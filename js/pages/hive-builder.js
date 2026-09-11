@@ -170,6 +170,24 @@ function hbApplyRarityStyle(card, rarity) {
   }
 }
 
+// Same visual style as .hb-equip-slot-filled — used for palette bee/sticker cards
+function hbApplyPaletteCardStyle(card, rarity) {
+  const rarityKey = (rarity || "").toLowerCase();
+  const rgb = HB_RARITY_RGB[rarityKey] || HB_RARITY_RGB.basic;
+  card.classList.add("hb-equip-slot-filled");
+  if (hbIsGradientRarity(rgb)) {
+    const [r1, g1, b1] = rgb[0];
+    const [r2, g2, b2] = rgb[1];
+    card.style.background = `linear-gradient(135deg, rgba(${r1},${g1},${b1},0.16), rgba(${r2},${g2},${b2},0.16))`;
+    card.style.borderColor = `rgba(${r2},${g2},${b2},0.55)`;
+    card.style.boxShadow = `0 0 0 1px rgba(${r2},${g2},${b2},0.22)`;
+  } else {
+    card.style.setProperty("--slot-r", rgb[0]);
+    card.style.setProperty("--slot-g", rgb[1]);
+    card.style.setProperty("--slot-b", rgb[2]);
+  }
+}
+
 function hbBuildPalettes() {
   const beeList = document.getElementById("hb-bee-list");
   beeList.innerHTML = "";
@@ -179,7 +197,7 @@ function hbBuildPalettes() {
     card.draggable = true;
     card.dataset.bee = bee.name;
     card.title = bee.name;
-    hbApplyRarityStyle(card, bee.rarity);
+    hbApplyPaletteCardStyle(card, bee.rarity);
 
     const img = document.createElement("img");
     img.src = bee.icon || "images/ui/site-logo.png";
@@ -189,6 +207,7 @@ function hbBuildPalettes() {
       img.src = "images/ui/site-logo.png";
     };
     const span = document.createElement("span");
+    span.className = "hb-equip-slot-name";
     span.textContent = bee.name.replace(/\s*Bee$/, "");
 
     card.appendChild(img);
@@ -219,7 +238,7 @@ function hbBuildPalettes() {
     card.draggable = true;
     card.dataset.sticker = sticker.name;
     card.title = sticker.name;
-    hbApplyRarityStyle(card, sticker.rarity);
+    hbApplyPaletteCardStyle(card, sticker.rarity);
 
     const img = document.createElement("img");
     img.src = sticker.image || "images/ui/site-logo.png";
@@ -229,6 +248,7 @@ function hbBuildPalettes() {
       img.src = "images/ui/site-logo.png";
     };
     const span = document.createElement("span");
+    span.className = "hb-equip-slot-name";
     span.textContent = sticker.name.replace(/\s*Sticker$/, "");
 
     card.appendChild(img);
