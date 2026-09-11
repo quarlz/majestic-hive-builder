@@ -920,7 +920,6 @@ function hbRenderAmuletModal() {
             style="--pick-r:${r}; --pick-g:${g}; --pick-b:${b};">
             <img src="${hbEsc(hbAmuletImage(amulet, variant))}" alt="" onerror="this.src='images/ui/site-logo.png'">
             <span class="hb-amulet-pick-name">${hbEsc(amulet.name)}</span>
-            <span class="hb-amulet-pick-rarity">${hbEsc(variant.rarity)}</span>
             ${disabled ? '<span class="hb-amulet-pick-note">In use</span>' : ""}
           </button>`);
       });

@@ -1228,14 +1228,6 @@
   line-height: 1.2;
 }
 
-.hb-amulet-pick-rarity {
-  font-size: 0.6rem;
-  font-weight: 800;
-  letter-spacing: 0.03em;
-  text-transform: uppercase;
-  color: rgb(var(--pick-r), var(--pick-g), var(--pick-b));
-}
-
 .hb-amulet-pick-selected {
   box-shadow:
     0 0 0 2px var(--gold),
