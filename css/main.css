@@ -2655,12 +2655,12 @@ html.pride-mode .ll-widget-input {
 
 .hb-shell {
   display: grid;
-  grid-template-columns: 190px minmax(0, 520px) 190px;
+  grid-template-columns: 290px minmax(0, auto) 290px;
   grid-template-areas: "bees hive stickers";
   align-items: start;
   justify-content: center;
-  gap: 14px;
-  max-width: 1080px;
+  gap: 18px;
+  max-width: 1340px;
   margin: 0 auto 20px;
   padding: 0 20px;
 }
@@ -2688,7 +2688,7 @@ html.pride-mode .ll-widget-input {
   gap: 10px;
   position: sticky;
   top: 90px;
-  max-height: 78vh;
+  max-height: 80vh;
 }
 
 .hb-palette-label {
@@ -2702,10 +2702,10 @@ html.pride-mode .ll-widget-input {
 
 .hb-palette-list {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 8px;
   overflow-y: auto;
-  padding-right: 2px;
+  padding-right: 4px;
   flex: 1;
 }
 
@@ -2997,102 +2997,104 @@ html.pride-mode .ll-widget-input {
   grid-area: hive;
   display: flex;
   align-items: flex-start;
+  gap: 8px;
 }
 
 .hb-hive-col {
   display: flex;
   flex-direction: column;
-  gap: 3px;
+  gap: 8px;
 }
 
-.hb-hive-col:not(:first-child) {
-  margin-left: -15px;
-}
-
-.hb-hive-col:nth-child(odd) {
-  margin-top: 29px;
-}
-
+/* Bee Slot — exact same design system as sticker slot */
+.hb-bee-slot,
 .hb-hex {
   position: relative;
-  width: 69px;
-  height: 56px;
-  cursor: default;
-  flex-shrink: 0;
-  transition: transform 0.12s ease;
-}
-
-.hb-hex:hover {
-  transform: scale(1.07);
-  z-index: 2;
-}
-
-.hb-hex-svg {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  display: block;
-  overflow: visible;
-}
-
-.hb-hex-poly {
-  fill: rgba(20, 14, 0, 0.65);
-  stroke: #000;
-  stroke-width: 5;
-  stroke-linejoin: round;
+  width: 72px;
+  height: 72px;
+  border-radius: 12px;
+  background: rgba(18, 12, 0, 0.6);
+  border: 1px solid rgba(58, 40, 0, 0.7);
   cursor: pointer;
-  transition:
-    filter 0.12s ease,
-    fill 0.12s ease;
-}
-
-.hb-hex.hb-drop-hover .hb-hex-poly {
-  filter: brightness(1.35);
-}
-
-.hb-hex-face {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 62%;
-  height: 62%;
-  transform: translate(-50%, -50%);
-  object-fit: contain;
-  pointer-events: none;
-  image-rendering: pixelated;
-  filter: drop-shadow(0 2px 3px rgba(0, 0, 0, 0.5));
-}
-
-.hb-hex-plus {
-  position: absolute;
-  inset: 0;
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-shrink: 0;
+  transition:
+    border-color 0.15s ease,
+    transform 0.15s ease,
+    background 0.15s ease,
+    box-shadow 0.15s ease;
+}
+
+.hb-bee-slot:hover,
+.hb-hex:hover {
+  transform: translateY(-2px);
+  border-color: rgba(232, 192, 64, 0.45);
+}
+
+.hb-bee-slot.hb-drop-hover,
+.hb-hex.hb-drop-hover {
+  border-color: rgba(232, 192, 64, 0.7);
+  background: rgba(232, 192, 64, 0.14);
+}
+
+.hb-bee-slot-empty {
+  color: rgba(232, 192, 64, 0.35);
+}
+
+.hb-bee-slot-plus,
+.hb-hex-plus {
   color: rgba(255, 221, 130, 0.35);
   font-family: "Fredoka One", Georgia, sans-serif;
-  font-size: 1rem;
+  font-size: 1.15rem;
   pointer-events: none;
 }
 
-.hb-hex-shiny .hb-hex-poly {
-  filter: drop-shadow(0 0 4px #fff)
-    drop-shadow(0 0 8px rgba(255, 255, 255, 0.85));
-  stroke: #fff;
+.hb-bee-slot-img,
+.hb-hex-face {
+  width: 58%;
+  height: 58%;
+  object-fit: contain;
+  pointer-events: none;
+  filter: drop-shadow(0 2px 3px rgba(0, 0, 0, 0.5));
+}
+
+.hb-bee-slot-filled,
+.hb-hex.hb-hex-filled {
+  --slot-r: 232;
+  --slot-g: 192;
+  --slot-b: 64;
+  cursor: grab;
+  background: rgba(var(--slot-r), var(--slot-g), var(--slot-b), 0.14);
+  border-color: rgba(var(--slot-r), var(--slot-g), var(--slot-b), 0.55);
+  box-shadow: 0 0 0 1px rgba(var(--slot-r), var(--slot-g), var(--slot-b), 0.2);
+}
+
+.hb-bee-slot-filled:hover,
+.hb-hex.hb-hex-filled:hover {
+  box-shadow: 0 0 14px rgba(var(--slot-r), var(--slot-g), var(--slot-b), 0.35);
+}
+
+.hb-slot-shiny,
+.hb-hex-shiny {
+  border-color: #fff !important;
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.7),
+    0 0 12px rgba(255, 255, 255, 0.85) !important;
 }
 
 .hb-hex-star {
   position: absolute;
-  top: -7px;
-  right: -4px;
+  top: -6px;
+  right: -6px;
   width: 19px;
   height: 19px;
   border-radius: 50%;
   border: 1px solid rgba(232, 192, 64, 0.55);
   background: rgba(20, 14, 0, 0.92);
-  color: rgba(232, 192, 64, 0.45);
-  font-size: 0.64rem;
+  color: rgba(232, 192, 64, 0.5);
+  font-size: 0.65rem;
   line-height: 1;
   display: flex;
   align-items: center;
@@ -4243,6 +4245,16 @@ html.pride-mode .ll-widget-input {
     0 0 10px rgba(232, 192, 64, 0.4);
 }
 
+@media (max-width: 1100px) {
+  .hb-shell {
+    grid-template-columns: 240px minmax(0, auto) 240px;
+    gap: 12px;
+  }
+  .hb-palette-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
 @media (max-width: 900px) {
   .hb-shell {
     grid-template-columns: 1fr;
@@ -4263,15 +4275,10 @@ html.pride-mode .ll-widget-input {
 }
 
 @media (max-width: 640px) {
+  .hb-bee-slot,
   .hb-hex {
-    width: 47px;
-    height: 38px;
-  }
-  .hb-hive-col:not(:first-child) {
-    margin-left: -10px;
-  }
-  .hb-hive-col:nth-child(odd) {
-    margin-top: 20px;
+    width: 48px;
+    height: 48px;
   }
   .hb-sticker-slot {
     width: 48px;
@@ -4294,15 +4301,10 @@ html.pride-mode .ll-widget-input {
 }
 
 @media (max-width: 420px) {
+  .hb-bee-slot,
   .hb-hex {
-    width: 35px;
-    height: 28px;
-  }
-  .hb-hive-col:not(:first-child) {
-    margin-left: -8px;
-  }
-  .hb-hive-col:nth-child(odd) {
-    margin-top: 15px;
+    width: 38px;
+    height: 38px;
   }
   .hb-sticker-slot {
     width: 38px;

@@ -288,27 +288,26 @@ function hbBuildGrid() {
 
     for (let row = 0; row < height; row++) {
       const slotIndex = index++;
-      const hex = document.createElement("div");
-      hex.className = "hb-hex hb-hex-empty";
-      hex.dataset.index = String(slotIndex);
-      hex.setAttribute("role", "button");
-      hex.setAttribute("aria-label", `Hive slot ${slotIndex + 1}`);
+      const slotEl = document.createElement("div");
+      slotEl.className = "hb-bee-slot hb-hex hb-bee-slot-empty";
+      slotEl.dataset.index = String(slotIndex);
+      slotEl.setAttribute("role", "button");
+      slotEl.setAttribute("aria-label", `Hive slot ${slotIndex + 1}`);
 
-      const { svg, poly } = hbCreateHexSvg();
-      hex.appendChild(svg);
-
-      poly.addEventListener("dragover", (e) => {
+      slotEl.addEventListener("dragover", (e) => {
         e.preventDefault();
-        hex.classList.add("hb-drop-hover");
+        slotEl.classList.add("hb-drop-hover");
       });
-      poly.addEventListener("dragleave", () => {
-        hex.classList.remove("hb-drop-hover");
+      slotEl.addEventListener("dragleave", () => {
+        slotEl.classList.remove("hb-drop-hover");
       });
-      poly.addEventListener("drop", (e) => {
+      slotEl.addEventListener("drop", (e) => {
         e.preventDefault();
-        hex.classList.remove("hb-drop-hover");
+        slotEl.classList.remove("hb-drop-hover");
         const beeName = e.dataTransfer.getData("application/x-bee");
-        const moveFrom = e.dataTransfer.getData("application/x-hex-move");
+        const moveFrom =
+          e.dataTransfer.getData("application/x-bee-move") ||
+          e.dataTransfer.getData("application/x-hex-move");
         if (beeName) {
           hbSlots[slotIndex] = { bee: beeName, shiny: false };
           hbRenderGrid();
@@ -325,7 +324,7 @@ function hbBuildGrid() {
         }
       });
 
-      poly.addEventListener("click", () => {
+      slotEl.addEventListener("click", () => {
         const slot = hbSlots[slotIndex];
         if (slot.bee) {
           slot.bee = null;
@@ -340,7 +339,7 @@ function hbBuildGrid() {
         hbRenderBonuses();
       });
 
-      colEl.appendChild(hex);
+      colEl.appendChild(slotEl);
     }
     grid.appendChild(colEl);
   });
@@ -350,34 +349,36 @@ function hbBuildGrid() {
 
 function hbRenderGrid() {
   const grid = document.getElementById("hb-hive-grid");
-  const hexes = grid.querySelectorAll(".hb-hex");
-  hexes.forEach((hex) => {
-    const index = Number(hex.dataset.index);
+  const slots = grid.querySelectorAll(".hb-bee-slot, .hb-hex");
+  slots.forEach((slotEl) => {
+    const index = Number(slotEl.dataset.index);
     const slot = hbSlots[index];
-    const poly = hex.querySelector(".hb-hex-poly");
 
-    hex.classList.remove("hb-hex-shiny");
-    hex.draggable = false;
-    hex
-      .querySelectorAll(".hb-hex-face, .hb-hex-star, .hb-hex-plus")
-      .forEach((el) => el.remove());
+    slotEl.innerHTML = "";
+    slotEl.draggable = false;
+    slotEl.classList.remove(
+      "hb-bee-slot-filled",
+      "hb-hex-filled",
+      "hb-slot-shiny",
+      "hb-hex-shiny",
+    );
+    slotEl.removeAttribute("style");
 
     if (!slot.bee) {
-      hex.classList.add("hb-hex-empty");
-      hex.classList.remove("hb-hex-filled");
-      poly.style.fill = "#2a2010";
+      slotEl.className = "hb-bee-slot hb-hex hb-bee-slot-empty";
       const plus = document.createElement("span");
-      plus.className = "hb-hex-plus";
+      plus.className = "hb-bee-slot-plus hb-hex-plus";
       plus.textContent = "+";
-      hex.appendChild(plus);
+      slotEl.appendChild(plus);
       return;
     }
 
-    hex.classList.remove("hb-hex-empty");
-    hex.classList.add("hb-hex-filled");
-    hex.draggable = true;
+    slotEl.className =
+      "hb-bee-slot hb-hex hb-bee-slot-filled hb-hex-filled";
+    slotEl.draggable = true;
 
-    hex.ondragstart = (e) => {
+    slotEl.ondragstart = (e) => {
+      e.dataTransfer.setData("application/x-bee-move", String(index));
       e.dataTransfer.setData("application/x-hex-move", String(index));
       e.dataTransfer.effectAllowed = "move";
     };
@@ -385,25 +386,17 @@ function hbRenderGrid() {
     const bee = hbGetBee(slot.bee);
     if (!bee) return;
 
-    const rarityKey = (bee.rarity || "").toLowerCase();
-    const rgb = HB_RARITY_RGB[rarityKey] || HB_RARITY_RGB.basic;
-    if (hbIsGradientRarity(rgb)) {
-      const c1 = hbMixRgb(rgb[0], HB_DARK_MIX, 0.9);
-      const c2 = hbMixRgb(rgb[1], HB_DARK_MIX, 0.9);
-      poly.style.fill = "url(#hb-grad-" + hex.dataset.index + ")";
-      hbEnsurePolyGradient(hex, index, c1, c2);
-    } else {
-      poly.style.fill = hbMixRgb(rgb, HB_DARK_MIX, 0.9);
-    }
+    hbApplyRarityStyle(slotEl, bee.rarity);
+
     const img = document.createElement("img");
-    img.className = "hb-hex-face";
+    img.className = "hb-bee-slot-img hb-hex-face";
     img.src = hbFaceIcon(bee);
     img.alt = bee.name;
     img.onerror = () => {
       img.onerror = null;
       img.src = "images/ui/site-logo.png";
     };
-    hex.appendChild(img);
+    slotEl.appendChild(img);
 
     const star = document.createElement("button");
     star.type = "button";
@@ -416,9 +409,9 @@ function hbRenderGrid() {
       hbRenderGrid();
       hbRenderBonuses();
     });
-    hex.appendChild(star);
+    slotEl.appendChild(star);
 
-    if (slot.shiny) hex.classList.add("hb-hex-shiny");
+    if (slot.shiny) slotEl.classList.add("hb-slot-shiny", "hb-hex-shiny");
   });
 
   hbUpdateCount();
@@ -1952,16 +1945,13 @@ function hbEnsurePolyGradient(hex, index, c1, c2) {
 }
 
 async function hbExportHive() {
-  const hexW = 97;
-  const hexH = 78;
-  const gapX = hexW * 0.7826;
-  const gapY = hexH + 6;
-  const colOffset = gapY / 2;
-  const strokeW = Math.max(3, hexW * 0.05);
+  const slotSize = 72;
+  const slotGap = 8;
+  const radius = 12;
   const maxCol = Math.max(...HB_COLUMNS);
 
-  const hiveW = gapX * (HB_COLUMNS.length - 1) + hexW * 1.3;
-  const hiveH = gapY * maxCol + colOffset;
+  const hiveW = HB_COLUMNS.length * slotSize + (HB_COLUMNS.length - 1) * slotGap;
+  const hiveH = maxCol * slotSize + (maxCol - 1) * slotGap;
 
   const stickerSize = 80;
   const stickerGap = 16;
@@ -1993,61 +1983,61 @@ async function hbExportHive() {
   let index = 0;
   for (let col = 0; col < HB_COLUMNS.length; col++) {
     const height = HB_COLUMNS[col];
-    const isEven = col % 2 === 0;
-    const colOffsetY = isEven ? colOffset : 0;
-    const colContentH = gapY * (height - 1);
-    const startY =
-      hiveOriginY + colOffsetY + (hiveH - colOffset - colContentH) / 2;
+    const colX = hiveOriginX + col * (slotSize + slotGap);
 
     for (let row = 0; row < height; row++) {
       const slot = hbSlots[index];
-      const cx = hiveOriginX + hexW * 0.7 + col * gapX;
-      const cyFinal = startY + row * gapY;
+      const slotY = hiveOriginY + row * (slotSize + slotGap);
 
-      hbHexPathAt(ctx, cx, cyFinal, hexW, hexH);
+      hbRoundRectPath(ctx, colX, slotY, slotSize, slotSize, radius);
 
       const bee = slot.bee ? hbGetBee(slot.bee) : null;
 
       if (!slot.bee) {
-        ctx.fillStyle = "#2a2010";
+        ctx.fillStyle = "rgba(18, 12, 0, 0.6)";
         ctx.fill();
+        ctx.strokeStyle = "rgba(58, 40, 0, 0.7)";
+        ctx.lineWidth = 1;
+        ctx.stroke();
       } else {
         const rarityKey = bee ? (bee.rarity || "").toLowerCase() : "basic";
         const rgb = HB_RARITY_RGB[rarityKey] || HB_RARITY_RGB.basic;
         if (hbIsGradientRarity(rgb)) {
-          const bounds = {
-            x: cx - hexW / 2,
-            y: cyFinal - hexH / 2,
-            w: hexW,
-            h: hexH,
-          };
           const grad = ctx.createLinearGradient(
-            bounds.x,
-            bounds.y,
-            bounds.x + bounds.w,
-            bounds.y + bounds.h,
+            colX,
+            slotY,
+            colX + slotSize,
+            slotY + slotSize,
           );
-          grad.addColorStop(0, hbMixRgb(rgb[0], HB_DARK_MIX, 0.9));
-          grad.addColorStop(1, hbMixRgb(rgb[1], HB_DARK_MIX, 0.9));
+          grad.addColorStop(
+            0,
+            `rgba(${rgb[0][0]}, ${rgb[0][1]}, ${rgb[0][2]}, 0.16)`,
+          );
+          grad.addColorStop(
+            1,
+            `rgba(${rgb[1][0]}, ${rgb[1][1]}, ${rgb[1][2]}, 0.16)`,
+          );
           ctx.fillStyle = grad;
+          ctx.fill();
+          ctx.strokeStyle = `rgba(${rgb[1][0]}, ${rgb[1][1]}, ${rgb[1][2]}, 0.55)`;
         } else {
-          ctx.fillStyle = hbMixRgb(rgb, HB_DARK_MIX, 0.9);
+          ctx.fillStyle = `rgba(${rgb[0]}, ${rgb[1]}, ${rgb[2]}, 0.14)`;
+          ctx.fill();
+          ctx.strokeStyle = `rgba(${rgb[0]}, ${rgb[1]}, ${rgb[2]}, 0.55)`;
         }
-        ctx.fill();
+        ctx.lineWidth = 1;
+        ctx.stroke();
       }
 
       ctx.save();
       if (slot.bee && slot.shiny) {
+        hbRoundRectPath(ctx, colX, slotY, slotSize, slotSize, radius);
         ctx.strokeStyle = "#fff";
-        ctx.lineWidth = strokeW + 1;
+        ctx.lineWidth = 2;
         ctx.shadowColor = "rgba(255,255,255,0.9)";
-        ctx.shadowBlur = 14;
-      } else {
-        ctx.strokeStyle = "#000";
-        ctx.lineWidth = strokeW;
+        ctx.shadowBlur = 10;
+        ctx.stroke();
       }
-      ctx.lineJoin = "round";
-      ctx.stroke();
       ctx.restore();
 
       if (bee) {
@@ -2055,8 +2045,14 @@ async function hbExportHive() {
         if (!(src in faceCache)) faceCache[src] = await hbLoadImage(src);
         const img = faceCache[src];
         if (img) {
-          const size = hexH * 0.62;
-          ctx.drawImage(img, cx - size / 2, cyFinal - size / 2, size, size);
+          const pad = slotSize * 0.18;
+          ctx.drawImage(
+            img,
+            colX + pad,
+            slotY + pad,
+            slotSize - pad * 2,
+            slotSize - pad * 2,
+          );
         }
       }
       index++;
