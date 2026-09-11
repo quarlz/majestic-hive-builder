@@ -46,6 +46,7 @@ const HB_DARK_MIX = [28, 20, 0];
 
 let hbBees = [];
 let hbStickers = [];
+let hbCosmetics = [];
 let hbStatDefs = [];
 
 let hbBadges = [];
@@ -61,7 +62,7 @@ let hbAmuletModalSlotIndex = null;
 let hbAmuletModalStep = "pick"; // "pick" | "configure"
 
 const HB_EQUIP_SLOT_DEFS = [
-  { key: "tools", label: "Tool" },
+  { key: "collectors", label: "Collector" },
   { key: "bags", label: "Bag" },
   { key: "belts", label: "Belt" },
   { key: "helmets", label: "Helmet" },
@@ -110,23 +111,26 @@ function hbGetSticker(name) {
 }
 
 async function hbLoadData() {
-  const [beesRes, hiveRes, badgesRes, amuletsRes, equipmentsRes, statsRes] = await Promise.all([
+  const [beesRes, stickersRes, cosmeticsRes, badgesRes, amuletsRes, equipmentsRes, statsRes] = await Promise.all([
     WikiData.response("data/bees.json"),
-    WikiData.response("data/hive.json"),
+    WikiData.response("data/stickers.json"),
+    WikiData.response("data/cosmetics.json"),
     WikiData.response("data/badges.json"),
     WikiData.response("data/amulets.json"),
     WikiData.response("data/equipments.json"),
     WikiData.response("data/stats.json"),
   ]);
   const beesData = await beesRes.json();
-  const hiveData = await hiveRes.json();
+  const stickersData = await stickersRes.json();
+  const cosmeticsData = await cosmeticsRes.json();
   const badgesData = await badgesRes.json();
   const amuletsData = await amuletsRes.json();
   const equipmentsData = await equipmentsRes.json();
   const statsData = await statsRes.json();
 
   hbBees = Array.isArray(beesData) ? beesData : Object.values(beesData);
-  hbStickers = Array.isArray(hiveData.stickers) ? hiveData.stickers : [];
+  hbStickers = Array.isArray(stickersData) ? stickersData : [];
+  hbCosmetics = Array.isArray(cosmeticsData) ? cosmeticsData : [];
   hbBadges = (Array.isArray(badgesData) ? badgesData : []).slice().sort(
     (a, b) => (a.order || 0) - (b.order || 0),
   );
@@ -722,6 +726,10 @@ function hbInitBadges() {
   }
 }
 
+function hbAmuletImage(amulet, variant) {
+  return (variant && variant.image) || amulet.image;
+}
+
 function hbAmuletKey(amuletId, rarity) {
   return `${amuletId}::${rarity}`;
 }
@@ -803,7 +811,7 @@ function hbAmuletDetailsHtml(amulet, variant, slotIndex, selections) {
     })
     .join("");
   return `<div class="hb-amulet-details">
-      <img class="hb-amulet-img" src="${hbEsc(amulet.image)}" alt="${hbEsc(amulet.name)}" onerror="this.src='images/ui/site-logo.png'">
+      <img class="hb-amulet-img" src="${hbEsc(hbAmuletImage(amulet, variant))}" alt="${hbEsc(amulet.name)}" onerror="this.src='images/ui/site-logo.png'">
       <div class="hb-amulet-info">
         <div class="hb-amulet-name-row">
           <span class="hb-amulet-name">${hbEsc(amulet.name)}</span>
@@ -838,7 +846,7 @@ function hbBuildAmuletSlots() {
       return `<div class="hb-amulet-slot hb-amulet-slot-filled" data-slot-index="${i}" role="button" tabindex="0"
           style="--slot-r:${r}; --slot-g:${g}; --slot-b:${b};"
           aria-label="Amulet slot ${i + 1}, ${hbEsc(amulet.name)}. Click to edit.">
-        <img src="${hbEsc(amulet.image)}" alt="" onerror="this.src='images/ui/site-logo.png'">
+        <img src="${hbEsc(hbAmuletImage(amulet, variant))}" alt="" onerror="this.src='images/ui/site-logo.png'">
         <span class="hb-amulet-slot-badge">${picked}/${limit}</span>
         <button type="button" class="hb-amulet-slot-remove" data-remove-index="${i}" aria-label="Remove amulet from slot ${i + 1}">&times;</button>
         <span class="hb-amulet-slot-name">${hbEsc(amulet.name)}</span>
@@ -907,7 +915,7 @@ function hbRenderAmuletModal() {
             class="hb-amulet-pick-card${selected ? " hb-amulet-pick-selected" : ""}${disabled ? " hb-amulet-pick-disabled" : ""}"
             data-key="${hbEsc(key)}" ${disabled ? "disabled" : ""}
             style="--pick-r:${r}; --pick-g:${g}; --pick-b:${b};">
-            <img src="${hbEsc(amulet.image)}" alt="" onerror="this.src='images/ui/site-logo.png'">
+            <img src="${hbEsc(hbAmuletImage(amulet, variant))}" alt="" onerror="this.src='images/ui/site-logo.png'">
             <span class="hb-amulet-pick-name">${hbEsc(amulet.name)}</span>
             <span class="hb-amulet-pick-rarity">${hbEsc(variant.rarity)}</span>
             ${disabled ? '<span class="hb-amulet-pick-note">In use</span>' : ""}

@@ -1,0 +1,245 @@
+[
+  {
+    "name": "Normal Hive",
+    "image": "images/hive/skins/Normal Skin.png",
+    "rarity": "Common",
+    "order": 999,
+    "desc": "Original Colour of hives.",
+    "buffs": []
+  },
+  {
+    "name": "Red Hive",
+    "image": "images/hive/skins/Red Skin.png",
+    "rarity": "Rare",
+    "order": 990,
+    "desc": "Red and strawberry style hive.",
+    "buffs": [
+      {
+        "stat": "Red Pollen",
+        "type": "Perc",
+        "value": 25
+      }
+    ],
+    "weight": 3000
+  },
+  {
+    "name": "Blue Hive",
+    "image": "images/hive/skins/Blue Skin.png",
+    "rarity": "Rare",
+    "order": 990,
+    "desc": "Blue and blueberry style hive.",
+    "buffs": [
+      {
+        "stat": "Blue Pollen",
+        "type": "Perc",
+        "value": 25
+      }
+    ],
+    "weight": 3000
+  },
+  {
+    "name": "Green Hive",
+    "image": "images/hive/skins/Green Skin.png",
+    "rarity": "Rare",
+    "order": 990,
+    "desc": "Green and lucky hive.",
+    "buffs": [
+      {
+        "stat": "Loot Luck",
+        "type": "Perc",
+        "value": 25
+      }
+    ],
+    "weight": 3000
+  },
+  {
+    "name": "Orange Hive",
+    "image": "images/hive/skins/Orange Skin.png",
+    "rarity": "Rare",
+    "order": 990,
+    "desc": "Orange and honeyfull hive.",
+    "buffs": [
+      {
+        "stat": "Convert Rate",
+        "type": "Perc",
+        "value": 25
+      },
+      {
+        "stat": "Honey Bonus",
+        "type": "Perc",
+        "value": 5
+      }
+    ],
+    "weight": 3000
+  },
+  {
+    "name": "Pink Hive",
+    "image": "images/hive/skins/Pink Skin.png",
+    "rarity": "Epic",
+    "order": 980,
+    "desc": "Pink and sweety flavour hive.",
+    "buffs": [
+      {
+        "stat": "Red Pollen",
+        "type": "Perc",
+        "value": 35
+      },
+      {
+        "stat": "Capacity Bonus",
+        "type": "Perc",
+        "value": 25
+      }
+    ],
+    "weight": 300
+  },
+  {
+    "name": "Purple Hive",
+    "image": "images/hive/skins/Purple Skin.png",
+    "rarity": "Epic",
+    "order": 980,
+    "desc": "Purple and mix of blue & red hive.",
+    "buffs": [
+      {
+        "stat": "Red Pollen",
+        "type": "Perc",
+        "value": 35
+      },
+      {
+        "stat": "Blue Pollen",
+        "type": "Perc",
+        "value": 35
+      }
+    ],
+    "weight": 300
+  },
+  {
+    "name": "Light Blue Hive",
+    "image": "images/hive/skins/Light Blue Skin.png",
+    "rarity": "Epic",
+    "order": 980,
+    "desc": "Light blue and sky color hive.",
+    "buffs": [
+      {
+        "stat": "White Pollen",
+        "type": "Perc",
+        "value": 35
+      },
+      {
+        "stat": "Cloud Pollen",
+        "type": "Perc",
+        "value": 25
+      }
+    ],
+    "weight": 300
+  },
+  {
+    "name": "Black Hive",
+    "image": "images/hive/skins/Black Skin.png",
+    "rarity": "Epic",
+    "order": 980,
+    "desc": "Black and classic style hive.",
+    "buffs": [
+      {
+        "stat": "Obsidian Pollen",
+        "type": "Perc",
+        "value": 25
+      }
+    ],
+    "weight": 300
+  },
+  {
+    "name": "White Hive",
+    "image": "images/hive/skins/White Skin.png",
+    "rarity": "Epic",
+    "order": 980,
+    "desc": "White and classic style hive.",
+    "buffs": [
+      {
+        "stat": "Cloud Pollen",
+        "type": "Perc",
+        "value": 100
+      },
+      {
+        "stat": "Movespeed",
+        "type": "Perc",
+        "value": 25
+      }
+    ],
+    "weight": 300
+  },
+  {
+    "name": "Blossom Hive",
+    "image": "images/hive/skins/Blossom Skin.png",
+    "rarity": "Legendary",
+    "order": 970,
+    "desc": "Legendary hive of blossom story...",
+    "buffs": [
+      {
+        "stat": "Honey Bonus",
+        "type": "Perc",
+        "value": 15
+      },
+      {
+        "stat": "Pollen",
+        "type": "Perc",
+        "value": 60
+      },
+      {
+        "stat": "Capacity Bonus",
+        "type": "Perc",
+        "value": 75
+      },
+      {
+        "stat": "Movespeed",
+        "type": "Perc",
+        "value": 30
+      },
+      {
+        "stat": "Critical Chance",
+        "type": "Perc",
+        "value": 5
+      },
+      {
+        "stat": "Critical Power",
+        "type": "Perc",
+        "value": 15
+      }
+    ],
+    "extraChances": [
+      {
+        "label": "0.008% from Wheel",
+        "type": "wheel"
+      }
+    ]
+  },
+  {
+    "name": "Chromatic Hive",
+    "image": "images/hive/skins/Chromatic Skin.png",
+    "rarity": "Legendary",
+    "order": 970,
+    "desc": "Mix of all colors hive.",
+    "buffs": [
+      {
+        "stat": "Honey Bonus",
+        "type": "Perc",
+        "value": 10
+      },
+      {
+        "stat": "Pollen",
+        "type": "Perc",
+        "value": 50
+      },
+      {
+        "stat": "Capacity Bonus",
+        "type": "Perc",
+        "value": 50
+      },
+      {
+        "stat": "Movespeed",
+        "type": "Perc",
+        "value": 25
+      }
+    ],
+    "weight": 15
+  }
+]

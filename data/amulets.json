@@ -402,7 +402,8 @@
             "max": 15,
             "chance": 6.1
           }
-        ]
+        ],
+        "image": "images/amulets/Star Amulet.png"
       },
       {
         "rarity": "Rare",
@@ -466,7 +467,8 @@
             "max": 1,
             "chance": 5.75
           }
-        ]
+        ],
+        "image": "images/amulets/Rare Star Amulet.png"
       },
       {
         "rarity": "Epic",
@@ -530,7 +532,8 @@
             "max": 2,
             "chance": 5.75
           }
-        ]
+        ],
+        "image": "images/amulets/Epic Star Amulet.png"
       },
       {
         "rarity": "Legendary",
@@ -594,7 +597,8 @@
             "max": 2,
             "chance": 5.75
           }
-        ]
+        ],
+        "image": "images/amulets/Legendary Star Amulet.png"
       },
       {
         "rarity": "Mythic",
@@ -658,7 +662,8 @@
             "max": 3,
             "chance": 5.75
           }
-        ]
+        ],
+        "image": "images/amulets/Mythic star Amulet.png"
       }
     ]
   }

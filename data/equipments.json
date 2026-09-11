@@ -1,5 +1,5 @@
 {
-  "tools": [
+  "collectors": [
     {
       "name": "Shovel",
       "image": "images/equipments/Shovel.png",
