@@ -834,32 +834,68 @@ function hbAmuletDetailsHtml(amulet, variant, slotIndex, selections) {
     <p class="hb-amulet-note">Pick up to ${hbEsc(limit)} buff${limit === 1 ? "" : "s"} &middot; <span class="hb-amulet-note-count">${pickedCount}/${hbEsc(limit)} picked</span>. Set the rolled value for each, up to its max.</p>`;
 }
 
+function hbBuildItemSlot({
+  item,
+  label,
+  index,
+  className,
+  emptyLabel,
+  image,
+  rarity,
+  removeClass,
+  removeLabel,
+  ariaLabel,
+}) {
+  if (!item) {
+    return `<div class="${className} ${className}-empty" data-slot-index="${index}" role="button" tabindex="0" aria-label="${hbEsc(emptyLabel)}">
+      <span class="${className}-plus">+</span>
+      <span class="${className}-label">${hbEsc(label)}</span>
+    </div>`;
+  }
+
+  const [r, g, b] = hbRarityRgbTriple(rarity);
+  return `<div class="${className} ${className}-filled" data-slot-index="${index}" role="button" tabindex="0"
+      style="--slot-r:${r}; --slot-g:${g}; --slot-b:${b};"
+      aria-label="${hbEsc(ariaLabel)}">
+    <img src="${hbEsc(image)}" alt="" onerror="this.src='images/ui/site-logo.png'">
+    <button type="button" class="${removeClass}" data-remove-index="${index}" aria-label="${hbEsc(removeLabel)}">&times;</button>
+    <span class="${className}-name">${hbEsc(item.name)}</span>
+  </div>`;
+}
+
 function hbBuildAmuletSlots() {
   const wrap = document.getElementById("hb-amulet-list");
   if (!wrap) return;
+
   wrap.innerHTML = hbAmuletSlots
     .map((slot, i) => {
       const found = hbFindAmuletVariant(slot.key);
+
       if (!found) {
-        return `<div class="hb-amulet-slot hb-amulet-slot-empty" data-slot-index="${i}" role="button" tabindex="0" aria-label="Amulet slot ${i + 1}, empty. Click to equip an amulet.">
-          <span class="hb-amulet-slot-plus">+</span>
-          <span class="hb-amulet-slot-label">Slot ${i + 1}</span>
-        </div>`;
+        return hbBuildItemSlot({
+          item: null,
+          label: `Slot ${i + 1}`,
+          index: i,
+          className: "hb-equip-slot",
+          emptyLabel: `Amulet slot ${i + 1}, empty. Click to equip an amulet.`,
+        });
       }
+
       const { amulet, variant } = found;
-      const [r, g, b] = hbAmuletRarityRgb(variant.rarity);
-      const picked = Object.keys(slot.selections).length;
-      const limit = variant.buffsAmount || 0;
-      return `<div class="hb-amulet-slot hb-amulet-slot-filled" data-slot-index="${i}" role="button" tabindex="0"
-          style="--slot-r:${r}; --slot-g:${g}; --slot-b:${b};"
-          aria-label="Amulet slot ${i + 1}, ${hbEsc(amulet.name)}. Click to edit.">
-        <img src="${hbEsc(hbAmuletImage(amulet, variant))}" alt="" onerror="this.src='images/ui/site-logo.png'">
-        <span class="hb-amulet-slot-badge">${picked}/${limit}</span>
-        <button type="button" class="hb-amulet-slot-remove" data-remove-index="${i}" aria-label="Remove amulet from slot ${i + 1}">&times;</button>
-        <span class="hb-amulet-slot-name">${hbEsc(amulet.name)}</span>
-      </div>`;
+      return hbBuildItemSlot({
+        item: amulet,
+        label: `Slot ${i + 1}`,
+        index: i,
+        className: "hb-equip-slot",
+        image: hbAmuletImage(amulet, variant),
+        rarity: variant.rarity,
+        removeClass: "hb-equip-slot-remove",
+        removeLabel: `Remove amulet from slot ${i + 1}`,
+        ariaLabel: `Amulet slot ${i + 1}, ${amulet.name}. Click to edit.`,
+      });
     })
     .join("");
+
   const chip = document.getElementById("hb-amulet-count-chip");
   if (chip) {
     const filled = hbAmuletSlots.filter((s) => hbFindAmuletVariant(s.key)).length;
@@ -1141,30 +1177,33 @@ function hbEquipDetailsHtml(item) {
 function hbBuildEquipSlots() {
   const wrap = document.getElementById("hb-equip-list");
   if (!wrap) return;
+
   wrap.innerHTML = hbEquipSlots
     .map((slot, i) => {
       const def = HB_EQUIP_SLOT_DEFS[i];
       const item = hbFindEquipItem(def.key, slot.item);
-      if (!item) {
-        return `<div class="hb-equip-slot hb-equip-slot-empty" data-slot-index="${i}" role="button" tabindex="0" aria-label="${hbEsc(def.label)} slot, empty. Click to equip a ${hbEsc(def.label.toLowerCase())}.">
-          <span class="hb-equip-slot-plus">+</span>
-          <span class="hb-equip-slot-label">${hbEsc(def.label)}</span>
-        </div>`;
-      }
-      const [r, g, b] = hbRarityRgbTriple(item.rarity);
-      return `<div class="hb-equip-slot hb-equip-slot-filled" data-slot-index="${i}" role="button" tabindex="0"
-          style="--slot-r:${r}; --slot-g:${g}; --slot-b:${b};"
-          aria-label="${hbEsc(def.label)} slot, ${hbEsc(item.name)}. Click to edit.">
-        <img src="${hbEsc(item.image)}" alt="" onerror="this.src='images/ui/site-logo.png'">
-        <button type="button" class="hb-equip-slot-remove" data-remove-index="${i}" aria-label="Remove ${hbEsc(def.label)}">&times;</button>
-        <span class="hb-equip-slot-name">${hbEsc(item.name)}</span>
-      </div>`;
+
+      return hbBuildItemSlot({
+        item,
+        label: def.label,
+        index: i,
+        className: "hb-equip-slot",
+        emptyLabel: `${def.label} slot, empty. Click to equip a ${def.label.toLowerCase()}.`,
+        image: item?.image,
+        rarity: item?.rarity,
+        removeClass: "hb-equip-slot-remove",
+        removeLabel: `Remove ${def.label}`,
+        ariaLabel: item
+          ? `${def.label} slot, ${item.name}. Click to edit.`
+          : undefined,
+      });
     })
     .join("");
+
   const chip = document.getElementById("hb-equip-count-chip");
   if (chip) {
-    const filled = hbEquipSlots.filter((s, i) =>
-      hbFindEquipItem(HB_EQUIP_SLOT_DEFS[i].key, s.item),
+    const filled = hbEquipSlots.filter((slot, i) =>
+      hbFindEquipItem(HB_EQUIP_SLOT_DEFS[i].key, slot.item),
     ).length;
     chip.textContent = `${filled}/${HB_EQUIP_SLOT_COUNT} equipped`;
   }
