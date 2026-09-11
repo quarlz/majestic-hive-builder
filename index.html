@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="en">
+  <head>
+<script defer src="js/core/data.js"></script>
+<meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hive Builder</title>
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Hive Builder" />
+    <meta
+      property="og:description"
+      content="Build and share your hive setup for The Majestic Bees."
+    />
+    <meta
+      property="og:image"
+      content="https://spookyz10.github.io/MajesticBeesWiki/images/ui/site-logo.png"
+    />
+    <meta property="og:image:alt" content="The Majestic Bees Wiki logo" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Hive Builder" />
+    <meta
+      name="twitter:description"
+      content="Build and share your hive setup for The Majestic Bees."
+    />
+    <link rel="icon" type="image/png" href="images/ui/fav-icon.png" />
+    <script defer src="js/core/utils.js"></script>
+    <script defer src="js/pages/hive-builder.js"></script>
+<link rel="stylesheet" href="css/main.css" data-site-style>
+</head>
+  <body>
+    <div class="main" data-pagefind-body>
+      <div class="content mw-parser-output">
+        <div class="bees-page-title">
+          <div class="hero-title">Hive Builder</div>
+        </div>
+        <div class="hero-description bees-hero-description">
+          Drag bees and stickers straight onto your hive. Click the star on a
+          placed bee to mark it shiny, click a bee to remove it, or drag things
+          to the trash. Share your setup with
+          <b>Export Hive</b> below.
+        </div>
+        <hr />
+        <div class="hb-shell">
+          <div class="hb-palette hb-palette-bees">
+            <div class="hb-palette-label">Bees</div>
+            <div class="hb-palette-list" id="hb-bee-list"></div>
+          </div>
+          <div class="hb-center">
+            <div class="hb-topline">
+              <div class="hb-count-row">
+                <div class="hb-count-text">
+                  <span id="hb-count-value">0</span> /
+                  <span id="hb-count-max">50</span>
+                  <div class="hb-count-sub">Bees placed</div>
+                </div>
+              </div>
+              <div class="hb-count-row">
+                <div class="hb-count-text hb-count-text-small">
+                  <span id="hb-sticker-count">0</span> /
+                  <span id="hb-sticker-max">20</span>
+                  <div class="hb-count-sub">Stickers placed</div>
+                </div>
+              </div>
+              <button
+                id="hb-clear-btn"
+                class="hb-btn hb-btn-danger"
+                type="button"
+              >
+                Clear Hive
+              </button>
+              <button
+                id="hb-export-btn"
+                class="hb-btn hb-btn-primary"
+                type="button"
+              >
+                Export Hive (PNG)
+              </button>
+            </div>
+            <div class="hb-hive-wrap">
+              <div class="hb-hive-frame">
+                <div
+                  class="hb-sticker-row hb-sticker-top"
+                  id="hb-sticker-top"
+                ></div>
+                <div
+                  class="hb-sticker-col hb-sticker-left"
+                  id="hb-sticker-left"
+                ></div>
+                <div class="hb-hive-grid" id="hb-hive-grid"></div>
+                <div
+                  class="hb-sticker-col hb-sticker-right"
+                  id="hb-sticker-right"
+                ></div>
+                <div
+                  class="hb-sticker-row hb-sticker-bottom"
+                  id="hb-sticker-bottom"
+                ></div>
+              </div>
+            </div>
+            <div class="hb-trash" id="hb-trash">Drag here to remove</div>
+          </div>
+          <div class="hb-palette hb-palette-stickers">
+            <div class="hb-palette-label">Stickers</div>
+            <div class="hb-palette-list" id="hb-sticker-list"></div>
+          </div>
+        </div>
+        <hr />
+        <div class="hb-badge-section">
+          <div class="hb-badge-panel">
+            <div class="hb-bonus-header">
+              <span class="hb-bonus-title">Badges<span class="hb-count-chip" id="hb-badge-count-chip">0 active</span></span>
+              <button class="hb-copy-btn" id="hb-badge-reset">Reset</button>
+            </div>
+            <div class="hb-badge-grid" id="hb-badge-list"></div>
+            <div class="hb-slot-hint">Set a tier for each badge you own.</div>
+          </div>
+        </div>
+        <hr />
+        <div class="hb-badge-section">
+          <div class="hb-badge-panel">
+            <div class="hb-bonus-header">
+              <span class="hb-bonus-title">Amulets<span class="hb-count-chip" id="hb-amulet-count-chip">0/5 equipped</span></span>
+              <button class="hb-copy-btn" id="hb-amulet-reset">Reset</button>
+            </div>
+            <div class="hb-amulet-slots" id="hb-amulet-list"></div>
+            <div class="hb-slot-hint">Click a slot to equip an amulet and pick its buffs.</div>
+          </div>
+        </div>
+        <hr />
+        <div class="hb-badge-section">
+          <div class="hb-badge-panel">
+            <div class="hb-bonus-header">
+              <span class="hb-bonus-title">Equipments<span class="hb-count-chip" id="hb-equip-count-chip">0/9 equipped</span></span>
+              <button class="hb-copy-btn" id="hb-equip-reset">Reset</button>
+            </div>
+            <div class="hb-equip-slot-row" id="hb-equip-list"></div>
+            <div class="hb-slot-hint">Pick one item per equipment slot.</div>
+          </div>
+        </div>
+        <hr />
+        <div class="hb-badge-section">
+          <div class="hb-badge-panel hb-bonus-box-total">
+            <div class="hb-bonus-header">
+              <span class="hb-bonus-title">Stats</span>
+              <button class="hb-copy-btn" data-copy-target="hb-total-table">
+                Copy
+              </button>
+            </div>
+            <table
+              class="wikitable bees-table hb-bonus-table"
+              id="hb-total-table"
+            >
+              <tr class="hb-bonus-thead-row">
+                <th>Stat</th>
+                <th>Value</th>
+              </tr>
+              <tbody id="hb-total-tbody">
+                <tr>
+                  <td colspan="2" class="hb-bonus-empty">
+                    Nothing yet, place bees and stickers.
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+</div>
+</body>
+</html>

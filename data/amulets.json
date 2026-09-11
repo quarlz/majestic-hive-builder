@@ -1,0 +1,665 @@
+[
+  {
+    "id": "caterpillar",
+    "name": "Caterpillar Amulet",
+    "image": "images/amulets/Caterpillar Amulet.png",
+    "source": "Caterpillars",
+    "variants": [
+      {
+        "rarity": "Rare",
+        "desc": "Drops from Caterpillars.",
+        "buffsAmount": 2,
+        "buffs": [
+          {
+            "stat": "Capacity Bonus",
+            "type": "Mult",
+            "min": 1.01,
+            "max": 1.1,
+            "chance": 29.61
+          },
+          {
+            "stat": "Clover Field Pollen",
+            "type": "Perc",
+            "min": 1,
+            "max": 25,
+            "chance": 23.03
+          },
+          {
+            "stat": "Cloud Pollen",
+            "type": "Perc",
+            "min": 1,
+            "max": 7,
+            "chance": 19.74
+          },
+          {
+            "stat": "Sunflower Field Pollen",
+            "type": "Perc",
+            "min": 1,
+            "max": 25,
+            "chance": 16.45
+          },
+          {
+            "stat": "Pine Cone Field Pollen",
+            "type": "Perc",
+            "min": 1,
+            "max": 25,
+            "chance": 6.58
+          },
+          {
+            "stat": "Loot Luck",
+            "type": "Mult",
+            "min": 1.01,
+            "max": 1.1,
+            "chance": 4.61
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "ladybug",
+    "name": "Ladybug Amulet",
+    "image": "images/amulets/Ladybug Amulet.png",
+    "source": "Ladybugs",
+    "variants": [
+      {
+        "rarity": "Epic",
+        "desc": "Drops from Ladybugs.",
+        "buffsAmount": 2,
+        "buffs": [
+          {
+            "stat": "Red Pollen",
+            "type": "Perc",
+            "min": 1,
+            "max": 25,
+            "chance": 31.03
+          },
+          {
+            "stat": "Mushroom Field Pollen",
+            "type": "Perc",
+            "min": 1,
+            "max": 25,
+            "chance": 24.14
+          },
+          {
+            "stat": "Fire Pollen",
+            "type": "Perc",
+            "min": 1,
+            "max": 27,
+            "chance": 20.69
+          },
+          {
+            "stat": "Rose Field Pollen",
+            "type": "Perc",
+            "min": 1,
+            "max": 25,
+            "chance": 17.24
+          },
+          {
+            "stat": "Raspberry Field Pollen",
+            "type": "Perc",
+            "min": 1,
+            "max": 25,
+            "chance": 6.9
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "rhino-beetle",
+    "name": "Rhino Beetle Amulet",
+    "image": "images/amulets/Rhino Beetle Amulet.png",
+    "source": "Rhino Beetles",
+    "variants": [
+      {
+        "rarity": "Epic",
+        "desc": "Drops from Rhino Beetles.",
+        "buffsAmount": 2,
+        "buffs": [
+          {
+            "stat": "Blue Pollen",
+            "type": "Perc",
+            "min": 1,
+            "max": 25,
+            "chance": 31.03
+          },
+          {
+            "stat": "Blackberry Field Pollen",
+            "type": "Perc",
+            "min": 1,
+            "max": 25,
+            "chance": 24.14
+          },
+          {
+            "stat": "Ice Pollen",
+            "type": "Perc",
+            "min": 1,
+            "max": 7,
+            "chance": 20.69
+          },
+          {
+            "stat": "Snowdrops Field Pollen",
+            "type": "Perc",
+            "min": 1,
+            "max": 25,
+            "chance": 17.24
+          },
+          {
+            "stat": "Bamboo Field Pollen",
+            "type": "Perc",
+            "min": 1,
+            "max": 25,
+            "chance": 6.9
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "spider",
+    "name": "Spider Amulet",
+    "image": "images/amulets/Spider Amulet.png",
+    "source": "Spiders",
+    "variants": [
+      {
+        "rarity": "Legendary",
+        "desc": "Drops from Spiders.",
+        "buffsAmount": 3,
+        "buffs": [
+          {
+            "stat": "White Pollen",
+            "type": "Perc",
+            "min": 1,
+            "max": 25,
+            "chance": 29.41
+          },
+          {
+            "stat": "Bomb Pollen",
+            "type": "Perc",
+            "min": 1,
+            "max": 30,
+            "chance": 22.88
+          },
+          {
+            "stat": "Bellflower Field Pollen",
+            "type": "Perc",
+            "min": 1,
+            "max": 25,
+            "chance": 22.88
+          },
+          {
+            "stat": "Strawberry Field Pollen",
+            "type": "Perc",
+            "min": 1,
+            "max": 25,
+            "chance": 16.34
+          },
+          {
+            "stat": "Spider Field Pollen",
+            "type": "Perc",
+            "min": 1,
+            "max": 25,
+            "chance": 6.54
+          },
+          {
+            "stat": "Obsidian Pollen",
+            "type": "Mult",
+            "min": 1.01,
+            "max": 1.1,
+            "chance": 1.96
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "butterfly",
+    "name": "Butterfly Amulet",
+    "image": "images/amulets/Butterfly Amulet.png",
+    "source": "Butterflies",
+    "variants": [
+      {
+        "rarity": "Mythic",
+        "desc": "Drops from Butterfly.",
+        "buffsAmount": 4,
+        "buffs": [
+          {
+            "stat": "Pollen",
+            "type": "Perc",
+            "min": 1,
+            "max": 25,
+            "chance": 28.85
+          },
+          {
+            "stat": "Capacity Bonus",
+            "type": "Perc",
+            "min": 1,
+            "max": 30,
+            "chance": 22.44
+          },
+          {
+            "stat": "Wisteria Field Pollen",
+            "type": "Perc",
+            "min": 1,
+            "max": 25,
+            "chance": 22.44
+          },
+          {
+            "stat": "Blossom Field Pollen",
+            "type": "Perc",
+            "min": 1,
+            "max": 25,
+            "chance": 16.03
+          },
+          {
+            "stat": "Lotus Field Pollen",
+            "type": "Perc",
+            "min": 1,
+            "max": 25,
+            "chance": 6.41
+          },
+          {
+            "stat": "Bubble Capacity",
+            "type": "Mult",
+            "min": 1.01,
+            "max": 1.1,
+            "chance": 1.92
+          },
+          {
+            "stat": "Fire Duration",
+            "type": "Mult",
+            "min": 1.01,
+            "max": 1.1,
+            "chance": 1.92
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "lunar",
+    "name": "Lunar Amulet",
+    "image": "images/amulets/Lunar Amulet.png",
+    "source": "Lunar Starflowers",
+    "variants": [
+      {
+        "rarity": "Epic",
+        "desc": "Drops from Lunar Starflowers.",
+        "buffsAmount": 3,
+        "buffs": [
+          {
+            "stat": "Capacity Bonus",
+            "type": "Mult",
+            "min": 1,
+            "max": 1.25,
+            "chance": 24.39
+          },
+          {
+            "stat": "Convert Rate",
+            "type": "Mult",
+            "min": 1,
+            "max": 1.25,
+            "chance": 18.29
+          },
+          {
+            "stat": "Convert Amount",
+            "type": "Add",
+            "min": 1,
+            "max": 10,
+            "chance": 18.29
+          },
+          {
+            "stat": "Fire Pollen",
+            "type": "Perc",
+            "min": 1,
+            "max": 25,
+            "chance": 10.98
+          },
+          {
+            "stat": "Ice Pollen",
+            "type": "Perc",
+            "min": 1,
+            "max": 25,
+            "chance": 10.98
+          },
+          {
+            "stat": "Obsidian Pollen",
+            "type": "Perc",
+            "min": 1,
+            "max": 15,
+            "chance": 10.98
+          },
+          {
+            "stat": "Pollen",
+            "type": "Perc",
+            "min": 1,
+            "max": 15,
+            "chance": 6.1
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "star",
+    "name": "Star Amulet",
+    "image": "images/amulets/Star Amulet.png",
+    "source": "Starflowers",
+    "variants": [
+      {
+        "rarity": "Common",
+        "source": "Basic Starflowers",
+        "desc": "Drops from Basic Starflowers.",
+        "buffsAmount": 3,
+        "buffs": [
+          {
+            "stat": "Capacity Bonus",
+            "type": "Mult",
+            "min": 1,
+            "max": 1.15,
+            "chance": 24.39
+          },
+          {
+            "stat": "Convert Rate",
+            "type": "Mult",
+            "min": 1,
+            "max": 1.25,
+            "chance": 18.29
+          },
+          {
+            "stat": "Convert Amount",
+            "type": "Add",
+            "min": 1,
+            "max": 20,
+            "chance": 18.29
+          },
+          {
+            "stat": "White Pollen",
+            "type": "Perc",
+            "min": 1,
+            "max": 25,
+            "chance": 10.98
+          },
+          {
+            "stat": "Blue Pollen",
+            "type": "Perc",
+            "min": 1,
+            "max": 25,
+            "chance": 10.98
+          },
+          {
+            "stat": "Red Pollen",
+            "type": "Perc",
+            "min": 1,
+            "max": 25,
+            "chance": 10.98
+          },
+          {
+            "stat": "Pollen",
+            "type": "Perc",
+            "min": 1,
+            "max": 15,
+            "chance": 6.1
+          }
+        ]
+      },
+      {
+        "rarity": "Rare",
+        "source": "Rare Starflowers",
+        "desc": "Drops from Rare Starflowers.",
+        "buffsAmount": 3,
+        "buffs": [
+          {
+            "stat": "Capacity Bonus",
+            "type": "Mult",
+            "min": 1,
+            "max": 1.3,
+            "chance": 22.99
+          },
+          {
+            "stat": "Convert Rate",
+            "type": "Mult",
+            "min": 1,
+            "max": 1.5,
+            "chance": 17.24
+          },
+          {
+            "stat": "Convert Amount",
+            "type": "Add",
+            "min": 10,
+            "max": 40,
+            "chance": 17.24
+          },
+          {
+            "stat": "White Pollen",
+            "type": "Perc",
+            "min": 10,
+            "max": 50,
+            "chance": 10.34
+          },
+          {
+            "stat": "Blue Pollen",
+            "type": "Perc",
+            "min": 10,
+            "max": 50,
+            "chance": 10.34
+          },
+          {
+            "stat": "Red Pollen",
+            "type": "Perc",
+            "min": 10,
+            "max": 50,
+            "chance": 10.34
+          },
+          {
+            "stat": "Pollen",
+            "type": "Perc",
+            "min": 10,
+            "max": 25,
+            "chance": 5.75
+          },
+          {
+            "stat": "Bee Attack",
+            "type": "Add",
+            "min": 1,
+            "max": 1,
+            "chance": 5.75
+          }
+        ]
+      },
+      {
+        "rarity": "Epic",
+        "source": "Epic Starflowers",
+        "desc": "Drops from Epic Starflowers.",
+        "buffsAmount": 4,
+        "buffs": [
+          {
+            "stat": "Capacity Bonus",
+            "type": "Mult",
+            "min": 1,
+            "max": 1.45,
+            "chance": 22.99
+          },
+          {
+            "stat": "Convert Rate",
+            "type": "Mult",
+            "min": 1,
+            "max": 1.75,
+            "chance": 17.24
+          },
+          {
+            "stat": "Convert Amount",
+            "type": "Add",
+            "min": 25,
+            "max": 50,
+            "chance": 17.24
+          },
+          {
+            "stat": "White Pollen",
+            "type": "Perc",
+            "min": 25,
+            "max": 60,
+            "chance": 10.34
+          },
+          {
+            "stat": "Blue Pollen",
+            "type": "Perc",
+            "min": 25,
+            "max": 60,
+            "chance": 10.34
+          },
+          {
+            "stat": "Red Pollen",
+            "type": "Perc",
+            "min": 25,
+            "max": 60,
+            "chance": 10.34
+          },
+          {
+            "stat": "Pollen",
+            "type": "Perc",
+            "min": 25,
+            "max": 50,
+            "chance": 5.75
+          },
+          {
+            "stat": "Bee Attack",
+            "type": "Add",
+            "min": 1,
+            "max": 2,
+            "chance": 5.75
+          }
+        ]
+      },
+      {
+        "rarity": "Legendary",
+        "source": "Legendary Starflowers",
+        "desc": "Drops from Legendary Starflowers.",
+        "buffsAmount": 4,
+        "buffs": [
+          {
+            "stat": "Capacity Bonus",
+            "type": "Mult",
+            "min": 1,
+            "max": 1.6,
+            "chance": 22.99
+          },
+          {
+            "stat": "Convert Rate",
+            "type": "Mult",
+            "min": 1,
+            "max": 2,
+            "chance": 17.24
+          },
+          {
+            "stat": "Convert Amount",
+            "type": "Add",
+            "min": 25,
+            "max": 75,
+            "chance": 17.24
+          },
+          {
+            "stat": "White Pollen",
+            "type": "Perc",
+            "min": 25,
+            "max": 80,
+            "chance": 10.34
+          },
+          {
+            "stat": "Blue Pollen",
+            "type": "Perc",
+            "min": 25,
+            "max": 80,
+            "chance": 10.34
+          },
+          {
+            "stat": "Red Pollen",
+            "type": "Perc",
+            "min": 25,
+            "max": 80,
+            "chance": 10.34
+          },
+          {
+            "stat": "Pollen",
+            "type": "Perc",
+            "min": 25,
+            "max": 60,
+            "chance": 5.75
+          },
+          {
+            "stat": "Bee Attack",
+            "type": "Add",
+            "min": 1,
+            "max": 2,
+            "chance": 5.75
+          }
+        ]
+      },
+      {
+        "rarity": "Mythic",
+        "source": "Mythic Starflowers",
+        "desc": "Drops from Mythic Starflowers.",
+        "buffsAmount": 4,
+        "buffs": [
+          {
+            "stat": "Capacity Bonus",
+            "type": "Mult",
+            "min": 1,
+            "max": 1.8,
+            "chance": 22.99
+          },
+          {
+            "stat": "Convert Rate",
+            "type": "Mult",
+            "min": 1,
+            "max": 2.25,
+            "chance": 17.24
+          },
+          {
+            "stat": "Convert Amount",
+            "type": "Add",
+            "min": 25,
+            "max": 75,
+            "chance": 17.24
+          },
+          {
+            "stat": "White Pollen",
+            "type": "Perc",
+            "min": 25,
+            "max": 100,
+            "chance": 10.34
+          },
+          {
+            "stat": "Blue Pollen",
+            "type": "Perc",
+            "min": 25,
+            "max": 100,
+            "chance": 10.34
+          },
+          {
+            "stat": "Red Pollen",
+            "type": "Perc",
+            "min": 25,
+            "max": 100,
+            "chance": 10.34
+          },
+          {
+            "stat": "Pollen",
+            "type": "Perc",
+            "min": 25,
+            "max": 75,
+            "chance": 5.75
+          },
+          {
+            "stat": "Bee Attack",
+            "type": "Add",
+            "min": 1,
+            "max": 3,
+            "chance": 5.75
+          }
+        ]
+      }
+    ]
+  }
+]

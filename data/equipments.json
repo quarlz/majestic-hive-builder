@@ -1,0 +1,1576 @@
+{
+  "tools": [
+    {
+      "name": "Shovel",
+      "image": "images/equipment/Shovel.png",
+      "description": "Just a shovel. Anything wrong? \n\n Gathers 2 Pollen from 2 flowers in front of you every 0.8 seconds.",
+      "buffs": []
+    },
+    {
+      "name": "Rake",
+      "image": "images/equipment/Rake.png",
+      "description": "Try not to stab yourself, alright? \n\n Gathers 1 Pollen from 6 flowers in front of you every 0.9 seconds.",
+      "buffs": []
+    },
+    {
+      "name": "Hammer",
+      "image": "images/equipment/Hammer.png",
+      "description": "Careful, don't smash anything with it! \n\n Gathers 2 Pollen from 5 flowers in front of you every 0.9 seconds.",
+      "buffs": []
+    },
+    {
+      "name": "Magnet",
+      "image": "images/equipment/Magnet.png",
+      "description": "You might find something unexpected while collecting with this... Or not. \n\n Gathers 3 Pollen from 7 flowers in front of you every 0.8 seconds.",
+      "buffs": []
+    },
+    {
+      "name": "Scissors",
+      "image": "images/equipment/Scissors.png",
+      "description": "Snip snip! \n\n Gathers 20 Pollen from 1 flower in front of you every 0.6 seconds.",
+      "buffs": []
+    },
+    {
+      "name": "Scythe",
+      "image": "images/equipment/Scythe.png",
+      "description": "Ready to harvest? \n\n Gathers 4 Pollen from 8 flowers in front of you every 0.66 seconds.",
+      "buffs": []
+    },
+    {
+      "name": "Axe",
+      "image": "images/equipment/Axe.png",
+      "description": "Might as well change my job with this. \n\n Gathers 5 Pollen from 9 flowers in front of you every 0.8 seconds.",
+      "buffs": []
+    },
+    {
+      "name": "Pickaxe",
+      "image": "images/equipment/Pickaxe.png",
+      "description": "Let's mine some diamonds! \n\n Gathers 6 Pollen from 12 flowers in front of you every 0.8 seconds.",
+      "buffs": []
+    },
+    {
+      "name": "Gold Magnet",
+      "image": "images/equipment/Gold Magnet.png",
+      "description": "I feel a sense of deja vu... \n\n Gathers 9 Pollen from 7 flowers in front of you every 0.8 seconds.",
+      "buffs": []
+    },
+    {
+      "name": "Honey Dipper",
+      "image": "images/equipment/Honey Dipper.png",
+      "description": "Very sticky. At least you won't lose it. \n\n Gathers 5 Pollen from 29 flowers in front of you every 0.8 seconds.",
+      "buffs": []
+    },
+    {
+      "name": "Fire Scythe",
+      "image": "images/equipment/Fire Scythe.png",
+      "description": "Careful! It's hot!\nIt can spread Fire in the field. \n\n Gathers 8 Pollen from 14 flowers in front of you every 0.7 seconds.\nAdditionaly grants x1.5 red pollen.\n\n[Fire Aura Passive]: Covers Stamp In Fire Every 5 Clicks.",
+      "buffs": []
+    },
+    {
+      "name": "Snow Shovel",
+      "image": "images/equipment/Snow Shovel.png",
+      "description": "Cold to the touch.\nIt can spread Ice in the field. \n\n Gathers 8 Pollen from 29 flowers in front of you every 0.7 seconds.\nAdditionaly grants x1.5 blue pollen.\n\n[Ice Aura Passive]: Covers Stamp In Ice Every 5 Clicks.",
+      "buffs": []
+    },
+    {
+      "name": "Windy Staff",
+      "image": "images/equipment/Windy Staff.png",
+      "description": "Very air‑tistic and light.\nIt can summon clouds in the field. \n\n Gathers 6 Pollen from 29 flowers in front of you every 0.9 seconds.\nAdditionaly grants x1.5 white pollen.\n\n[Windy Aura Passive]: Spawns 1 Cloud Every 5 Clicks.",
+      "buffs": []
+    },
+    {
+      "name": "Bamboo Spear",
+      "image": "images/equipment/Bamboo Spear.png",
+      "description": "...A pointy bamboo stick? Really? \n\n Gathers 26 Pollen from 8 flowers in front of you every 0.66 seconds.",
+      "buffs": []
+    },
+    {
+      "name": "Bamboo Rake",
+      "image": "images/equipment/Bamboo Rake.png",
+      "description": "Can you eat with this? \n\n Gathers 45 Pollen from 6 flowers in front of you every 0.9 seconds.",
+      "buffs": []
+    },
+    {
+      "name": "Bamboo Staff",
+      "image": "images/equipment/Bamboo Staff.png",
+      "description": "...Abracadabra? \n\n Gathers 18 Pollen from 29 flowers in front of you every 0.8 seconds.",
+      "buffs": []
+    },
+    {
+      "name": "Coconut Smash",
+      "image": "images/equipment/Coconut Smash.png",
+      "description": "Now, that's what I'm talking about! \n\n Gathers 65 Pollen from 5 flowers in front of you every 0.6 seconds.\n+Passive: Coconut Storm (Every 15 Clicks)",
+      "buffs": []
+    },
+    {
+      "name": "Nature Staff",
+      "image": "images/equipment/Nature Staff.png",
+      "description": "Carved from an ancient branch of oak, it channels the ancient power of the forest. \n\n Gathers 95 Pollen from 29 flowers in front of you every 0.8 seconds.\n+Passive: Nature Harvest",
+      "buffs": []
+    },
+    {
+      "name": "Canvy’s Extra Paintbrush",
+      "image": "images/equipment/Paint Brush.png",
+      "description": "Powered by the power of master. In true hands gives absolute drawing potential.\n\n Gathers 280 Pollen from 29 flowers in front of you every 1.3 seconds.\n+Passive: Colorful Splash",
+      "buffs": []
+    }
+  ],
+  "bags": [
+    {
+      "name": "Satchel",
+      "image": "images/equipment/Satchel.png",
+      "description": "The starter bag, everyone starts with it.",
+      "buffs": [
+        {
+          "stat": "Capacity",
+          "type": "Add",
+          "value": 250
+        }
+      ]
+    },
+    {
+      "name": "Jar",
+      "image": "images/equipment/Jar.png",
+      "description": "Careful not to spill the honey!",
+      "buffs": [
+        {
+          "stat": "Capacity",
+          "type": "Add",
+          "value": 850
+        }
+      ]
+    },
+    {
+      "name": "Flask",
+      "image": "images/equipment/Flask.png",
+      "description": "Guess we can experiment with honey now.",
+      "buffs": [
+        {
+          "stat": "Capacity",
+          "type": "Add",
+          "value": 2250
+        }
+      ]
+    },
+    {
+      "name": "Backpack",
+      "image": "images/equipment/Backpack.png",
+      "description": "Let's go camping!",
+      "buffs": [
+        {
+          "stat": "Capacity",
+          "type": "Add",
+          "value": 8000
+        },
+        {
+          "stat": "Convert Rate",
+          "type": "Perc",
+          "value": 25
+        }
+      ]
+    },
+    {
+      "name": "Flower Pot",
+      "image": "images/equipment/Flower Pot.png",
+      "description": "A pot made of clay with a red flower inside it...\nIf it works it works I guess.",
+      "buffs": [
+        {
+          "stat": "Capacity",
+          "type": "Add",
+          "value": 25000
+        },
+        {
+          "stat": "Convert Rate",
+          "type": "Perc",
+          "value": 60
+        }
+      ]
+    },
+    {
+      "name": "Bouquet Of Flowers",
+      "image": "images/equipment/Bouquet Of Flowers.png",
+      "description": "Huh? It smells really nice!",
+      "buffs": [
+        {
+          "stat": "Capacity",
+          "type": "Add",
+          "value": 65000
+        },
+        {
+          "stat": "Convert Rate",
+          "type": "Perc",
+          "value": 100
+        },
+        {
+          "stat": "Convert Amount",
+          "type": "Add",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "name": "Cauldron",
+      "image": "images/equipment/Cauldron.png",
+      "description": "Mirror, mirror on the wall...",
+      "buffs": [
+        {
+          "stat": "Capacity",
+          "type": "Add",
+          "value": 150000
+        },
+        {
+          "stat": "Convert Rate",
+          "type": "Perc",
+          "value": 150
+        },
+        {
+          "stat": "Convert Amount",
+          "type": "Add",
+          "value": 10
+        }
+      ]
+    },
+    {
+      "name": "Hive",
+      "image": "images/equipment/Hive.png",
+      "description": "Sweet! Quite literally.",
+      "buffs": [
+        {
+          "stat": "Capacity",
+          "type": "Add",
+          "value": 300000
+        },
+        {
+          "stat": "Convert Rate",
+          "type": "Perc",
+          "value": 200
+        },
+        {
+          "stat": "Convert Amount",
+          "type": "Add",
+          "value": 15
+        },
+        {
+          "stat": "Pollen",
+          "type": "Perc",
+          "value": 15
+        }
+      ]
+    },
+    {
+      "name": "Furnace",
+      "image": "images/equipment/Furnace.png",
+      "description": "Isn't it a little too heavy?",
+      "buffs": [
+        {
+          "stat": "Capacity",
+          "type": "Add",
+          "value": 600000
+        },
+        {
+          "stat": "Convert Rate",
+          "type": "Perc",
+          "value": 300
+        },
+        {
+          "stat": "Convert Amount",
+          "type": "Add",
+          "value": 30
+        },
+        {
+          "stat": "Red Pollen",
+          "type": "Perc",
+          "value": 50
+        },
+        {
+          "stat": "Bee Ability Rate",
+          "type": "Perc",
+          "value": 10
+        }
+      ]
+    },
+    {
+      "name": "Coal Basket",
+      "image": "images/equipment/Coal Basket.png",
+      "description": "Let's make some BBQ!",
+      "buffs": [
+        {
+          "stat": "Capacity",
+          "type": "Add",
+          "value": 1000000
+        },
+        {
+          "stat": "Convert Rate",
+          "type": "Perc",
+          "value": 450
+        },
+        {
+          "stat": "Capacity Bonus",
+          "type": "Multi",
+          "value": 1.1
+        },
+        {
+          "stat": "Convert Amount",
+          "type": "Add",
+          "value": 45
+        },
+        {
+          "stat": "Red Pollen",
+          "type": "Perc",
+          "value": 75
+        },
+        {
+          "stat": "Fire Pollen",
+          "type": "Perc",
+          "value": 25
+        },
+        {
+          "stat": "Bee Ability Rate",
+          "type": "Perc",
+          "value": 15
+        }
+      ]
+    },
+    {
+      "name": "Fridge",
+      "image": "images/equipment/Fridge.png",
+      "description": "You can even store food inside!",
+      "buffs": [
+        {
+          "stat": "Capacity",
+          "type": "Add",
+          "value": 600000
+        },
+        {
+          "stat": "Convert Rate",
+          "type": "Perc",
+          "value": 300
+        },
+        {
+          "stat": "Convert Amount",
+          "type": "Add",
+          "value": 30
+        },
+        {
+          "stat": "Blue Pollen",
+          "type": "Perc",
+          "value": 50
+        },
+        {
+          "stat": "Bee Ability Rate",
+          "type": "Perc",
+          "value": 10
+        }
+      ]
+    },
+    {
+      "name": "Ice Basket",
+      "image": "images/equipment/Ice Basket.png",
+      "description": "Does it not melt?",
+      "buffs": [
+        {
+          "stat": "Capacity",
+          "type": "Add",
+          "value": 1000000
+        },
+        {
+          "stat": "Convert Rate",
+          "type": "Perc",
+          "value": 450
+        },
+        {
+          "stat": "Capacity Bonus",
+          "type": "Multi",
+          "value": 1.1
+        },
+        {
+          "stat": "Convert Amount",
+          "type": "Add",
+          "value": 45
+        },
+        {
+          "stat": "Blue Pollen",
+          "type": "Perc",
+          "value": 75
+        },
+        {
+          "stat": "Ice Pollen",
+          "type": "Perc",
+          "value": 10
+        },
+        {
+          "stat": "Bee Ability Rate",
+          "type": "Perc",
+          "value": 15
+        }
+      ]
+    },
+    {
+      "name": "Sheaf of Bamboo",
+      "image": "images/equipment/Sheaf of Bamboo.png",
+      "description": "Well, that's one weird bag for sure.",
+      "buffs": [
+        {
+          "stat": "Capacity",
+          "type": "Add",
+          "value": 1500000
+        },
+        {
+          "stat": "Convert Rate",
+          "type": "Perc",
+          "value": 600
+        },
+        {
+          "stat": "Capacity Bonus",
+          "type": "Multi",
+          "value": 1.25
+        },
+        {
+          "stat": "Convert Amount",
+          "type": "Add",
+          "value": 60
+        },
+        {
+          "stat": "White Pollen",
+          "type": "Perc",
+          "value": 50
+        },
+        {
+          "stat": "Cloud Pollen",
+          "type": "Perc",
+          "value": 25
+        },
+        {
+          "stat": "Bee Ability Rate",
+          "type": "Perc",
+          "value": 15
+        }
+      ]
+    },
+    {
+      "name": "Coconut Bag",
+      "image": "images/equipment/Coconut Bag.png",
+      "description": "Wanna take a sip?",
+      "buffs": [
+        {
+          "stat": "Capacity",
+          "type": "Add",
+          "value": 4250000
+        },
+        {
+          "stat": "Convert Rate",
+          "type": "Perc",
+          "value": 750
+        },
+        {
+          "stat": "Capacity Bonus",
+          "type": "Multi",
+          "value": 1.35
+        },
+        {
+          "stat": "Convert Amount",
+          "type": "Add",
+          "value": 45
+        },
+        {
+          "stat": "Red Pollen",
+          "type": "Perc",
+          "value": 50
+        },
+        {
+          "stat": "Blue Pollen",
+          "type": "Perc",
+          "value": 50
+        },
+        {
+          "stat": "Bee Ability Rate",
+          "type": "Perc",
+          "value": 20
+        }
+      ]
+    },
+    {
+      "name": "Blossom Canister",
+      "image": "images/equipment/Blossom Canister.png",
+      "description": "Nature's power on your back! Literally!",
+      "buffs": [
+        {
+          "stat": "Capacity",
+          "type": "Add",
+          "value": 6000000
+        },
+        {
+          "stat": "Convert Rate",
+          "type": "Perc",
+          "value": 900
+        },
+        {
+          "stat": "Capacity Bonus",
+          "type": "Multi",
+          "value": 1.5
+        },
+        {
+          "stat": "Convert Amount",
+          "type": "Add",
+          "value": 60
+        },
+        {
+          "stat": "Red Pollen",
+          "type": "Perc",
+          "value": 75
+        },
+        {
+          "stat": "Blue Pollen",
+          "type": "Perc",
+          "value": 75
+        },
+        {
+          "stat": "Bee Ability Rate",
+          "type": "Perc",
+          "value": 25
+        }
+      ]
+    },
+    {
+      "name": "Paint Bucket",
+      "image": "images/equipment/Paint Bucket.png",
+      "description": "Art hall power stored inside those paints!\n+Passive: Art Splashes",
+      "buffs": [
+        {
+          "stat": "Capacity",
+          "type": "Add",
+          "value": 10000000
+        },
+        {
+          "stat": "Convert Rate",
+          "type": "Perc",
+          "value": 1400
+        },
+        {
+          "stat": "Capacity Bonus",
+          "type": "Multi",
+          "value": 1.8
+        },
+        {
+          "stat": "Convert Amount",
+          "type": "Add",
+          "value": 150
+        },
+        {
+          "stat": "Pollen",
+          "type": "Perc",
+          "value": 50
+        },
+        {
+          "stat": "White Pollen",
+          "type": "Perc",
+          "value": 35
+        },
+        {
+          "stat": "Red Pollen",
+          "type": "Perc",
+          "value": 35
+        },
+        {
+          "stat": "Blue Pollen",
+          "type": "Perc",
+          "value": 35
+        },
+        {
+          "stat": "Bee Ability Rate",
+          "type": "Perc",
+          "value": 30
+        },
+        {
+          "stat": "Energy Bonus",
+          "type": "Multi",
+          "value": 1.4
+        }
+      ]
+    }
+  ],
+  "belts": [
+    {
+      "name": "Worker's Belt",
+      "image": "images/equipment/Worker's Belt.png",
+      "description": "A belt that has all you need! Maybe.",
+      "buffs": [
+        {
+          "stat": "Capacity",
+          "type": "Add",
+          "value": 1500
+        },
+        {
+          "stat": "Capacity Bonus",
+          "type": "Multi",
+          "value": 1.05
+        },
+        {
+          "stat": "Convert Rate",
+          "type": "Multi",
+          "value": 1.05
+        }
+      ]
+    },
+    {
+      "name": "Wasp Belt",
+      "image": "images/equipment/Wasp Belt.png",
+      "description": "Can I get more bees with this?",
+      "buffs": [
+        {
+          "stat": "Capacity",
+          "type": "Add",
+          "value": 25000
+        },
+        {
+          "stat": "Capacity Bonus",
+          "type": "Multi",
+          "value": 1.15
+        },
+        {
+          "stat": "Convert Rate",
+          "type": "Multi",
+          "value": 1.15
+        }
+      ]
+    },
+    {
+      "name": "Windy Belt",
+      "image": "images/equipment/Windy Belt.png",
+      "description": "C'mon, take it! It will really blow you away!",
+      "buffs": [
+        {
+          "stat": "Capacity",
+          "type": "Add",
+          "value": 150000
+        },
+        {
+          "stat": "Capacity Bonus",
+          "type": "Multi",
+          "value": 2
+        },
+        {
+          "stat": "Convert Rate",
+          "type": "Multi",
+          "value": 2
+        },
+        {
+          "stat": "White Pollen",
+          "type": "Multi",
+          "value": 1.25
+        },
+        {
+          "stat": "Loot Luck",
+          "type": "Perc",
+          "value": 75
+        }
+      ]
+    },
+    {
+      "name": "Bamboo Belt",
+      "image": "images/equipment/Bamboo Belt.png",
+      "description": "Is this edible?",
+      "buffs": [
+        {
+          "stat": "Capacity",
+          "type": "Add",
+          "value": 100000
+        },
+        {
+          "stat": "Capacity Bonus",
+          "type": "Multi",
+          "value": 1.5
+        },
+        {
+          "stat": "Convert Rate",
+          "type": "Multi",
+          "value": 1.5
+        },
+        {
+          "stat": "Loot Luck",
+          "type": "Perc",
+          "value": 50
+        }
+      ]
+    },
+    {
+      "name": "Coconut Belt",
+      "image": "images/equipment/Coconut Belt.png",
+      "description": "Essential item for the new coconut fashion.",
+      "buffs": [
+        {
+          "stat": "Capacity",
+          "type": "Add",
+          "value": 400000
+        },
+        {
+          "stat": "Capacity Bonus",
+          "type": "Multi",
+          "value": 1.85
+        },
+        {
+          "stat": "Convert Rate",
+          "type": "Multi",
+          "value": 2.25
+        },
+        {
+          "stat": "Pollen",
+          "type": "Multi",
+          "value": 1.35
+        },
+        {
+          "stat": "Bee Ability Rate",
+          "type": "Perc",
+          "value": 15
+        },
+        {
+          "stat": "Loot Luck",
+          "type": "Perc",
+          "value": 100
+        }
+      ]
+    },
+    {
+      "name": "Nature Belt",
+      "image": "images/equipment/Nature Belt.png",
+      "description": "Made from enchanted vines... And a little poison.\n+Passive: Poison Harvest",
+      "buffs": [
+        {
+          "stat": "Capacity",
+          "type": "Add",
+          "value": 750000
+        },
+        {
+          "stat": "Capacity Bonus",
+          "type": "Multi",
+          "value": 2
+        },
+        {
+          "stat": "Convert Rate",
+          "type": "Multi",
+          "value": 2.5
+        },
+        {
+          "stat": "Pollen",
+          "type": "Multi",
+          "value": 1.5
+        },
+        {
+          "stat": "Bee Ability Rate",
+          "type": "Perc",
+          "value": 20
+        },
+        {
+          "stat": "Loot Luck",
+          "type": "Perc",
+          "value": 150
+        }
+      ]
+    }
+  ],
+  "helmets": [
+    {
+      "name": "Worker's Helmet",
+      "image": "images/equipment/Worker's Helmet.png",
+      "description": "A very sturdy helmet, isANT't it?",
+      "buffs": [
+        {
+          "stat": "Capacity",
+          "type": "Add",
+          "value": 0
+        },
+        {
+          "stat": "Convert Rate",
+          "type": "Perc",
+          "value": 15
+        },
+        {
+          "stat": "Loot Luck",
+          "type": "Perc",
+          "value": 10
+        },
+        {
+          "stat": "Capacity Bonus",
+          "type": "Multi",
+          "value": 1.1
+        },
+        {
+          "stat": "Pollen",
+          "type": "Perc",
+          "value": 10
+        }
+      ]
+    },
+    {
+      "name": "Wasp Helmet",
+      "image": "images/equipment/Wasp Helmet.png",
+      "description": "Wasp its a danger insect that hate bees!",
+      "buffs": [
+        {
+          "stat": "Capacity",
+          "type": "Add",
+          "value": 0
+        },
+        {
+          "stat": "Convert Rate",
+          "type": "Perc",
+          "value": 45
+        },
+        {
+          "stat": "Loot Luck",
+          "type": "Perc",
+          "value": 25
+        },
+        {
+          "stat": "Capacity Bonus",
+          "type": "Multi",
+          "value": 1.25
+        },
+        {
+          "stat": "Pollen",
+          "type": "Perc",
+          "value": 20
+        },
+        {
+          "stat": "Bee Ability Rate",
+          "type": "Perc",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "name": "Fire Ant Helmet",
+      "image": "images/equipment/Fire Ant Helmet.png",
+      "description": "Made with ant‑thusiasm and a touch of fire.",
+      "buffs": [
+        {
+          "stat": "Capacity",
+          "type": "Add",
+          "value": 750000
+        },
+        {
+          "stat": "Convert Rate",
+          "type": "Perc",
+          "value": 125
+        },
+        {
+          "stat": "Pollen",
+          "type": "Perc",
+          "value": 25
+        },
+        {
+          "stat": "Loot Luck",
+          "type": "Perc",
+          "value": 75
+        },
+        {
+          "stat": "Capacity Bonus",
+          "type": "Multi",
+          "value": 1.5
+        },
+        {
+          "stat": "Fire Pollen",
+          "type": "Multi",
+          "value": 2.25
+        },
+        {
+          "stat": "Red Pollen",
+          "type": "Multi",
+          "value": 1.5
+        },
+        {
+          "stat": "Bee Ability Rate",
+          "type": "Perc",
+          "value": 15
+        }
+      ]
+    },
+    {
+      "name": "Ice Ant Helmet",
+      "image": "images/equipment/Ice Ant Helmet.png",
+      "description": "Icefully ant made helmet!",
+      "buffs": [
+        {
+          "stat": "Capacity",
+          "type": "Add",
+          "value": 750000
+        },
+        {
+          "stat": "Convert Rate",
+          "type": "Perc",
+          "value": 125
+        },
+        {
+          "stat": "Pollen",
+          "type": "Perc",
+          "value": 25
+        },
+        {
+          "stat": "Loot Luck",
+          "type": "Perc",
+          "value": 75
+        },
+        {
+          "stat": "Capacity Bonus",
+          "type": "Multi",
+          "value": 2.5
+        },
+        {
+          "stat": "Ice Pollen",
+          "type": "Multi",
+          "value": 1.25
+        },
+        {
+          "stat": "Blue Pollen",
+          "type": "Multi",
+          "value": 1.25
+        },
+        {
+          "stat": "Bee Ability Rate",
+          "type": "Perc",
+          "value": 15
+        }
+      ]
+    },
+    {
+      "name": "Windy Helmet",
+      "image": "images/equipment/Windy Helmet.png",
+      "description": "Gust what you needed. Am I right?",
+      "buffs": [
+        {
+          "stat": "Capacity",
+          "type": "Add",
+          "value": 750000
+        },
+        {
+          "stat": "Convert Rate",
+          "type": "Perc",
+          "value": 175
+        },
+        {
+          "stat": "Pollen",
+          "type": "Perc",
+          "value": 50
+        },
+        {
+          "stat": "Loot Luck",
+          "type": "Perc",
+          "value": 75
+        },
+        {
+          "stat": "Capacity Bonus",
+          "type": "Multi",
+          "value": 1.5
+        },
+        {
+          "stat": "Cloud Pollen",
+          "type": "Multi",
+          "value": 1.5
+        },
+        {
+          "stat": "Obsidian Pollen",
+          "type": "Multi",
+          "value": 1.25
+        },
+        {
+          "stat": "White Pollen",
+          "type": "Multi",
+          "value": 1.25
+        },
+        {
+          "stat": "Bee Ability Rate",
+          "type": "Perc",
+          "value": 15
+        }
+      ]
+    },
+    {
+      "name": "Aphid Helmet",
+      "image": "images/equipment/Aphid Helmet.png",
+      "description": "Found by Panda Bear after a battle.\nShould be good, right?",
+      "buffs": [
+        {
+          "stat": "Capacity",
+          "type": "Add",
+          "value": 0
+        },
+        {
+          "stat": "Convert Rate",
+          "type": "Perc",
+          "value": 100
+        },
+        {
+          "stat": "Loot Luck",
+          "type": "Perc",
+          "value": 50
+        },
+        {
+          "stat": "Capacity Bonus",
+          "type": "Multi",
+          "value": 1.5
+        },
+        {
+          "stat": "Pollen",
+          "type": "Perc",
+          "value": 40
+        },
+        {
+          "stat": "Bee Ability Rate",
+          "type": "Perc",
+          "value": 10
+        }
+      ]
+    },
+    {
+      "name": "Sunny Helmet",
+      "image": "images/equipment/Sunny Helmet.png",
+      "description": "The true sun god helmet.",
+      "buffs": [
+        {
+          "stat": "Capacity",
+          "type": "Add",
+          "value": 1000000
+        },
+        {
+          "stat": "Convert Rate",
+          "type": "Perc",
+          "value": 225
+        },
+        {
+          "stat": "Loot Luck",
+          "type": "Perc",
+          "value": 75
+        },
+        {
+          "stat": "Capacity Bonus",
+          "type": "Multi",
+          "value": 2.75
+        },
+        {
+          "stat": "Pollen",
+          "type": "Multi",
+          "value": 1.75
+        },
+        {
+          "stat": "Pollen",
+          "type": "Perc",
+          "value": 50
+        },
+        {
+          "stat": "Obsidian Pollen",
+          "type": "Perc",
+          "value": 20
+        },
+        {
+          "stat": "Bee Ability Rate",
+          "type": "Perc",
+          "value": 15
+        },
+        {
+          "stat": "Energy Bonus",
+          "type": "Multi",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "name": "Canvas Helmet",
+      "image": "images/equipment/Paint Helmet.png",
+      "description": "Hunt secret stickers to increase your power!\n+Passive: Sticker Hunter",
+      "buffs": [
+        {
+          "stat": "Capacity",
+          "type": "Add",
+          "value": 1500000
+        },
+        {
+          "stat": "Convert Rate",
+          "type": "Perc",
+          "value": 300
+        },
+        {
+          "stat": "Convert Amount",
+          "type": "Add",
+          "value": 50
+        },
+        {
+          "stat": "Pollen",
+          "type": "Multi",
+          "value": 2
+        },
+        {
+          "stat": "Loot Luck",
+          "type": "Perc",
+          "value": 100
+        },
+        {
+          "stat": "Capacity Bonus",
+          "type": "Multi",
+          "value": 3
+        },
+        {
+          "stat": "Pollen",
+          "type": "Perc",
+          "value": 75
+        },
+        {
+          "stat": "Bee Ability Rate",
+          "type": "Perc",
+          "value": 15
+        }
+      ]
+    }
+  ],
+  "leftGuards": [
+    {
+      "name": "Left Worker's Guard",
+      "image": "images/equipment/Left Worker.png",
+      "description": "Protects you... to some extent.",
+      "buffs": [
+        {
+          "stat": "Capacity",
+          "type": "Add",
+          "value": 750
+        },
+        {
+          "stat": "Convert Rate",
+          "type": "Perc",
+          "value": 15
+        },
+        {
+          "stat": "Defense",
+          "type": "Perc",
+          "value": 5
+        },
+        {
+          "stat": "Pollen",
+          "type": "Perc",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "name": "Left Wasp Guard",
+      "image": "images/equipment/Left Wasp.png",
+      "description": "Good! I could use a snack.",
+      "buffs": [
+        {
+          "stat": "Capacity",
+          "type": "Add",
+          "value": 5000
+        },
+        {
+          "stat": "Convert Rate",
+          "type": "Perc",
+          "value": 35
+        },
+        {
+          "stat": "Capacity Bonus",
+          "type": "Perc",
+          "value": 15
+        },
+        {
+          "stat": "Defense",
+          "type": "Perc",
+          "value": 10
+        },
+        {
+          "stat": "Pollen",
+          "type": "Perc",
+          "value": 15
+        }
+      ]
+    }
+  ],
+  "rightGuards": [
+    {
+      "name": "Right Worker's Guard",
+      "image": "images/equipment/Right Worker.png",
+      "description": "Protects you... to some extent.",
+      "buffs": [
+        {
+          "stat": "Capacity",
+          "type": "Add",
+          "value": 750
+        },
+        {
+          "stat": "Convert Rate",
+          "type": "Perc",
+          "value": 15
+        },
+        {
+          "stat": "Defense",
+          "type": "Perc",
+          "value": 5
+        },
+        {
+          "stat": "Pollen",
+          "type": "Perc",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "name": "Right Wasp Guard",
+      "image": "images/equipment/Right Wasp.png",
+      "description": "Good! I could use a snack.",
+      "buffs": [
+        {
+          "stat": "Capacity",
+          "type": "Add",
+          "value": 5000
+        },
+        {
+          "stat": "Convert Rate",
+          "type": "Perc",
+          "value": 35
+        },
+        {
+          "stat": "Capacity Bonus",
+          "type": "Perc",
+          "value": 15
+        },
+        {
+          "stat": "Defense",
+          "type": "Perc",
+          "value": 10
+        },
+        {
+          "stat": "Pollen",
+          "type": "Perc",
+          "value": 15
+        }
+      ]
+    }
+  ],
+  "gloves": [
+    {
+      "name": "Worker's Gloves",
+      "image": "images/equipment/Worker's Gloves.png",
+      "description": "Might be dirty, but who cares?",
+      "buffs": [
+        {
+          "stat": "Capacity",
+          "type": "Add",
+          "value": 0
+        },
+        {
+          "stat": "Tool Speed",
+          "type": "Perc",
+          "value": 5
+        },
+        {
+          "stat": "Pollen",
+          "type": "Perc",
+          "value": 10
+        }
+      ]
+    },
+    {
+      "name": "Wasp Gloves",
+      "image": "images/equipment/Wasp Gloves.png",
+      "description": "How do they even get these?",
+      "buffs": [
+        {
+          "stat": "Capacity",
+          "type": "Add",
+          "value": 0
+        },
+        {
+          "stat": "Tool Speed",
+          "type": "Perc",
+          "value": 10
+        },
+        {
+          "stat": "Tool Pollen",
+          "type": "Perc",
+          "value": 15
+        },
+        {
+          "stat": "Pollen",
+          "type": "Perc",
+          "value": 15
+        },
+        {
+          "stat": "Bee Pollen",
+          "type": "Perc",
+          "value": 10
+        }
+      ]
+    },
+    {
+      "name": "Bamboo Gloves",
+      "image": "images/equipment/Bamboo Gloves.png",
+      "description": "Natural and soft. What else would you need?",
+      "buffs": [
+        {
+          "stat": "Capacity",
+          "type": "Add",
+          "value": 0
+        },
+        {
+          "stat": "Tool Speed",
+          "type": "Perc",
+          "value": 15
+        },
+        {
+          "stat": "Tool Pollen",
+          "type": "Perc",
+          "value": 25
+        },
+        {
+          "stat": "Pollen",
+          "type": "Perc",
+          "value": 25
+        },
+        {
+          "stat": "White Pollen",
+          "type": "Perc",
+          "value": 10
+        },
+        {
+          "stat": "Bee Pollen",
+          "type": "Perc",
+          "value": 15
+        }
+      ]
+    },
+    {
+      "name": "Nature Gloves",
+      "image": "images/equipment/Nature Gloves.png",
+      "description": "Stitched from soft leaves and lined with thick moss, it keeps the hands warm and protected.",
+      "buffs": [
+        {
+          "stat": "Capacity",
+          "type": "Add",
+          "value": 0
+        },
+        {
+          "stat": "Tool Speed",
+          "type": "Perc",
+          "value": 20
+        },
+        {
+          "stat": "Tool Pollen",
+          "type": "Perc",
+          "value": 50
+        },
+        {
+          "stat": "Pollen",
+          "type": "Perc",
+          "value": 65
+        },
+        {
+          "stat": "White Pollen",
+          "type": "Perc",
+          "value": 25
+        },
+        {
+          "stat": "Blue Pollen",
+          "type": "Perc",
+          "value": 25
+        },
+        {
+          "stat": "Red Pollen",
+          "type": "Perc",
+          "value": 25
+        },
+        {
+          "stat": "Capacity Bonus",
+          "type": "Multi",
+          "value": 1.1
+        },
+        {
+          "stat": "Bee Pollen",
+          "type": "Perc",
+          "value": 30
+        }
+      ]
+    }
+  ],
+  "boots": [
+    {
+      "name": "Worker's Boots",
+      "image": "images/equipment/Worker's Boots.png",
+      "description": "Better than nothing, I guess?",
+      "buffs": [
+        {
+          "stat": "Capacity",
+          "type": "Add",
+          "value": 0
+        },
+        {
+          "stat": "Movement Collection",
+          "type": "Add",
+          "value": 3
+        },
+        {
+          "stat": "Player Movespeed",
+          "type": "Add",
+          "value": 3
+        },
+        {
+          "stat": "Jump Power",
+          "type": "Add",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "name": "Wasp Boots",
+      "image": "images/equipment/Wasp Boots.png",
+      "description": "They make a strange sound...",
+      "buffs": [
+        {
+          "stat": "Capacity",
+          "type": "Add",
+          "value": 0
+        },
+        {
+          "stat": "Movement Collection",
+          "type": "Add",
+          "value": 5
+        },
+        {
+          "stat": "Player Movespeed",
+          "type": "Add",
+          "value": 5
+        },
+        {
+          "stat": "Jump Power",
+          "type": "Add",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "name": "Fire Boots",
+      "image": "images/equipment/Fire Boots.png",
+      "description": "Comfy and warm.\nSpreads Fire wherever you walk.",
+      "buffs": [
+        {
+          "stat": "Capacity",
+          "type": "Add",
+          "value": 0
+        },
+        {
+          "stat": "Movement Collection",
+          "type": "Add",
+          "value": 7
+        },
+        {
+          "stat": "Player Movespeed",
+          "type": "Add",
+          "value": 6
+        },
+        {
+          "stat": "Jump Power",
+          "type": "Add",
+          "value": 7
+        },
+        {
+          "stat": "Fire Pollen",
+          "type": "Multi",
+          "value": 1.5
+        }
+      ]
+    },
+    {
+      "name": "Ice Boots",
+      "image": "images/equipment/Ice Boots.png",
+      "description": "Can't feel my toes anymore...\nSpreads Ice wherever you walk.",
+      "buffs": [
+        {
+          "stat": "Capacity",
+          "type": "Add",
+          "value": 0
+        },
+        {
+          "stat": "Movement Collection",
+          "type": "Add",
+          "value": 7
+        },
+        {
+          "stat": "Player Movespeed",
+          "type": "Add",
+          "value": 6
+        },
+        {
+          "stat": "Jump Power",
+          "type": "Add",
+          "value": 7
+        },
+        {
+          "stat": "Ice Pollen",
+          "type": "Multi",
+          "value": 1.15
+        }
+      ]
+    },
+    {
+      "name": "Coconut Boots",
+      "image": "images/equipment/Coconut Boots.png",
+      "description": "These boots go as hard as obsidian!",
+      "buffs": [
+        {
+          "stat": "Movement Collection",
+          "type": "Add",
+          "value": 9
+        },
+        {
+          "stat": "Player Movespeed",
+          "type": "Add",
+          "value": 8
+        },
+        {
+          "stat": "Jump Power",
+          "type": "Add",
+          "value": 10
+        },
+        {
+          "stat": "Obsidian Pollen",
+          "type": "Multi",
+          "value": 1.15
+        }
+      ]
+    }
+  ],
+  "hydrants": [
+    {
+      "name": "Bronze Hydrant",
+      "image": "images/equipment/Bronze Hydrant.png",
+      "description": "Forged from the heat of dedication, worn with pride.\n\n Amount: [1] \n Radius: [7] \n Rate: [5s] \n Power: [2].",
+      "buffs": []
+    },
+    {
+      "name": "Silver Hydrant",
+      "image": "images/equipment/Silver Hydrant.png",
+      "description": "A gleaming relic of urban infrastructure, reforged in pure silver.\n\n Amount: [1] \n Radius: [10] \n Rate: [4s] \n Power: [2].",
+      "buffs": []
+    },
+    {
+      "name": "Golden Hydrant",
+      "image": "images/equipment/Golden Hydrant.png",
+      "description": "Drenched in pure gold from top to bottom, the Golden Hydrant is the ultimate symbol of wealth and success.\n\n Amount: [2] \n Radius: [11] \n Rate: [3.5s] \n Power: [3].",
+      "buffs": []
+    },
+    {
+      "name": "Diamond Hydrant",
+      "image": "images/equipment/Diamond Hydrant.png",
+      "description": "Forged under extreme heat and pressure, the Diamond Hydrant is the pinnacle of nobility and elegance.\n\n Amount: [2] \n Radius: [13] \n Rate: [3s] \n Power: [4].",
+      "buffs": []
+    },
+    {
+      "name": "Emerald Hydrant",
+      "image": "images/equipment/Emerald Hydrant.png",
+      "description": "Having a rich and mesmerizing green, the Emerald Hydrant pulses with an otherworldly glow.\n\n Amount: [3] \n Radius: [15] \n Rate: [3s] \n Power: [5].",
+      "buffs": []
+    },
+    {
+      "name": "Sunny Hydrant",
+      "image": "images/equipment/Sunny Hydrant.png",
+      "description": "This hydrant has a very bright future.\n\n Amount: [2] \n Radius: [22] \n Rate: [4s] \n Power: [7].\n+Passive: Sunny Pulse.",
+      "buffs": []
+    }
+  ]
+}

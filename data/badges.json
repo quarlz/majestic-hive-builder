@@ -1,0 +1,379 @@
+[
+  {
+    "id": "honey",
+    "name": "Honey",
+    "order": 1,
+    "start": 10000,
+    "mult": 10,
+    "buff": {
+      "stat": "Convert Rate",
+      "type": "Perc",
+      "value": 25
+    },
+    "desc": "Collect honey."
+  },
+  {
+    "id": "quest",
+    "name": "Quest",
+    "order": 2,
+    "start": 5,
+    "mult": 2,
+    "buff": {
+      "stat": "Capacity Bonus",
+      "type": "Perc",
+      "value": 10
+    },
+    "desc": "Complete quests."
+  },
+  {
+    "id": "time",
+    "name": "Time",
+    "order": 2,
+    "start": 3600,
+    "mult": 2,
+    "buff": {
+      "stat": "Honey Bonus",
+      "type": "Perc",
+      "value": 2
+    },
+    "desc": "Play the game."
+  },
+  {
+    "id": "ability",
+    "name": "Ability",
+    "order": 3,
+    "start": 10,
+    "mult": 5,
+    "buff": {
+      "stat": "Bee Ability Rate",
+      "type": "Perc",
+      "value": 3
+    },
+    "desc": "Use bee abilities."
+  },
+  {
+    "id": "ice",
+    "name": "Ice",
+    "order": 4,
+    "start": 1000,
+    "mult": 10,
+    "buff": {
+      "stat": "Blue Pollen",
+      "type": "Perc",
+      "value": 5
+    },
+    "desc": "Collect blue pollen using ice."
+  },
+  {
+    "id": "fire",
+    "name": "Fire",
+    "order": 5,
+    "start": 1000,
+    "mult": 10,
+    "buff": {
+      "stat": "Red Pollen",
+      "type": "Perc",
+      "value": 5
+    },
+    "desc": "Collect red pollen using fire."
+  },
+  {
+    "id": "daisy-field",
+    "name": "Daisy Field",
+    "order": 10,
+    "start": 5000,
+    "mult": 10,
+    "buff": {
+      "stat": "Capacity Bonus",
+      "type": "Mult",
+      "value": 0.1
+    },
+    "desc": "Collect pollen from the Daisy Field."
+  },
+  {
+    "id": "clover-field",
+    "name": "Clover Field",
+    "order": 11,
+    "start": 5000,
+    "mult": 10,
+    "buff": {
+      "stat": "Loot Luck",
+      "type": "Perc",
+      "value": 10
+    },
+    "desc": "Collect pollen from the Clover Field."
+  },
+  {
+    "id": "mushroom-field",
+    "name": "Mushroom Field",
+    "order": 12,
+    "start": 5000,
+    "mult": 10,
+    "buff": {
+      "stat": "Convert Amount",
+      "type": "Add",
+      "value": 25
+    },
+    "desc": "Collect pollen from the Mushroom Field."
+  },
+  {
+    "id": "blackberry-field",
+    "name": "Blackberry Field",
+    "order": 13,
+    "start": 5000,
+    "mult": 10,
+    "buff": {
+      "stat": "Capacity Bonus",
+      "type": "Perc",
+      "value": 3
+    },
+    "desc": "Collect pollen from the Blackberry Field."
+  },
+  {
+    "id": "sunflower-field",
+    "name": "Sunflower Field",
+    "order": 18,
+    "start": 5000,
+    "mult": 10,
+    "buff": {
+      "stat": "White Pollen",
+      "type": "Mult",
+      "value": 0.1
+    },
+    "desc": "Collect pollen from the Sunflower Field."
+  },
+  {
+    "id": "blue-flowers-field",
+    "name": "Blue Flowers Field",
+    "order": 19,
+    "start": 5000,
+    "mult": 10,
+    "buff": {
+      "stat": "Blue Pollen",
+      "type": "Mult",
+      "value": 0.1
+    },
+    "desc": "Collect pollen from the Blue Flowers Field."
+  },
+  {
+    "id": "red-flowers-field",
+    "name": "Red Flowers Field",
+    "order": 20,
+    "start": 5000,
+    "mult": 10,
+    "buff": {
+      "stat": "Red Pollen",
+      "type": "Mult",
+      "value": 0.1
+    },
+    "desc": "Collect pollen from the Red Flowers Field."
+  },
+  {
+    "id": "bellflower-field",
+    "name": "Bellflower Field",
+    "order": 25,
+    "start": 5000,
+    "mult": 10,
+    "buff": {
+      "stat": "Blue Bomb Pollen",
+      "type": "Mult",
+      "value": 0.1
+    },
+    "desc": "Collect pollen from the Bellflower Field."
+  },
+  {
+    "id": "strawberry-field",
+    "name": "Strawberry Field",
+    "order": 26,
+    "start": 5000,
+    "mult": 10,
+    "buff": {
+      "stat": "Red Bomb Pollen",
+      "type": "Mult",
+      "value": 0.1
+    },
+    "desc": "Collect pollen from the Strawberry Field."
+  },
+  {
+    "id": "spider-field",
+    "name": "Spider Field",
+    "order": 27,
+    "start": 5000,
+    "mult": 10,
+    "buff": {
+      "stat": "Bomb Pollen",
+      "type": "Mult",
+      "value": 0.1
+    },
+    "desc": "Collect pollen from the Spider Field."
+  },
+  {
+    "id": "snowdrops-field",
+    "name": "Snowdrops Field",
+    "order": 30,
+    "start": 5000,
+    "mult": 10,
+    "buff": {
+      "stat": "Ice Pollen",
+      "type": "Perc",
+      "value": 5
+    },
+    "desc": "Collect pollen from the Snowdrops Field."
+  },
+  {
+    "id": "rose-field",
+    "name": "Rose Field",
+    "order": 31,
+    "start": 5000,
+    "mult": 10,
+    "buff": {
+      "stat": "Fire Pollen",
+      "type": "Perc",
+      "value": 15
+    },
+    "desc": "Collect pollen from the Rose Field."
+  },
+  {
+    "id": "pine-cone-field",
+    "name": "Pine Cone Field",
+    "order": 34,
+    "start": 5000,
+    "mult": 10,
+    "buff": {
+      "stat": "Tool Speed",
+      "type": "Perc",
+      "value": 1
+    },
+    "desc": "Collect pollen from the Pine Cone Field."
+  },
+  {
+    "id": "bamboo-field",
+    "name": "Bamboo Field",
+    "order": 38,
+    "start": 5000,
+    "mult": 10,
+    "buff": {
+      "stat": "Blue Pollen",
+      "type": "Mult",
+      "value": 0.1
+    },
+    "desc": "Collect pollen from the Bamboo Field."
+  },
+  {
+    "id": "raspberry-field",
+    "name": "Raspberry Field",
+    "order": 39,
+    "start": 5000,
+    "mult": 10,
+    "buff": {
+      "stat": "Red Pollen",
+      "type": "Mult",
+      "value": 0.1
+    },
+    "desc": "Collect pollen from the Raspberry Field."
+  },
+  {
+    "id": "banana-field",
+    "name": "Banana Field",
+    "order": 40,
+    "start": 5000,
+    "mult": 10,
+    "buff": {
+      "stat": "White Pollen",
+      "type": "Mult",
+      "value": 0.1
+    },
+    "desc": "Collect pollen from the Banana Field."
+  },
+  {
+    "id": "wisteria-field",
+    "name": "Wisteria Field",
+    "order": 50,
+    "start": 5000,
+    "mult": 10,
+    "buff": {
+      "stat": "Blue Field Capacity",
+      "type": "Mult",
+      "value": 0.03
+    },
+    "desc": "Collect pollen from the Wisteria Field."
+  },
+  {
+    "id": "blossom-field",
+    "name": "Blossom Field",
+    "order": 51,
+    "start": 5000,
+    "mult": 10,
+    "buff": {
+      "stat": "White Field Capacity",
+      "type": "Mult",
+      "value": 0.03
+    },
+    "desc": "Collect pollen from the Blossom Field."
+  },
+  {
+    "id": "lotus-field",
+    "name": "Lotus Field",
+    "order": 53,
+    "start": 5000,
+    "mult": 10,
+    "buff": {
+      "stat": "Red Field Capacity",
+      "type": "Mult",
+      "value": 0.03
+    },
+    "desc": "Collect pollen from the Lotus Field."
+  },
+  {
+    "id": "apple-field",
+    "name": "Apple Field",
+    "desc": "Gather pollen in Apple Field.",
+    "order": 66,
+    "start": 5000,
+    "mult": 10,
+    "buff": {
+      "stat": "Red Field Capacity",
+      "type": "Mult",
+      "value": 0.03
+    }
+  },
+  {
+    "id": "cabbage-field",
+    "name": "Cabbage Field",
+    "desc": "Gather pollen in Cabbage Field.",
+    "order": 66,
+    "start": 5000,
+    "mult": 10,
+    "buff": {
+      "stat": "Blue Field Capacity",
+      "type": "Mult",
+      "value": 0.03
+    }
+  },
+  {
+    "id": "carrot-field",
+    "name": "Carrot Field",
+    "desc": "Gather pollen in Carrot Field.",
+    "order": 66,
+    "start": 5000,
+    "mult": 10,
+    "buff": {
+      "stat": "White Field Capacity",
+      "type": "Mult",
+      "value": 0.03
+    }
+  },
+  {
+    "id": "garden-field",
+    "name": "Garden Field",
+    "desc": "Gather pollen in Garden Field.",
+    "order": 66,
+    "start": 5000,
+    "mult": 10,
+    "buff": {
+      "stat": "Capacity Bonus",
+      "type": "Mult",
+      "value": 0.03
+    }
+  }
+]

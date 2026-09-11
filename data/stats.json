@@ -1,0 +1,42 @@
+[
+  {
+    "stat": "Total Hive Attack",
+    "type": "Raw",
+    "value": 0
+  },
+  {
+    "stat": "Bee Attack",
+    "type": "Raw",
+    "value": 0
+  },
+  {
+    "stat": "Red Bee Attack",
+    "type": "Raw",
+    "value": 0
+  },
+  {
+    "stat": "Blue Bee Attack",
+    "type": "Raw",
+    "value": 0
+  },
+  {
+    "stat": "Attack Bonus",
+    "type": "Perc",
+    "value": 100
+  },
+  {
+    "stat": "Total Capacity",
+    "type": "Raw",
+    "value": 0
+  },
+  {
+    "stat": "Capacity",
+    "type": "Raw",
+    "value": 0
+  },
+  {
+    "stat": "Capacity Bonus",
+    "type": "Perc",
+    "value": 100
+  }
+]
