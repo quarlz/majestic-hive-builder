@@ -156,23 +156,17 @@ function hbApplyRarityStyle(card, rarity) {
   const rgb = HB_RARITY_RGB[rarityKey] || HB_RARITY_RGB.basic;
 
   if (hbIsGradientRarity(rgb)) {
-    const [r1, g1, b1] = rgb[0];
-    const [r2, g2, b2] = rgb[1];
-    card.style.setProperty("--slot-r", r1);
-    card.style.setProperty("--slot-g", g1);
-    card.style.setProperty("--slot-b", b1);
-    card.style.background = `linear-gradient(135deg, rgba(${r1},${g1},${b1},0.16), rgba(${r2},${g2},${b2},0.16))`;
-    card.style.borderColor = `rgba(${r2},${g2},${b2},0.55)`;
-    card.style.boxShadow = `0 0 0 1px rgba(${r2},${g2},${b2},0.2)`;
+    const c1bg = hbMixRgb(rgb[0], HB_DARK_MIX, 0.45);
+    const c2bg = hbMixRgb(rgb[1], HB_DARK_MIX, 0.45);
+    const c1border = hbMixRgb(rgb[0], HB_DARK_MIX, 0.7);
+    const c2border = hbMixRgb(rgb[1], HB_DARK_MIX, 0.7);
+    card.style.background = `linear-gradient(135deg, ${c1bg}, ${c2bg})`;
+    card.style.borderColor = c2border;
+    card.style.borderImage = `linear-gradient(135deg, ${c1border}, ${c2border}) 1`;
   } else {
-    const [r, g, b] = rgb;
-    card.style.setProperty("--slot-r", r);
-    card.style.setProperty("--slot-g", g);
-    card.style.setProperty("--slot-b", b);
-    card.style.removeProperty("background");
-    card.style.removeProperty("borderColor");
-    card.style.removeProperty("boxShadow");
-    card.style.removeProperty("borderImage");
+    card.style.borderImage = "none";
+    card.style.background = hbMixRgb(rgb, HB_DARK_MIX, 0.45);
+    card.style.borderColor = hbMixRgb(rgb, HB_DARK_MIX, 0.7);
   }
 }
 
@@ -181,7 +175,7 @@ function hbBuildPalettes() {
   beeList.innerHTML = "";
   hbBees.forEach((bee) => {
     const card = document.createElement("div");
-    card.className = "hb-card hb-equip-slot-filled";
+    card.className = "hb-card";
     card.draggable = true;
     card.dataset.bee = bee.name;
     card.title = bee.name;
@@ -195,7 +189,6 @@ function hbBuildPalettes() {
       img.src = "images/ui/site-logo.png";
     };
     const span = document.createElement("span");
-    span.className = "hb-equip-slot-name";
     span.textContent = bee.name.replace(/\s*Bee$/, "");
 
     card.appendChild(img);
@@ -222,7 +215,7 @@ function hbBuildPalettes() {
   stickerList.innerHTML = "";
   hbStickers.forEach((sticker) => {
     const card = document.createElement("div");
-    card.className = "hb-card hb-equip-slot-filled";
+    card.className = "hb-card";
     card.draggable = true;
     card.dataset.sticker = sticker.name;
     card.title = sticker.name;
@@ -236,7 +229,6 @@ function hbBuildPalettes() {
       img.src = "images/ui/site-logo.png";
     };
     const span = document.createElement("span");
-    span.className = "hb-equip-slot-name";
     span.textContent = sticker.name.replace(/\s*Sticker$/, "");
 
     card.appendChild(img);
@@ -517,14 +509,12 @@ function hbRenderStickerGrid() {
     el.innerHTML = "";
     el.draggable = false;
     el.classList.remove("hb-sticker-slot-filled");
-    el.removeAttribute("style");
 
     if (!slot.sticker) return;
     const sticker = hbGetSticker(slot.sticker);
     if (!sticker) return;
 
     el.classList.add("hb-sticker-slot-filled");
-    hbApplyRarityStyle(el, sticker.rarity);
     el.draggable = true;
     el.ondragstart = (e) => {
       e.dataTransfer.setData("application/x-sticker-move", String(index));
