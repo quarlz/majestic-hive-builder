@@ -1369,9 +1369,7 @@ function hbInitEquips() {
       hbEquipSlots = Array.from({ length: HB_EQUIP_SLOT_COUNT }, () => ({
         item: null,
       }));
-      hbSkin = null;
       hbBuildEquipSlots();
-      hbBuildSkinSlot();
       hbRenderBonuses();
     });
   }
@@ -1580,6 +1578,15 @@ function hbInitSkin() {
     e.preventDefault();
     hbOpenSkinModal();
   });
+
+  const resetBtn = document.getElementById("hb-skin-reset");
+  if (resetBtn) {
+    resetBtn.addEventListener("click", () => {
+      hbSkin = null;
+      hbBuildSkinSlot();
+      hbRenderBonuses();
+    });
+  }
 }
 
 function hbGetSkinBonusEntries() {

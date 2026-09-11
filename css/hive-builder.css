@@ -1574,10 +1574,11 @@
 .hb-skin-slot {
   width: 92px;
   min-width: 92px;
+  height: 92px;
 }
 .hb-skin-slot img {
-  width: 100%;
-  height: 100%;
+  width: 46%;
+  height: 46%;
   object-fit: contain;
   image-rendering: auto;
 }
