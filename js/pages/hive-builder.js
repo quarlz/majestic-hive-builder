@@ -1389,12 +1389,22 @@ function hbEnsureSkinModal() {
 function hbOpenSkinModal() {
   hbEnsureSkinModal();
   const body = document.getElementById("hb-skin-modal-body");
-  const cards = hbCosmetics.map((skin) => `
-    <button type="button" class="hb-equip-pick-card${skin.name === hbSkin ? " hb-equip-pick-selected" : ""}" data-skin-name="${hbEsc(skin.name)}">
+  const cards = hbCosmetics.map((skin) => {
+    const buffs = Array.isArray(skin.buffs) ? skin.buffs : [];
+    const buffHtml = buffs.length
+      ? `<div class="hb-skin-pick-buffs">
+          ${buffs.map((b) => `<span class="hb-skin-pick-buff">${hbEsc(b.stat)}: ${hbEsc(hbFormatEquipBuff(b))}</span>`).join("")}
+        </div>`
+      : `<div class="hb-skin-pick-buffs"><span class="hb-skin-pick-buff hb-skin-pick-none">No stats</span></div>`;
+    return `<button type="button" class="hb-equip-pick-card hb-skin-pick-card${skin.name === hbSkin ? " hb-equip-pick-selected" : ""}" data-skin-name="${hbEsc(skin.name)}">
       <img src="${hbEsc(skin.image)}" alt="" onerror="this.src='images/ui/site-logo.png'">
       <span class="hb-equip-pick-name">${hbEsc(skin.name)}</span>
-    </button>`).join("");
-  body.innerHTML = `<div class="hb-equip-pick-grid">${cards}</div>`;
+      ${skin.rarity ? `<span class="hb-skin-pick-rarity">${hbEsc(skin.rarity)}</span>` : ""}
+      ${skin.desc ? `<span class="hb-skin-pick-desc">${hbEsc(skin.desc)}</span>` : ""}
+      ${buffHtml}
+    </button>`;
+  }).join("");
+  body.innerHTML = `<div class="hb-equip-pick-grid hb-skin-pick-grid">${cards}</div>`;
   const overlay = document.getElementById("hb-skin-modal");
   overlay.hidden = false;
   requestAnimationFrame(() => overlay.classList.add("hb-modal-open"));

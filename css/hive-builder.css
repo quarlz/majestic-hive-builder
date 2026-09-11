@@ -1711,3 +1711,58 @@
   object-fit: contain;
   image-rendering: auto;
 }
+
+
+/* Skin picker details */
+.hb-skin-pick-grid {
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+}
+
+.hb-skin-pick-card {
+  align-items: stretch;
+  text-align: left;
+  min-height: 210px;
+}
+
+.hb-skin-pick-card img {
+  width: 72px;
+  height: 72px;
+  align-self: center;
+  margin-bottom: 3px;
+}
+
+.hb-skin-pick-rarity {
+  font-size: 0.65rem;
+  font-weight: 800;
+  text-align: center;
+  text-transform: uppercase;
+  opacity: 0.75;
+}
+
+.hb-skin-pick-desc {
+  font-size: 0.66rem;
+  line-height: 1.35;
+  color: var(--text-muted, rgba(255,255,255,0.65));
+  text-align: center;
+  min-height: 2.7em;
+}
+
+.hb-skin-pick-buffs {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  margin-top: 4px;
+  padding-top: 6px;
+  border-top: 1px solid rgba(255,255,255,0.08);
+}
+
+.hb-skin-pick-buff {
+  font-size: 0.63rem;
+  line-height: 1.25;
+  color: var(--gold-soft);
+  text-align: center;
+}
+
+.hb-skin-pick-none {
+  opacity: 0.5;
+}
