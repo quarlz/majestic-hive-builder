@@ -231,6 +231,15 @@
   border-color: rgba(122, 184, 96, 0.6);
 }
 
+#hb-clear-btn,
+#hb-export-btn {
+  font-family: "Nunito", sans-serif;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
 .hb-hive-wrap {
   background: none;
   border: none;
