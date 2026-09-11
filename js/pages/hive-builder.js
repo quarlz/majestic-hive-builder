@@ -756,16 +756,6 @@ function hbFindAmuletVariant(key) {
   return { amulet, variant };
 }
 
-function hbUsedAmuletIds(excludeIndex) {
-  const used = new Set();
-  hbAmuletSlots.forEach((slot, i) => {
-    if (i === excludeIndex || !slot.key) return;
-    const found = hbFindAmuletVariant(slot.key);
-    if (found) used.add(found.amulet.id);
-  });
-  return used;
-}
-
 function hbAmuletRarityRgb(rarity) {
   return hbRarityRgbTriple(rarity);
 }
@@ -908,22 +898,18 @@ function hbRenderAmuletModal() {
   if (hbAmuletModalStep === "pick" || !hbFindAmuletVariant(slot.key)) {
     hbAmuletModalStep = "pick";
     title.textContent = `Slot ${index + 1} · Choose an Amulet`;
-    const usedIds = hbUsedAmuletIds(index);
     const cards = [];
     hbAmulets.forEach((amulet) => {
-      const isUsedElsewhere = usedIds.has(amulet.id);
       (amulet.variants || []).forEach((variant) => {
         const key = hbAmuletKey(amulet.id, variant.rarity);
-        const disabled = isUsedElsewhere && key !== slot.key;
         const selected = key === slot.key;
         const [r, g, b] = hbAmuletRarityRgb(variant.rarity);
         cards.push(`<button type="button"
-            class="hb-amulet-pick-card${selected ? " hb-amulet-pick-selected" : ""}${disabled ? " hb-amulet-pick-disabled" : ""}"
-            data-key="${hbEsc(key)}" ${disabled ? "disabled" : ""}
+            class="hb-amulet-pick-card${selected ? " hb-amulet-pick-selected" : ""}"
+            data-key="${hbEsc(key)}"
             style="--pick-r:${r}; --pick-g:${g}; --pick-b:${b};">
             <img src="${hbEsc(hbAmuletImage(amulet, variant))}" alt="" onerror="this.src='images/ui/site-logo.png'">
             <span class="hb-amulet-pick-name">${hbEsc(amulet.name)}</span>
-            ${disabled ? '<span class="hb-amulet-pick-note">In use</span>' : ""}
           </button>`);
       });
     });
@@ -1384,6 +1370,8 @@ function hbBuildSkinSlot() {
   const wrap = document.getElementById("hb-skin-list");
   if (!wrap) return;
   const skin = hbGetSkin(hbSkin);
+  const chip = document.getElementById("hb-skin-count-chip");
+  if (chip) chip.textContent = `${skin ? 1 : 0}/1 equipped`;
   if (!skin) {
     wrap.innerHTML = `<div class="hb-equip-slot hb-equip-slot-empty hb-skin-slot" id="hb-skin-slot" role="button" tabindex="0" aria-label="Skin slot, empty. Click to choose a skin.">
       <span class="hb-equip-slot-plus">+</span>
