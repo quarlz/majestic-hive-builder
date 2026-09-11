@@ -1141,16 +1141,11 @@ function hbBuildEquipSlots() {
           <span class="hb-equip-slot-label">${hbEsc(def.label)}</span>
         </div>`;
       }
-      const slotRarity = (item.rarity || "basic").toLowerCase();
-      const slotRgb = HB_RARITY_RGB[slotRarity] || HB_RARITY_RGB.basic;
-      const slotColor = hbIsGradientRarity(slotRgb) ? slotRgb[0] : slotRgb;
       return `<div class="hb-equip-slot hb-equip-slot-filled" data-slot-index="${i}" role="button" tabindex="0"
-          aria-label="${hbEsc(def.label)} slot, ${hbEsc(item.name)}. Click to edit."
-          style="--slot-r:${slotColor[0]}; --slot-g:${slotColor[1]}; --slot-b:${slotColor[2]};">
-        <span class="hb-slot-image"><img src="${hbEsc(item.image)}" alt="" onerror="this.src='images/ui/site-logo.png'"></span>
+          aria-label="${hbEsc(def.label)} slot, ${hbEsc(item.name)}. Click to edit.">
+        <img src="${hbEsc(item.image)}" alt="" onerror="this.src='images/ui/site-logo.png'">
         <button type="button" class="hb-equip-slot-remove" data-remove-index="${i}" aria-label="Remove ${hbEsc(def.label)}">&times;</button>
         <span class="hb-equip-slot-name">${hbEsc(item.name)}</span>
-        ${item.rarity ? `<span class="hb-equip-slot-rarity">${hbEsc(item.rarity)}</span>` : ""}
       </div>`;
     })
     .join("");
@@ -1209,16 +1204,13 @@ function hbRenderEquipModal() {
     const cards = items
       .map((item) => {
         const selected = item.name === slot.item;
-        const rarityKey = (item.rarity || "basic").toLowerCase();
-        const rarityRgb = HB_RARITY_RGB[rarityKey] || HB_RARITY_RGB.basic;
-        const rgb = hbIsGradientRarity(rarityRgb) ? rarityRgb[0] : rarityRgb;
+        const [r, g, b] = HB_RARITY_RGB.epic;
         return `<button type="button"
             class="hb-equip-pick-card${selected ? " hb-equip-pick-selected" : ""}"
             data-item-name="${hbEsc(item.name)}"
-            style="--pick-r:${rgb[0]}; --pick-g:${rgb[1]}; --pick-b:${rgb[2]};">
-            <span class="hb-pick-image"><img src="${hbEsc(item.image)}" alt="" onerror="this.src='images/ui/site-logo.png'"></span>
+            style="--pick-r:${r}; --pick-g:${g}; --pick-b:${b};">
+            <img src="${hbEsc(item.image)}" alt="" onerror="this.src='images/ui/site-logo.png'">
             <span class="hb-equip-pick-name">${hbEsc(item.name)}</span>
-            ${item.rarity ? `<span class="hb-equip-pick-rarity">${hbEsc(item.rarity)}</span>` : ""}
           </button>`;
       })
       .join("");
@@ -1404,12 +1396,8 @@ function hbOpenSkinModal() {
           ${buffs.map((b) => `<span class="hb-skin-pick-buff">${hbEsc(b.stat)}: ${hbEsc(hbFormatEquipBuff(b))}</span>`).join("")}
         </div>`
       : `<div class="hb-skin-pick-buffs"><span class="hb-skin-pick-buff hb-skin-pick-none">No stats</span></div>`;
-    const rarityKey = (skin.rarity || "basic").toLowerCase();
-    const rarityRgb = HB_RARITY_RGB[rarityKey] || HB_RARITY_RGB.basic;
-    const rgb = hbIsGradientRarity(rarityRgb) ? rarityRgb[0] : rarityRgb;
-    return `<button type="button" class="hb-equip-pick-card hb-skin-pick-card${skin.name === hbSkin ? " hb-equip-pick-selected" : ""}" data-skin-name="${hbEsc(skin.name)}"
-      style="--pick-r:${rgb[0]}; --pick-g:${rgb[1]}; --pick-b:${rgb[2]};">
-      <span class="hb-pick-image"><img src="${hbEsc(skin.image)}" alt="" onerror="this.src='images/ui/site-logo.png'"></span>
+    return `<button type="button" class="hb-equip-pick-card hb-skin-pick-card${skin.name === hbSkin ? " hb-equip-pick-selected" : ""}" data-skin-name="${hbEsc(skin.name)}">
+      <img src="${hbEsc(skin.image)}" alt="" onerror="this.src='images/ui/site-logo.png'">
       <span class="hb-equip-pick-name">${hbEsc(skin.name)}</span>
       ${skin.rarity ? `<span class="hb-skin-pick-rarity">${hbEsc(skin.rarity)}</span>` : ""}
       ${skin.desc ? `<span class="hb-skin-pick-desc">${hbEsc(skin.desc)}</span>` : ""}
