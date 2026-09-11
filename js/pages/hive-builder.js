@@ -175,7 +175,7 @@ function hbBuildPalettes() {
   beeList.innerHTML = "";
   hbBees.forEach((bee) => {
     const card = document.createElement("div");
-    card.className = "hb-equip-slot hb-palette-item";
+    card.className = "hb-card";
     card.draggable = true;
     card.dataset.bee = bee.name;
     card.title = bee.name;
@@ -202,7 +202,7 @@ function hbBuildPalettes() {
     card.addEventListener("click", () => {
       const isSame = hbSelectedBee === bee.name;
       document
-        .querySelectorAll("#hb-bee-list .hb-palette-item")
+        .querySelectorAll("#hb-bee-list .hb-card")
         .forEach((c) => c.classList.remove("hb-card-selected"));
       hbSelectedBee = isSame ? null : bee.name;
       if (hbSelectedBee) card.classList.add("hb-card-selected");
@@ -215,7 +215,7 @@ function hbBuildPalettes() {
   stickerList.innerHTML = "";
   hbStickers.forEach((sticker) => {
     const card = document.createElement("div");
-    card.className = "hb-equip-slot hb-palette-item";
+    card.className = "hb-card";
     card.draggable = true;
     card.dataset.sticker = sticker.name;
     card.title = sticker.name;
@@ -242,7 +242,7 @@ function hbBuildPalettes() {
     card.addEventListener("click", () => {
       const isSame = hbSelectedSticker === sticker.name;
       document
-        .querySelectorAll("#hb-sticker-list .hb-palette-item")
+        .querySelectorAll("#hb-sticker-list .hb-card")
         .forEach((c) => c.classList.remove("hb-card-selected"));
       hbSelectedSticker = isSame ? null : sticker.name;
       if (hbSelectedSticker) card.classList.add("hb-card-selected");
