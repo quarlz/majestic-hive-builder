@@ -654,6 +654,24 @@ function hbRenderBonusTable(tbodyId, entries, emptyMsg) {
     .join("");
 }
 
+function hbRenderStatsGrid(gridId, entries, emptyMsg) {
+  const grid = document.getElementById(gridId);
+  if (!grid) return;
+  if (!entries.length) {
+    grid.innerHTML = `<div class="hb-bonus-empty">${hbEsc(emptyMsg)}</div>`;
+    return;
+  }
+  grid.innerHTML = entries
+    .map(
+      (e) =>
+        `<div class="hb-stat-card" data-stat="${hbEsc(e.stat)}" data-value="${hbEsc(hbFormatBonus(e.type, e.value))}">
+          <span class="hb-stat-name">${hbEsc(e.stat)}</span>
+          <span class="hb-stat-value">${hbEsc(hbFormatBonus(e.type, e.value))}</span>
+        </div>`,
+    )
+    .join("");
+}
+
 const HB_TIER_LABELS = ["I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X"];
 
 function hbBadgeBuffValue(badge, tier) {
@@ -1841,26 +1859,34 @@ function hbRenderBonuses() {
     "No stickers placed yet.",
   );
 
-  hbRenderBonusTable(
-    "hb-total-tbody",
+  hbRenderStatsGrid(
+    "hb-total-grid",
     displayEntries,
-    "",
+    "Nothing yet, place bees and stickers.",
   );
 }
 
 function hbInitCopyButtons() {
   document.querySelectorAll(".hb-copy-btn").forEach((btn) => {
     btn.addEventListener("click", async () => {
-      const tableId = btn.dataset.copyTarget;
-      const table = document.getElementById(tableId);
-      const rows = Array.from(table.querySelectorAll("tbody tr"))
-        .map((tr) => {
+      const targetId = btn.dataset.copyTarget;
+      const target = document.getElementById(targetId);
+      if (!target) return;
+
+      let rows;
+      if (target.matches(".hb-stats-grid")) {
+        rows = Array.from(target.querySelectorAll(".hb-stat-card")).map(
+          (card) => `${card.dataset.stat}: ${card.dataset.value}`,
+        );
+      } else {
+        rows = Array.from(target.querySelectorAll("tbody tr")).map((tr) => {
           const cells = Array.from(tr.querySelectorAll("td")).map((td) =>
             td.textContent.trim(),
           );
           return cells.join(": ");
-        })
-        .filter((line) => line && !line.includes("undefined"));
+        });
+      }
+      rows = rows.filter((line) => line && !line.includes("undefined"));
 
       const text = rows.join("\n");
       try {
