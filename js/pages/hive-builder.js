@@ -687,11 +687,6 @@ function hbBuildBadges() {
       </div>`;
     })
     .join("");
-  const chip = document.getElementById("hb-badge-count-chip");
-  if (chip) {
-    const active = Object.keys(hbBadgeTiers).filter((id) => hbBadgeTiers[id]).length;
-    chip.textContent = `${active} active`;
-  }
 }
 
 function hbInitBadges() {
@@ -714,11 +709,6 @@ function hbInitBadges() {
         if (bonusEl && badge) bonusEl.textContent = hbBadgeBuffText(badge, tier);
         const pipsEl = card.querySelector(".hb-tier-pips");
         if (pipsEl) pipsEl.innerHTML = hbTierPipsHtml(tier);
-      }
-      const chip = document.getElementById("hb-badge-count-chip");
-      if (chip) {
-        const active = Object.keys(hbBadgeTiers).filter((bid) => hbBadgeTiers[bid]).length;
-        chip.textContent = `${active} active`;
       }
 
       hbRenderBonuses();
@@ -849,11 +839,6 @@ function hbBuildAmuletSlots() {
       });
     })
     .join("");
-  const chip = document.getElementById("hb-amulet-count-chip");
-  if (chip) {
-    const filled = hbAmuletSlots.filter((s) => hbFindAmuletVariant(s.key)).length;
-    chip.textContent = `${filled}/${HB_AMULET_SLOT_COUNT} equipped`;
-  }
 }
 
 function hbEnsureAmuletModal() {
@@ -1178,13 +1163,6 @@ function hbBuildEquipSlots() {
       });
     })
     .join("");
-  const chip = document.getElementById("hb-equip-count-chip");
-  if (chip) {
-    const filled = hbEquipSlots.filter((s, i) =>
-      hbFindEquipItem(HB_EQUIP_SLOT_DEFS[i].key, s.item),
-    ).length;
-    chip.textContent = `${filled}/${HB_EQUIP_SLOT_COUNT} equipped`;
-  }
 }
 
 function hbEnsureEquipModal() {
@@ -1370,8 +1348,6 @@ function hbBuildSkinSlot() {
   const wrap = document.getElementById("hb-skin-list");
   if (!wrap) return;
   const skin = hbGetSkin(hbSkin);
-  const chip = document.getElementById("hb-skin-count-chip");
-  if (chip) chip.textContent = `${skin ? 1 : 0}/1 equipped`;
   if (!skin) {
     wrap.innerHTML = `<div class="hb-equip-slot hb-equip-slot-empty hb-skin-slot" id="hb-skin-slot" role="button" tabindex="0" aria-label="Skin slot, empty. Click to choose a skin.">
       <span class="hb-equip-slot-plus">+</span>
