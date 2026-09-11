@@ -2,115 +2,115 @@
   "collectors": [
     {
       "name": "Shovel",
-      "image": "images/equipments/Shovel.png",
+      "image": "images/equipments/collectors/Shovel.png",
       "description": "Just a shovel. Anything wrong? \n\n Gathers 2 Pollen from 2 flowers in front of you every 0.8 seconds.",
       "buffs": []
     },
     {
       "name": "Rake",
-      "image": "images/equipments/Rake.png",
+      "image": "images/equipments/collectors/Rake.png",
       "description": "Try not to stab yourself, alright? \n\n Gathers 1 Pollen from 6 flowers in front of you every 0.9 seconds.",
       "buffs": []
     },
     {
       "name": "Hammer",
-      "image": "images/equipments/Hammer.png",
+      "image": "images/equipments/collectors/Hammer.png",
       "description": "Careful, don't smash anything with it! \n\n Gathers 2 Pollen from 5 flowers in front of you every 0.9 seconds.",
       "buffs": []
     },
     {
       "name": "Magnet",
-      "image": "images/equipments/Magnet.png",
+      "image": "images/equipments/collectors/Magnet.png",
       "description": "You might find something unexpected while collecting with this... Or not. \n\n Gathers 3 Pollen from 7 flowers in front of you every 0.8 seconds.",
       "buffs": []
     },
     {
       "name": "Scissors",
-      "image": "images/equipments/Scissors.png",
+      "image": "images/equipments/collectors/Scissors.png",
       "description": "Snip snip! \n\n Gathers 20 Pollen from 1 flower in front of you every 0.6 seconds.",
       "buffs": []
     },
     {
       "name": "Scythe",
-      "image": "images/equipments/Scythe.png",
+      "image": "images/equipments/collectors/Scythe.png",
       "description": "Ready to harvest? \n\n Gathers 4 Pollen from 8 flowers in front of you every 0.66 seconds.",
       "buffs": []
     },
     {
       "name": "Axe",
-      "image": "images/equipments/Axe.png",
+      "image": "images/equipments/collectors/Axe.png",
       "description": "Might as well change my job with this. \n\n Gathers 5 Pollen from 9 flowers in front of you every 0.8 seconds.",
       "buffs": []
     },
     {
       "name": "Pickaxe",
-      "image": "images/equipments/Pickaxe.png",
+      "image": "images/equipments/collectors/Pickaxe.png",
       "description": "Let's mine some diamonds! \n\n Gathers 6 Pollen from 12 flowers in front of you every 0.8 seconds.",
       "buffs": []
     },
     {
       "name": "Gold Magnet",
-      "image": "images/equipments/Gold Magnet.png",
+      "image": "images/equipments/collectors/Gold Magnet.png",
       "description": "I feel a sense of deja vu... \n\n Gathers 9 Pollen from 7 flowers in front of you every 0.8 seconds.",
       "buffs": []
     },
     {
       "name": "Honey Dipper",
-      "image": "images/equipments/Honey Dipper.png",
+      "image": "images/equipments/collectors/Honey Dipper.png",
       "description": "Very sticky. At least you won't lose it. \n\n Gathers 5 Pollen from 29 flowers in front of you every 0.8 seconds.",
       "buffs": []
     },
     {
       "name": "Fire Scythe",
-      "image": "images/equipments/Fire Scythe.png",
+      "image": "images/equipments/collectors/Fire Scythe.png",
       "description": "Careful! It's hot!\nIt can spread Fire in the field. \n\n Gathers 8 Pollen from 14 flowers in front of you every 0.7 seconds.\nAdditionaly grants x1.5 red pollen.\n\n[Fire Aura Passive]: Covers Stamp In Fire Every 5 Clicks.",
       "buffs": []
     },
     {
       "name": "Snow Shovel",
-      "image": "images/equipments/Snow Shovel.png",
+      "image": "images/equipments/collectors/Snow Shovel.png",
       "description": "Cold to the touch.\nIt can spread Ice in the field. \n\n Gathers 8 Pollen from 29 flowers in front of you every 0.7 seconds.\nAdditionaly grants x1.5 blue pollen.\n\n[Ice Aura Passive]: Covers Stamp In Ice Every 5 Clicks.",
       "buffs": []
     },
     {
       "name": "Windy Staff",
-      "image": "images/equipments/Windy Staff.png",
+      "image": "images/equipments/collectors/Windy Staff.png",
       "description": "Very air‑tistic and light.\nIt can summon clouds in the field. \n\n Gathers 6 Pollen from 29 flowers in front of you every 0.9 seconds.\nAdditionaly grants x1.5 white pollen.\n\n[Windy Aura Passive]: Spawns 1 Cloud Every 5 Clicks.",
       "buffs": []
     },
     {
       "name": "Bamboo Spear",
-      "image": "images/equipments/Bamboo Spear.png",
+      "image": "images/equipments/collectors/Bamboo Spear.png",
       "description": "...A pointy bamboo stick? Really? \n\n Gathers 26 Pollen from 8 flowers in front of you every 0.66 seconds.",
       "buffs": []
     },
     {
       "name": "Bamboo Rake",
-      "image": "images/equipments/Bamboo Rake.png",
+      "image": "images/equipments/collectors/Bamboo Rake.png",
       "description": "Can you eat with this? \n\n Gathers 45 Pollen from 6 flowers in front of you every 0.9 seconds.",
       "buffs": []
     },
     {
       "name": "Bamboo Staff",
-      "image": "images/equipments/Bamboo Staff.png",
+      "image": "images/equipments/collectors/Bamboo Staff.png",
       "description": "...Abracadabra? \n\n Gathers 18 Pollen from 29 flowers in front of you every 0.8 seconds.",
       "buffs": []
     },
     {
       "name": "Coconut Smash",
-      "image": "images/equipments/Coconut Smash.png",
+      "image": "images/equipments/collectors/Coconut Smash.png",
       "description": "Now, that's what I'm talking about! \n\n Gathers 65 Pollen from 5 flowers in front of you every 0.6 seconds.\n+Passive: Coconut Storm (Every 15 Clicks)",
       "buffs": []
     },
     {
       "name": "Nature Staff",
-      "image": "images/equipments/Nature Staff.png",
+      "image": "images/equipments/collectors/Nature Staff.png",
       "description": "Carved from an ancient branch of oak, it channels the ancient power of the forest. \n\n Gathers 95 Pollen from 29 flowers in front of you every 0.8 seconds.\n+Passive: Nature Harvest",
       "buffs": []
     },
     {
       "name": "Canvy’s Extra Paintbrush",
-      "image": "images/equipments/Paint Brush.png",
+      "image": "images/equipments/collectors/Paint Brush.png",
       "description": "Powered by the power of master. In true hands gives absolute drawing potential.\n\n Gathers 280 Pollen from 29 flowers in front of you every 1.3 seconds.\n+Passive: Colorful Splash",
       "buffs": []
     }
@@ -118,7 +118,7 @@
   "bags": [
     {
       "name": "Satchel",
-      "image": "images/equipments/Satchel.png",
+      "image": "images/equipments/bags/Satchel.png",
       "description": "The starter bag, everyone starts with it.",
       "buffs": [
         {
@@ -130,7 +130,7 @@
     },
     {
       "name": "Jar",
-      "image": "images/equipments/Jar.png",
+      "image": "images/equipments/bags/Jar.png",
       "description": "Careful not to spill the honey!",
       "buffs": [
         {
@@ -142,7 +142,7 @@
     },
     {
       "name": "Flask",
-      "image": "images/equipments/Flask.png",
+      "image": "images/equipments/bags/Flask.png",
       "description": "Guess we can experiment with honey now.",
       "buffs": [
         {
@@ -154,7 +154,7 @@
     },
     {
       "name": "Backpack",
-      "image": "images/equipments/Backpack.png",
+      "image": "images/equipments/bags/Backpack.png",
       "description": "Let's go camping!",
       "buffs": [
         {
@@ -171,7 +171,7 @@
     },
     {
       "name": "Flower Pot",
-      "image": "images/equipments/Flower Pot.png",
+      "image": "images/equipments/bags/Flower Pot.png",
       "description": "A pot made of clay with a red flower inside it...\nIf it works it works I guess.",
       "buffs": [
         {
@@ -188,7 +188,7 @@
     },
     {
       "name": "Bouquet Of Flowers",
-      "image": "images/equipments/Bouquet Of Flowers.png",
+      "image": "images/equipments/bags/Bouquet Of Flowers.png",
       "description": "Huh? It smells really nice!",
       "buffs": [
         {
@@ -210,7 +210,7 @@
     },
     {
       "name": "Cauldron",
-      "image": "images/equipments/Cauldron.png",
+      "image": "images/equipments/bags/Cauldron.png",
       "description": "Mirror, mirror on the wall...",
       "buffs": [
         {
@@ -232,7 +232,7 @@
     },
     {
       "name": "Hive",
-      "image": "images/equipments/Hive.png",
+      "image": "images/equipments/bags/Hive.png",
       "description": "Sweet! Quite literally.",
       "buffs": [
         {
@@ -259,7 +259,7 @@
     },
     {
       "name": "Furnace",
-      "image": "images/equipments/Furnace.png",
+      "image": "images/equipments/bags/Furnace.png",
       "description": "Isn't it a little too heavy?",
       "buffs": [
         {
@@ -291,7 +291,7 @@
     },
     {
       "name": "Coal Basket",
-      "image": "images/equipments/Coal Basket.png",
+      "image": "images/equipments/bags/Coal Basket.png",
       "description": "Let's make some BBQ!",
       "buffs": [
         {
@@ -333,7 +333,7 @@
     },
     {
       "name": "Fridge",
-      "image": "images/equipments/Fridge.png",
+      "image": "images/equipments/bags/Fridge.png",
       "description": "You can even store food inside!",
       "buffs": [
         {
@@ -365,7 +365,7 @@
     },
     {
       "name": "Ice Basket",
-      "image": "images/equipments/Ice Basket.png",
+      "image": "images/equipments/bags/Ice Basket.png",
       "description": "Does it not melt?",
       "buffs": [
         {
@@ -407,7 +407,7 @@
     },
     {
       "name": "Sheaf of Bamboo",
-      "image": "images/equipments/Sheaf of Bamboo.png",
+      "image": "images/equipments/bags/Sheaf of Bamboo.png",
       "description": "Well, that's one weird bag for sure.",
       "buffs": [
         {
@@ -449,7 +449,7 @@
     },
     {
       "name": "Coconut Bag",
-      "image": "images/equipments/Coconut Bag.png",
+      "image": "images/equipments/bags/Coconut Bag.png",
       "description": "Wanna take a sip?",
       "buffs": [
         {
@@ -491,7 +491,7 @@
     },
     {
       "name": "Blossom Canister",
-      "image": "images/equipments/Blossom Canister.png",
+      "image": "images/equipments/bags/Blossom Canister.png",
       "description": "Nature's power on your back! Literally!",
       "buffs": [
         {
@@ -533,7 +533,7 @@
     },
     {
       "name": "Paint Bucket",
-      "image": "images/equipments/Paint Bucket.png",
+      "image": "images/equipments/bags/Paint Bucket.png",
       "description": "Art hall power stored inside those paints!\n+Passive: Art Splashes",
       "buffs": [
         {
@@ -592,7 +592,7 @@
   "belts": [
     {
       "name": "Worker's Belt",
-      "image": "images/equipments/Worker's Belt.png",
+      "image": "images/equipments/belts/Worker's Belt.png",
       "description": "A belt that has all you need! Maybe.",
       "buffs": [
         {
@@ -614,7 +614,7 @@
     },
     {
       "name": "Wasp Belt",
-      "image": "images/equipments/Wasp Belt.png",
+      "image": "images/equipments/belts/Wasp Belt.png",
       "description": "Can I get more bees with this?",
       "buffs": [
         {
@@ -636,7 +636,7 @@
     },
     {
       "name": "Windy Belt",
-      "image": "images/equipments/Windy Belt.png",
+      "image": "images/equipments/belts/Windy Belt.png",
       "description": "C'mon, take it! It will really blow you away!",
       "buffs": [
         {
@@ -668,7 +668,7 @@
     },
     {
       "name": "Bamboo Belt",
-      "image": "images/equipments/Bamboo Belt.png",
+      "image": "images/equipments/belts/Bamboo Belt.png",
       "description": "Is this edible?",
       "buffs": [
         {
@@ -695,7 +695,7 @@
     },
     {
       "name": "Coconut Belt",
-      "image": "images/equipments/Coconut Belt.png",
+      "image": "images/equipments/belts/Coconut Belt.png",
       "description": "Essential item for the new coconut fashion.",
       "buffs": [
         {
@@ -732,7 +732,7 @@
     },
     {
       "name": "Nature Belt",
-      "image": "images/equipments/Nature Belt.png",
+      "image": "images/equipments/belts/Nature Belt.png",
       "description": "Made from enchanted vines... And a little poison.\n+Passive: Poison Harvest",
       "buffs": [
         {
@@ -771,7 +771,7 @@
   "helmets": [
     {
       "name": "Worker's Helmet",
-      "image": "images/equipments/Worker's Helmet.png",
+      "image": "images/equipments/helmets/Worker's Helmet.png",
       "description": "A very sturdy helmet, isANT't it?",
       "buffs": [
         {
@@ -803,7 +803,7 @@
     },
     {
       "name": "Wasp Helmet",
-      "image": "images/equipments/Wasp Helmet.png",
+      "image": "images/equipments/helmets/Wasp Helmet.png",
       "description": "Wasp its a danger insect that hate bees!",
       "buffs": [
         {
@@ -840,7 +840,7 @@
     },
     {
       "name": "Fire Ant Helmet",
-      "image": "images/equipments/Fire Ant Helmet.png",
+      "image": "images/equipments/helmets/Fire Ant Helmet.png",
       "description": "Made with ant‑thusiasm and a touch of fire.",
       "buffs": [
         {
@@ -887,7 +887,7 @@
     },
     {
       "name": "Ice Ant Helmet",
-      "image": "images/equipments/Ice Ant Helmet.png",
+      "image": "images/equipments/helmets/Ice Ant Helmet.png",
       "description": "Icefully ant made helmet!",
       "buffs": [
         {
@@ -934,7 +934,7 @@
     },
     {
       "name": "Windy Helmet",
-      "image": "images/equipments/Windy Helmet.png",
+      "image": "images/equipments/helmets/Windy Helmet.png",
       "description": "Gust what you needed. Am I right?",
       "buffs": [
         {
@@ -986,7 +986,7 @@
     },
     {
       "name": "Aphid Helmet",
-      "image": "images/equipments/Aphid Helmet.png",
+      "image": "images/equipments/helmets/Aphid Helmet.png",
       "description": "Found by Panda Bear after a battle.\nShould be good, right?",
       "buffs": [
         {
@@ -1023,7 +1023,7 @@
     },
     {
       "name": "Sunny Helmet",
-      "image": "images/equipments/Sunny Helmet.png",
+      "image": "images/equipments/helmets/Sunny Helmet.png",
       "description": "The true sun god helmet.",
       "buffs": [
         {
@@ -1075,7 +1075,7 @@
     },
     {
       "name": "Canvas Helmet",
-      "image": "images/equipments/Paint Helmet.png",
+      "image": "images/equipments/helmets/Paint Helmet.png",
       "description": "Hunt secret stickers to increase your power!\n+Passive: Sticker Hunter",
       "buffs": [
         {
@@ -1124,7 +1124,7 @@
   "leftGuards": [
     {
       "name": "Left Worker's Guard",
-      "image": "images/equipments/Left Worker.png",
+      "image": "images/equipments/leftGuards/Left Worker.png",
       "description": "Protects you... to some extent.",
       "buffs": [
         {
@@ -1151,7 +1151,7 @@
     },
     {
       "name": "Left Wasp Guard",
-      "image": "images/equipments/Left Wasp.png",
+      "image": "images/equipments/leftGuards/Left Wasp.png",
       "description": "Good! I could use a snack.",
       "buffs": [
         {
@@ -1180,12 +1180,123 @@
           "value": 15
         }
       ]
+    },
+    {
+      "name": "Snowflake Guard",
+      "image": "images/equipments/leftGuards/Left Snowflake.png",
+      "description": "It's getting cold in here!",
+      "buffs": [
+        {
+          "stat": "Capacity",
+          "type": "Add",
+          "value": 25000
+        },
+        {
+          "stat": "Convert Rate",
+          "type": "Perc",
+          "value": 50
+        },
+        {
+          "stat": "Ice Pollen",
+          "type": "Perc",
+          "value": 10
+        },
+        {
+          "stat": "Capacity Bonus",
+          "type": "Perc",
+          "value": 25
+        },
+        {
+          "stat": "Movespeed",
+          "type": "Perc",
+          "value": 5
+        },
+        {
+          "stat": "Blue Pollen",
+          "type": "Perc",
+          "value": 15
+        }
+      ]
+    },
+    {
+      "name": "Snowy Guard",
+      "image": "images/equipments/leftGuards/Left Snowy.png",
+      "description": "Just a little cool.",
+      "buffs": [
+        {
+          "stat": "Capacity",
+          "type": "Add",
+          "value": 50000
+        },
+        {
+          "stat": "Convert Rate",
+          "type": "Perc",
+          "value": 75
+        },
+        {
+          "stat": "Ice Pollen",
+          "type": "Perc",
+          "value": 15
+        },
+        {
+          "stat": "Capacity Bonus",
+          "type": "Perc",
+          "value": 50
+        },
+        {
+          "stat": "Movespeed",
+          "type": "Perc",
+          "value": 7
+        },
+        {
+          "stat": "Blue Pollen",
+          "type": "Perc",
+          "value": 30
+        }
+      ]
+    },
+    {
+      "name": "Icicle Guard",
+      "image": "images/equipments/leftGuards/Left Icicle.png",
+      "description": "Almost as cold as ice.",
+      "buffs": [
+        {
+          "stat": "Capacity",
+          "type": "Add",
+          "value": 100000
+        },
+        {
+          "stat": "Convert Rate",
+          "type": "Perc",
+          "value": 100
+        },
+        {
+          "stat": "Ice Pollen",
+          "type": "Perc",
+          "value": 25
+        },
+        {
+          "stat": "Capacity Bonus",
+          "type": "Perc",
+          "value": 75
+        },
+        {
+          "stat": "Movespeed",
+          "type": "Perc",
+          "value": 10
+        },
+        {
+          "stat": "Blue Pollen",
+          "type": "Perc",
+          "value": 50
+        }
+      ]
     }
   ],
   "rightGuards": [
     {
       "name": "Right Worker's Guard",
-      "image": "images/equipments/Right Worker.png",
+      "image": "images/equipments/rightGuards/Right Worker.png",
       "description": "Protects you... to some extent.",
       "buffs": [
         {
@@ -1212,7 +1323,7 @@
     },
     {
       "name": "Right Wasp Guard",
-      "image": "images/equipments/Right Wasp.png",
+      "image": "images/equipments/rightGuards/Right Wasp.png",
       "description": "Good! I could use a snack.",
       "buffs": [
         {
@@ -1241,12 +1352,123 @@
           "value": 15
         }
       ]
+    },
+    {
+      "name": "Fire Guard",
+      "image": "images/equipments/rightGuards/Right Fire.png",
+      "description": "Just a little warm.",
+      "buffs": [
+        {
+          "stat": "Capacity",
+          "type": "Add",
+          "value": 25000
+        },
+        {
+          "stat": "Convert Rate",
+          "type": "Perc",
+          "value": 50
+        },
+        {
+          "stat": "Fire Pollen",
+          "type": "Perc",
+          "value": 25
+        },
+        {
+          "stat": "Capacity Bonus",
+          "type": "Perc",
+          "value": 25
+        },
+        {
+          "stat": "Defense",
+          "type": "Perc",
+          "value": 15
+        },
+        {
+          "stat": "Red Pollen",
+          "type": "Perc",
+          "value": 15
+        }
+      ]
+    },
+    {
+      "name": "Flame Guard",
+      "image": "images/equipments/rightGuards/Right Flame.png",
+      "description": "It's getting hot in here!",
+      "buffs": [
+        {
+          "stat": "Capacity",
+          "type": "Add",
+          "value": 50000
+        },
+        {
+          "stat": "Convert Rate",
+          "type": "Perc",
+          "value": 75
+        },
+        {
+          "stat": "Fire Pollen",
+          "type": "Perc",
+          "value": 40
+        },
+        {
+          "stat": "Capacity Bonus",
+          "type": "Perc",
+          "value": 50
+        },
+        {
+          "stat": "Defense",
+          "type": "Perc",
+          "value": 25
+        },
+        {
+          "stat": "Red Pollen",
+          "type": "Perc",
+          "value": 30
+        }
+      ]
+    },
+    {
+      "name": "Burning Guard",
+      "image": "images/equipments/rightGuards/Right Burning.png",
+      "description": "Almost as hot as fire.",
+      "buffs": [
+        {
+          "stat": "Capacity",
+          "type": "Add",
+          "value": 100000
+        },
+        {
+          "stat": "Convert Rate",
+          "type": "Perc",
+          "value": 100
+        },
+        {
+          "stat": "Fire Pollen",
+          "type": "Perc",
+          "value": 75
+        },
+        {
+          "stat": "Capacity Bonus",
+          "type": "Perc",
+          "value": 75
+        },
+        {
+          "stat": "Defense",
+          "type": "Perc",
+          "value": 35
+        },
+        {
+          "stat": "Red Pollen",
+          "type": "Perc",
+          "value": 50
+        }
+      ]
     }
   ],
   "gloves": [
     {
       "name": "Worker's Gloves",
-      "image": "images/equipments/Worker's Gloves.png",
+      "image": "images/equipments/gloves/Worker's Gloves.png",
       "description": "Might be dirty, but who cares?",
       "buffs": [
         {
@@ -1268,7 +1490,7 @@
     },
     {
       "name": "Wasp Gloves",
-      "image": "images/equipments/Wasp Gloves.png",
+      "image": "images/equipments/gloves/Wasp Gloves.png",
       "description": "How do they even get these?",
       "buffs": [
         {
@@ -1300,7 +1522,7 @@
     },
     {
       "name": "Bamboo Gloves",
-      "image": "images/equipments/Bamboo Gloves.png",
+      "image": "images/equipments/gloves/Bamboo Gloves.png",
       "description": "Natural and soft. What else would you need?",
       "buffs": [
         {
@@ -1337,7 +1559,7 @@
     },
     {
       "name": "Nature Gloves",
-      "image": "images/equipments/Nature Gloves.png",
+      "image": "images/equipments/gloves/Nature Gloves.png",
       "description": "Stitched from soft leaves and lined with thick moss, it keeps the hands warm and protected.",
       "buffs": [
         {
@@ -1391,7 +1613,7 @@
   "boots": [
     {
       "name": "Worker's Boots",
-      "image": "images/equipments/Worker's Boots.png",
+      "image": "images/equipments/boots/Worker's Boots.png",
       "description": "Better than nothing, I guess?",
       "buffs": [
         {
@@ -1418,7 +1640,7 @@
     },
     {
       "name": "Wasp Boots",
-      "image": "images/equipments/Wasp Boots.png",
+      "image": "images/equipments/boots/Wasp Boots.png",
       "description": "They make a strange sound...",
       "buffs": [
         {
@@ -1445,7 +1667,7 @@
     },
     {
       "name": "Fire Boots",
-      "image": "images/equipments/Fire Boots.png",
+      "image": "images/equipments/boots/Fire Boots.png",
       "description": "Comfy and warm.\nSpreads Fire wherever you walk.",
       "buffs": [
         {
@@ -1477,7 +1699,7 @@
     },
     {
       "name": "Ice Boots",
-      "image": "images/equipments/Ice Boots.png",
+      "image": "images/equipments/boots/Ice Boots.png",
       "description": "Can't feel my toes anymore...\nSpreads Ice wherever you walk.",
       "buffs": [
         {
@@ -1509,7 +1731,7 @@
     },
     {
       "name": "Coconut Boots",
-      "image": "images/equipments/Coconut Boots.png",
+      "image": "images/equipments/boots/Coconut Boots.png",
       "description": "These boots go as hard as obsidian!",
       "buffs": [
         {
@@ -1538,37 +1760,37 @@
   "hydrants": [
     {
       "name": "Bronze Hydrant",
-      "image": "images/equipments/Bronze Hydrant.png",
+      "image": "images/equipments/hydrants/Bronze Hydrant.png",
       "description": "Forged from the heat of dedication, worn with pride.\n\n Amount: [1] \n Radius: [7] \n Rate: [5s] \n Power: [2].",
       "buffs": []
     },
     {
       "name": "Silver Hydrant",
-      "image": "images/equipments/Silver Hydrant.png",
+      "image": "images/equipments/hydrants/Silver Hydrant.png",
       "description": "A gleaming relic of urban infrastructure, reforged in pure silver.\n\n Amount: [1] \n Radius: [10] \n Rate: [4s] \n Power: [2].",
       "buffs": []
     },
     {
       "name": "Golden Hydrant",
-      "image": "images/equipments/Golden Hydrant.png",
+      "image": "images/equipments/hydrants/Golden Hydrant.png",
       "description": "Drenched in pure gold from top to bottom, the Golden Hydrant is the ultimate symbol of wealth and success.\n\n Amount: [2] \n Radius: [11] \n Rate: [3.5s] \n Power: [3].",
       "buffs": []
     },
     {
       "name": "Diamond Hydrant",
-      "image": "images/equipments/Diamond Hydrant.png",
+      "image": "images/equipments/hydrants/Diamond Hydrant.png",
       "description": "Forged under extreme heat and pressure, the Diamond Hydrant is the pinnacle of nobility and elegance.\n\n Amount: [2] \n Radius: [13] \n Rate: [3s] \n Power: [4].",
       "buffs": []
     },
     {
       "name": "Emerald Hydrant",
-      "image": "images/equipments/Emerald Hydrant.png",
+      "image": "images/equipments/hydrants/Emerald Hydrant.png",
       "description": "Having a rich and mesmerizing green, the Emerald Hydrant pulses with an otherworldly glow.\n\n Amount: [3] \n Radius: [15] \n Rate: [3s] \n Power: [5].",
       "buffs": []
     },
     {
       "name": "Sunny Hydrant",
-      "image": "images/equipments/Sunny Hydrant.png",
+      "image": "images/equipments/hydrants/Sunny Hydrant.png",
       "description": "This hydrant has a very bright future.\n\n Amount: [2] \n Radius: [22] \n Rate: [4s] \n Power: [7].\n+Passive: Sunny Pulse.",
       "buffs": []
     }

@@ -79,6 +79,8 @@ let hbEquipSlots = Array.from({ length: HB_EQUIP_SLOT_COUNT }, () => ({
 }));
 let hbEquipModalSlotIndex = null;
 let hbEquipModalStep = "pick"; // "pick" | "configure"
+let hbSkin = null;
+let hbSkinModalOpen = false;
 let hbSlots = Array.from({ length: HB_TOTAL_SLOTS }, () => ({
   bee: null,
   shiny: false,
@@ -114,7 +116,7 @@ async function hbLoadData() {
   const [beesRes, stickersRes, cosmeticsRes, badgesRes, amuletsRes, equipmentsRes, statsRes] = await Promise.all([
     WikiData.response("data/bees.json"),
     WikiData.response("data/stickers.json"),
-    WikiData.response("data/cosmetics.json"),
+    WikiData.response("data/skins.json"),
     WikiData.response("data/badges.json"),
     WikiData.response("data/amulets.json"),
     WikiData.response("data/equipments.json"),
@@ -1324,10 +1326,119 @@ function hbInitEquips() {
       hbEquipSlots = Array.from({ length: HB_EQUIP_SLOT_COUNT }, () => ({
         item: null,
       }));
+      hbSkin = null;
       hbBuildEquipSlots();
+      hbBuildSkinSlot();
       hbRenderBonuses();
     });
   }
+}
+
+
+function hbGetSkin(name) {
+  return hbCosmetics.find((s) => s.name === name) || null;
+}
+
+function hbBuildSkinSlot() {
+  const wrap = document.getElementById("hb-skin-list");
+  if (!wrap) return;
+  const skin = hbGetSkin(hbSkin);
+  if (!skin) {
+    wrap.innerHTML = `<div class="hb-equip-slot hb-equip-slot-empty hb-skin-slot" id="hb-skin-slot" role="button" tabindex="0" aria-label="Skin slot, empty. Click to choose a skin.">
+      <span class="hb-equip-slot-plus">+</span>
+      <span class="hb-equip-slot-label">Skin</span>
+    </div>`;
+    return;
+  }
+  wrap.innerHTML = `<div class="hb-equip-slot hb-equip-slot-filled hb-skin-slot" id="hb-skin-slot" role="button" tabindex="0" aria-label="Skin slot, ${hbEsc(skin.name)}. Click to change.">
+      <img src="${hbEsc(skin.image)}" alt="" onerror="this.src='images/ui/site-logo.png'">
+      <button type="button" class="hb-equip-slot-remove" id="hb-skin-remove" aria-label="Remove Skin">&times;</button>
+      <span class="hb-equip-slot-name">${hbEsc(skin.name)}</span>
+    </div>`;
+}
+
+function hbEnsureSkinModal() {
+  if (document.getElementById("hb-skin-modal")) return;
+  const overlay = document.createElement("div");
+  overlay.className = "hb-modal-overlay";
+  overlay.id = "hb-skin-modal";
+  overlay.hidden = true;
+  overlay.innerHTML = `
+    <div class="hb-modal" role="dialog" aria-modal="true" aria-labelledby="hb-skin-modal-title">
+      <div class="hb-modal-header">
+        <span class="hb-modal-title" id="hb-skin-modal-title">Choose Skin</span>
+        <button type="button" class="hb-modal-close" id="hb-skin-modal-close" aria-label="Close">&times;</button>
+      </div>
+      <div class="hb-modal-body" id="hb-skin-modal-body"></div>
+    </div>`;
+  document.body.appendChild(overlay);
+  overlay.addEventListener("click", (e) => {
+    if (e.target === overlay) hbCloseSkinModal();
+  });
+  document.getElementById("hb-skin-modal-close").addEventListener("click", hbCloseSkinModal);
+  document.getElementById("hb-skin-modal-body").addEventListener("click", (e) => {
+    const card = e.target.closest(".hb-equip-pick-card");
+    if (!card) return;
+    hbSkin = card.dataset.skinName;
+    hbBuildSkinSlot();
+    hbCloseSkinModal();
+    hbRenderBonuses();
+  });
+}
+
+function hbOpenSkinModal() {
+  hbEnsureSkinModal();
+  const body = document.getElementById("hb-skin-modal-body");
+  const cards = hbCosmetics.map((skin) => `
+    <button type="button" class="hb-equip-pick-card${skin.name === hbSkin ? " hb-equip-pick-selected" : ""}" data-skin-name="${hbEsc(skin.name)}">
+      <img src="${hbEsc(skin.image)}" alt="" onerror="this.src='images/ui/site-logo.png'">
+      <span class="hb-equip-pick-name">${hbEsc(skin.name)}</span>
+    </button>`).join("");
+  body.innerHTML = `<div class="hb-equip-pick-grid">${cards}</div>`;
+  const overlay = document.getElementById("hb-skin-modal");
+  overlay.hidden = false;
+  requestAnimationFrame(() => overlay.classList.add("hb-modal-open"));
+}
+
+function hbCloseSkinModal() {
+  const overlay = document.getElementById("hb-skin-modal");
+  if (!overlay || overlay.hidden) return;
+  overlay.classList.remove("hb-modal-open");
+  setTimeout(() => { overlay.hidden = true; }, 160);
+  hbSkinModalOpen = false;
+}
+
+function hbInitSkin() {
+  const wrap = document.getElementById("hb-skin-list");
+  if (!wrap) return;
+  wrap.addEventListener("click", (e) => {
+    if (e.target.closest("#hb-skin-remove")) {
+      e.stopPropagation();
+      hbSkin = null;
+      hbBuildSkinSlot();
+      hbRenderBonuses();
+      return;
+    }
+    const slot = e.target.closest("#hb-skin-slot");
+    if (slot) hbOpenSkinModal();
+  });
+  wrap.addEventListener("keydown", (e) => {
+    if (e.key !== "Enter" && e.key !== " ") return;
+    const slot = e.target.closest("#hb-skin-slot");
+    if (!slot) return;
+    e.preventDefault();
+    hbOpenSkinModal();
+  });
+}
+
+function hbGetSkinBonusEntries() {
+  const entries = [];
+  const skin = hbGetSkin(hbSkin);
+  if (!skin || !Array.isArray(skin.buffs)) return entries;
+  skin.buffs.forEach((b) => {
+    entries.push({ stat: b.stat, type: b.type, value: b.value });
+  });
+  return entries;
 }
 
 function hbCentralizeAndAggregateStats(allEntries) {
@@ -1515,6 +1626,7 @@ function hbRenderBonuses() {
   const badgeEntries = hbGetBadgeBonusEntries();
   const amuletEntries = hbGetAmuletBonusEntries();
   const equipEntries = hbGetEquipBonusEntries();
+  const skinEntries = hbGetSkinBonusEntries();
   
   const allRawEntries = [
     ...giftEntries,
@@ -1522,6 +1634,7 @@ function hbRenderBonuses() {
     ...badgeEntries,
     ...amuletEntries,
     ...equipEntries,
+    ...skinEntries,
   ];
 
   const totalEntries = hbCentralizeAndAggregateStats(allRawEntries);
@@ -1939,6 +2052,8 @@ document.addEventListener("DOMContentLoaded", async () => {
   hbInitAmulets();
   hbBuildEquipSlots();
   hbInitEquips();
+  hbBuildSkinSlot();
+  hbInitSkin();
   hbRenderBonuses();
   hbInitTopline();
   hbInitTrash();
