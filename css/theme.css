@@ -1,0 +1,66 @@
+﻿/* Site-wide surfaces, typography and controls. Page styles retain layout rules. */
+:root { --surface-border: rgba(232,192,64,.18); --reading: #e8dcbf; --radius: 12px; }
+body { line-height: 1.6; }
+.content:not(.catalog-page) { box-sizing: border-box; padding: 36px 32px 44px; border: 1px solid var(--surface-border); box-shadow: 0 18px 56px rgba(0,0,0,.22); background: radial-gradient(ellipse at 50% 0,rgba(232,192,64,.075),transparent 380px),rgba(36,26,10,.97); }
+.content .hero-title { margin: 8px 0 18px; line-height: 1.2; font-size: clamp(2.1rem,4vw,3rem); }
+.hero-description { max-width: 760px; margin: 16px auto 28px; color: var(--gold-soft); line-height: 1.8; }
+.content h2 { line-height: 1.35; }
+.content :is(.wiki-panel,.portable-infobox,.bear-card,.bee-card,.item-card,.shop-card,.mob-card,.planter-card,.ul-card,.code-card,.store-card,.store-item-card,.hive-card,.badge-card,.amulet-card,.pipe-card,.dispenser-card,.shop-item,.bear-quest-card,.sf-tier-card,.vine-tier-card) { border-radius: var(--radius); border-color: var(--surface-border); box-shadow: 0 5px 18px rgba(0,0,0,.14); background: linear-gradient(145deg,rgba(255,255,255,.025),transparent 65%),var(--panel); overflow: hidden; }
+.content :is(.bear-card-name,.shop-card-name,.item-card-name,.planter-card-name,.mob-name,.shop-item-name) { color: var(--gold); font-weight: 800; line-height: 1.35; }
+.content :is(.bear-card-desc,.shop-card-desc,.item-card-desc,.planter-card-desc,.mob-desc,.bee-desc-panel) { color: var(--reading); line-height: 1.75; }
+.content :is(.wiki-panel-header,.bear-quest-header,.ul-card-header,.item-toggle-header,.shop-item-name) { background: rgba(0,0,0,.12); border-bottom-color: var(--surface-border); }
+.content :is(.bear-card-img,.shop-card-img,.item-card-img,.planter-card-img) { background: radial-gradient(circle,rgba(232,192,64,.1),rgba(0,0,0,.1)); }
+.content :is(.bear-card,.shop-card,.planter-card):hover { border-color: rgba(232,192,64,.4); box-shadow: 0 8px 24px rgba(0,0,0,.22); }
+.content table { font-variant-numeric: tabular-nums; }
+.content table th { background: rgba(232,192,64,.07); color: var(--gold-soft); font-size: .75rem; letter-spacing: .04em; }
+.content table td { line-height: 1.55; }
+.content table tbody tr:nth-child(even) { background: rgba(255,255,255,.018); }
+.content :is(button,input,select) { font-family: inherit; }
+.content :is(input[type='search'],input[type='text'],select) { border-radius: 8px; border-color: var(--surface-border); background-color: var(--bg-deep); color: var(--reading); }
+a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,[role='button']:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
+.sidebar { padding-bottom: 24px; overflow-y: auto; scrollbar-width: thin; scrollbar-color: var(--divider) transparent; }
+.sidebar > a:not(.sidebar-logo),.mobile-sheet-inner > a:not(.sidebar-logo) { border-radius: 7px; margin: 2px 12px; padding: 8px 14px; font-size: .88rem; font-weight: 700; }
+.sidebar a[aria-current='page'],.mobile-sheet-inner a[aria-current='page'] { background: rgba(232,192,64,.12); color: var(--gold); box-shadow: inset 0 0 0 1px var(--surface-border); }
+.topbar { padding: 12px 32px; background: rgba(26,18,0,.94); }
+.related-pages { box-sizing: border-box; width: min(calc(100% - var(--sidebar-width) - 80px),var(--content-width)); margin: -8px max(40px,calc((100% - var(--sidebar-width) - var(--content-width))/2)) 40px auto; padding: 24px 28px; border: 1px solid var(--surface-border); border-radius: var(--radius); background: var(--panel); }
+.related-pages h2 { margin: 0 0 14px; font-size: .75rem; text-transform: uppercase; letter-spacing: .13em; color: var(--gold-soft); }
+.related-pages nav { display: flex; flex-wrap: wrap; gap: 8px; }
+.related-pages a { padding: 9px 15px; border: 1px solid var(--surface-border); border-radius: 7px; background: rgba(0,0,0,.1); color: var(--gold-soft); text-decoration: none; font-size: .85rem; font-weight: 800; }
+.related-pages a:hover { background: rgba(232,192,64,.1); color: var(--gold); }
+.wiki-search { position: relative; max-width: 850px; margin: auto; }
+.search-label { display: block; margin-bottom: 5px; font-size: .68rem; font-weight: 800; letter-spacing: .06em; color: var(--gold-soft); }
+.search-input-row { display: flex; align-items: center; gap: 10px; padding: 0 12px; background: var(--bg-deep); border: 1px solid var(--surface-border); border-radius: 9px; }
+.search-input-row:focus-within { border-color: var(--gold); box-shadow: 0 0 0 3px rgba(232,192,64,.08); }
+.search-symbol { font-size: 1.65rem; color: var(--gold-dim); }
+#wiki-query { width: 100%; min-width: 0; border: 0; padding: 12px 0; font: inherit; font-size: .95rem; color: var(--reading); background: transparent; outline: none; appearance: none; }
+#wiki-query::-webkit-search-cancel-button { display: none; }
+#wiki-query::placeholder { color: var(--gold-dim); }
+.search-shortcut { color: var(--gold-dim); border: 1px solid var(--divider); border-radius: 4px; padding: 0 7px; }
+.search-clear { border: 0; color: var(--gold); background: transparent; cursor: pointer; font-size: 1.5rem; }
+.search-panel { position: absolute; top: calc(100% + 8px); width: 100%; box-sizing: border-box; background: #241a09; border: 1px solid var(--divider); border-radius: 12px; box-shadow: 0 18px 50px rgba(0,0,0,.45); overflow: hidden; }
+.search-status { padding: 12px 16px; margin: 0; font-size: .76rem; color: var(--gold-soft); border-bottom: 1px solid var(--surface-border); }
+#wiki-results { list-style: none; padding: 6px; margin: 0; max-height: min(55vh,490px); overflow-y: auto; overscroll-behavior: contain; }
+#wiki-results a { display: flex; align-items: center; gap: 16px; justify-content: space-between; padding: 12px; text-decoration: none; border-radius: 7px; color: var(--reading); }
+#wiki-results a:hover,#wiki-results a.active { background: rgba(232,192,64,.1); }
+#wiki-results strong { color: var(--gold); font-size: .92rem; }
+#wiki-results p { font-size: .78rem; line-height: 1.5; margin: 3px 0 0; color: var(--gold-soft); }
+.search-type { flex-shrink: 0; font-size: .65rem; border: 1px solid var(--surface-border); padding: 3px 7px; border-radius: 5px; color: var(--gold-soft); }
+.search-help { display: flex; gap: 18px; margin: 0; padding: 9px 16px; font-size: .68rem; color: var(--gold-dim); border-top: 1px solid var(--surface-border); }
+[hidden] { display: none !important; }
+@media (max-width:900px) { .related-pages { width: calc(100% - 32px); margin: 16px auto 32px; } }
+@media (max-width:640px) { .content:not(.catalog-page) { padding: 26px 16px 32px; } .topbar { padding: 10px 16px; } .related-pages { padding: 20px 16px; margin-bottom: 90px; } .search-shortcut { display: none; } .search-panel { max-width: calc(100vw - 32px); } .search-type { max-width: 68px; overflow: hidden; text-overflow: ellipsis; } }
+@media (prefers-reduced-motion:reduce) { *,*::before,*::after { scroll-behavior: auto !important; transition: none !important; animation: none !important; } }
+/* Related articles live inside the same main column as page content. */
+.main > .related-pages { width: min(calc(100% - 80px),var(--content-width)); margin: 24px auto 40px; }
+@media (max-width:900px) { .main > .related-pages { width: calc(100% - 32px); } }
+@media (max-width:640px) { .main > .related-pages { margin-bottom: 90px; } }
+@media (max-width:700px) { .items-list { grid-template-columns: repeat(2,minmax(0,1fr)); } }
+@media (max-width:440px) { .items-list { grid-template-columns: minmax(0,1fr); } }
+/* Bee glow follows the PNG alpha channel, never the card surface. */
+.content .bee-card { background: transparent; border: 0; box-shadow: none; overflow: visible; filter: none; }
+.content .bee-card img { object-fit: contain; }
+/* Skip painting off-screen catalog entries while keeping browser find available. */
+@supports (content-visibility: auto) {
+  .catalog-card { content-visibility: auto; contain-intrinsic-size: auto 320px; }
+  .item-card { content-visibility: auto; contain-intrinsic-size: auto 280px; }
+}

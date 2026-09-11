@@ -1,0 +1,680 @@
+.hive-page-title {
+  text-align: center;
+  padding: 30px 0 10px;
+}
+
+.hive-hero-description {
+  max-width: 740px;
+  margin: 6px auto 28px;
+  padding: 0 20px;
+  font-size: 1.05em;
+}
+
+.hive-section-label {
+  font-family: "Fredoka One", Georgia, sans-serif;
+  font-size: 1.55rem;
+  color: var(--gold);
+  letter-spacing: 0.02em;
+  text-align: center;
+  margin: 0 0 6px;
+  padding: 0;
+}
+
+.hive-section-desc {
+  text-align: center;
+  color: var(--gold-soft);
+  font-size: 0.94em;
+  margin: 0 auto 18px;
+  max-width: 680px;
+  line-height: 1.7;
+}
+
+.hive-tab-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: center;
+  margin-bottom: 18px;
+}
+
+.hive-tab-btn {
+  background: rgba(232, 192, 64, 0.08);
+  border: 1px solid rgba(232, 192, 64, 0.25);
+  color: var(--gold-soft);
+  font-family: "Nunito", sans-serif;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 7px 16px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition:
+    background 0.18s,
+    border-color 0.18s,
+    color 0.18s,
+    transform 0.15s;
+}
+
+.hive-tab-btn:hover {
+  background: rgba(232, 192, 64, 0.16);
+  border-color: rgba(232, 192, 64, 0.45);
+  color: var(--gold);
+  transform: translateY(-1px);
+}
+
+.hive-tab-btn.active {
+  background: rgba(232, 192, 64, 0.18);
+  border-color: rgba(232, 192, 64, 0.6);
+  color: var(--gold);
+}
+
+.hive-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: min(860px, 92%);
+  margin: 0 auto;
+}
+
+.hive-card {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background: rgba(36, 26, 10, 0.72);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 14px 16px;
+  position: relative;
+  transition:
+    border-color 0.2s,
+    box-shadow 0.2s;
+}
+
+.hive-card:hover {
+  box-shadow: 0 0 20px rgba(212, 170, 48, 0.1);
+}
+
+.hive-card--common {
+  border-color: var(--r-common);
+}
+.hive-card--common:hover {
+  border-color: var(--r-common-bd);
+}
+.hive-card--common .hive-card-name {
+  color: var(--r-common);
+}
+
+.hive-card--rare {
+  border-color: var(--r-rare);
+}
+.hive-card--rare:hover {
+  border-color: var(--r-rare-bd);
+}
+.hive-card--rare .hive-card-name {
+  color: var(--r-rare);
+}
+
+.hive-card--epic {
+  border-color: var(--r-epic);
+}
+.hive-card--epic:hover {
+  border-color: var(--r-epic-bd);
+}
+.hive-card--epic .hive-card-name {
+  color: var(--r-epic);
+}
+
+.hive-card--legendary {
+  border-color: var(--r-legendary);
+}
+.hive-card--legendary:hover {
+  border-color: var(--r-legendary-bd);
+}
+.hive-card--legendary .hive-card-name {
+  color: var(--r-legendary);
+}
+
+.hive-card--mythic {
+  border-color: var(--r-mythic);
+}
+.hive-card--mythic:hover {
+  border-color: var(--r-mythic-bd);
+}
+.hive-card--mythic .hive-card-name {
+  color: var(--r-mythic);
+}
+
+.hive-card--special {
+  border-color: var(--r-special);
+}
+.hive-card--special:hover {
+  border-color: var(--r-special-bd);
+}
+.hive-card--special .hive-card-name {
+  color: var(--r-special);
+}
+
+.hive-card--limited {
+  border: 1px solid transparent;
+  overflow: hidden;
+}
+
+@property --angle {
+  syntax: "<angle>";
+  inherits: false;
+  initial-value: 0deg;
+}
+
+.hive-card--limited::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: conic-gradient(
+    from var(--angle),
+    #5ec8ff,
+    #7d7cff,
+    #b06cff,
+    #e38bff
+  );
+
+  mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+
+  pointer-events: none;
+  transition: transform 0.6s;
+  transform-origin: center;
+  --angle: 0deg;
+}
+
+.hive-card--limited:hover {
+  border-color: var(--r-limited-bd);
+}
+
+@keyframes border-flow {
+  to {
+    --angle: 360deg;
+  }
+}
+
+.hive-card--limited:hover::before {
+  animation: border-flow 2s linear infinite;
+}
+
+.hive-card--limited .hive-card-name {
+  background: var(--r-limited);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.hive-card--exclusive {
+  border-color: var(--r-exclusive);
+}
+.hive-card--exclusive:hover {
+  border-color: var(--r-exclusive-bd);
+}
+.hive-card--exclusive .hive-card-name {
+  color: var(--r-exclusive);
+}
+
+.hive-card-img-wrap {
+  flex: 0 0 72px;
+  width: 72px;
+  height: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(18, 12, 0, 0.62);
+  border: 1px solid rgba(58, 40, 0, 0.8);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.hive-card-img-wrap img {
+  width: 56px;
+  height: 56px;
+  object-fit: contain;
+  image-rendering: pixelated;
+  filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.4));
+}
+
+.hive-card-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  min-width: 0;
+}
+
+.hive-card-name {
+  font-family: "Fredoka One", Georgia, sans-serif;
+  font-size: 1.05rem;
+  color: var(--gold);
+  line-height: 1.15;
+}
+
+.hive-card-desc {
+  font-size: 0.85em;
+  color: var(--gold-dim);
+  line-height: 1.5;
+}
+
+.hive-card-buffs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin-top: 2px;
+}
+
+.hive-buff-tag {
+  background: rgba(122, 184, 96, 0.1);
+  border: 1px solid rgba(122, 184, 96, 0.3);
+  border-radius: 5px;
+  color: #8ecf6a;
+  font-size: 0.78em;
+  font-weight: 700;
+  padding: 2px 8px;
+}
+
+.hive-buff-none {
+  font-size: 0.78em;
+  color: var(--gold-dim);
+  opacity: 0.5;
+}
+
+.hive-rarity-badge {
+  flex-shrink: 0;
+  align-self: flex-start;
+  font-size: 0.74em;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  padding: 3px 10px;
+  border-radius: 6px;
+  border: 1px solid;
+}
+
+.hive-empty {
+  text-align: center;
+  color: var(--gold-dim);
+  padding: 24px 0;
+  font-size: 0.94em;
+}
+
+.hive-info-box {
+  max-width: 680px;
+  margin: 0 auto 32px;
+  background: #241900;
+  border: 1px solid #3a2800;
+  border-radius: 12px;
+  padding: 20px 28px;
+  color: var(--gold-soft);
+  line-height: 1.85;
+}
+
+.hive-slot-table {
+  margin-top: 12px;
+}
+
+.hive-slot-row--extra {
+  display: none;
+}
+
+.hive-slot-table.is-expanded .hive-slot-row--extra {
+  display: table-row;
+}
+
+.hive-slot-table-actions {
+  text-align: center;
+  margin-top: 12px;
+}
+
+.hive-slot-toggle {
+  background: rgba(232, 192, 64, 0.12);
+  border: 1px solid rgba(232, 192, 64, 0.35);
+  color: var(--gold);
+  font-family: "Nunito", sans-serif;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 8px 16px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition:
+    transform 0.15s,
+    background 0.2s,
+    border-color 0.2s;
+}
+
+.hive-slot-toggle:hover {
+  background: rgba(232, 192, 64, 0.2);
+  border-color: rgba(232, 192, 64, 0.5);
+  transform: translateY(-1px);
+}
+
+.hive-card-drop {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin-top: 4px;
+}
+
+.hive-drop-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.76em;
+  font-weight: 700;
+  padding: 2px 9px;
+  border-radius: 5px;
+  border: 1px solid;
+  cursor: default;
+  letter-spacing: 0.01em;
+}
+
+.hive-drop-tag--pool {
+  background: rgba(130, 184, 232, 0.07);
+  border-color: rgba(130, 184, 232, 0.25);
+  color: #8ab8d8;
+}
+
+.hive-drop-tag--flower {
+  background: rgba(122, 184, 96, 0.07);
+  border-color: rgba(122, 184, 96, 0.22);
+  color: #7eb85e;
+}
+
+.hive-drop-tag--egg {
+  background: rgba(130, 184, 232, 0.07);
+  border-color: rgba(130, 184, 232, 0.25);
+  color: #8ab8d8;
+}
+
+.drop-flow-wrap {
+  display: flex;
+  justify-content: center;
+  margin: 0 auto 36px;
+  padding: 0 16px;
+}
+
+.drop-flow {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+  width: 100%;
+  max-width: 560px;
+}
+
+.drop-flow-node {
+  padding: 10px 28px;
+  border-radius: 10px;
+  font-family: "Fredoka One", Georgia, sans-serif;
+  font-size: 1rem;
+  letter-spacing: 0.01em;
+  text-align: center;
+}
+
+.drop-flow-node--start {
+  background: rgba(232, 192, 64, 0.1);
+  border: 1px solid rgba(232, 192, 64, 0.4);
+  color: var(--gold);
+  font-size: 1.05rem;
+}
+
+.drop-flow-node--roll {
+  background: rgba(130, 184, 232, 0.08);
+  border: 1px solid rgba(130, 184, 232, 0.3);
+  color: #a8d0f0;
+}
+
+.drop-flow-node--sticker {
+  background: rgba(206, 147, 216, 0.08);
+  border: 1px solid rgba(206, 147, 216, 0.3);
+  color: #d4a8e0;
+}
+
+.drop-flow-arrow {
+  color: rgba(232, 192, 64, 0.35);
+  font-size: 1.1rem;
+  line-height: 1.6;
+  user-select: none;
+}
+
+.drop-flow-split {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.drop-flow-branch {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.drop-flow-outcome-row {
+  display: flex;
+  gap: 10px;
+  width: 100%;
+  margin-top: 0;
+}
+
+.drop-flow-outcome {
+  flex: 1;
+  border-radius: 8px;
+  padding: 10px 12px;
+  font-size: 0.83em;
+  line-height: 1.55;
+  border: 1px solid;
+  text-align: center;
+}
+
+.drop-flow-outcome--hit {
+  background: rgba(122, 184, 96, 0.08);
+  border-color: rgba(122, 184, 96, 0.28);
+  color: #9ed878;
+}
+
+.drop-flow-outcome--hit.drop-flow-outcome--sticker {
+  background: rgba(206, 147, 216, 0.07);
+  border-color: rgba(206, 147, 216, 0.28);
+  color: #d4a8e0;
+}
+
+.drop-flow-outcome--miss {
+  background: rgba(232, 192, 64, 0.05);
+  border-color: rgba(232, 192, 64, 0.18);
+  color: var(--gold-dim);
+}
+
+.drop-flow-outcome--nothing {
+  background: rgba(120, 100, 60, 0.06);
+  border-color: rgba(120, 100, 60, 0.2);
+  color: var(--gold-dim);
+  opacity: 0.7;
+}
+
+.drop-outcome-label {
+  display: block;
+  font-family: "Fredoka One", Georgia, sans-serif;
+  font-size: 1.05em;
+  letter-spacing: 0.04em;
+  margin-bottom: 3px;
+}
+
+.drop-outcome-sub {
+  display: block;
+  opacity: 0.75;
+  font-size: 0.9em;
+  margin-top: 2px;
+}
+
+.drop-flow-connector {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin: 6px 0;
+  color: rgba(232, 192, 64, 0.3);
+  font-size: 0.72em;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+}
+
+.drop-flow-connector::before,
+.drop-flow-connector::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: rgba(232, 192, 64, 0.15);
+}
+
+.drop-flow-connector-label {
+  white-space: nowrap;
+  padding: 0 8px;
+}
+
+.drop-tables-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  max-width: 860px;
+  margin: 0 auto 36px;
+  padding: 0 16px;
+}
+
+.drop-table-block {
+  background: rgba(24, 16, 0, 0.6);
+  border: 1px solid rgba(58, 40, 0, 0.9);
+  border-radius: 14px;
+  padding: 22px 24px;
+}
+
+.drop-table-title {
+  font-family: "Fredoka One", Georgia, sans-serif;
+  font-size: 1.1rem;
+  color: var(--gold);
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.drop-table-icon {
+  font-size: 1.1em;
+}
+
+.drop-table-note {
+  font-size: 0.85em;
+  color: var(--gold-dim);
+  line-height: 1.6;
+  margin: 0 0 16px;
+}
+
+.drop-subtable-group {
+  display: flex;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+
+.drop-subtable {
+  flex: 1;
+  min-width: 240px;
+}
+
+.drop-subtable-label {
+  font-family: "Fredoka One", Georgia, sans-serif;
+  font-size: 0.9rem;
+  color: var(--gold-soft);
+  margin-bottom: 4px;
+}
+
+.drop-subtable-meta {
+  font-size: 0.78em;
+  color: var(--gold-dim);
+  margin-bottom: 8px;
+}
+
+.drop-chance-table th,
+.drop-chance-table td {
+  font-size: 0.8em;
+  padding: 6px 10px !important;
+  white-space: nowrap;
+}
+
+.drop-chance-table--full {
+  width: 100%;
+}
+
+.drop-chance-table--full th,
+.drop-chance-table--full td {
+  white-space: normal;
+}
+
+.drop-row--divider td {
+  border-top: 1px solid rgba(232, 192, 64, 0.1) !important;
+}
+
+.drop-row--ultra td {
+  background: rgba(232, 192, 64, 0.04) !important;
+}
+
+.drop-ultra-callout {
+  margin-top: 14px;
+  background: rgba(232, 192, 64, 0.06);
+  border: 1px solid rgba(232, 192, 64, 0.22);
+  border-radius: 8px;
+  padding: 12px 16px;
+  font-size: 0.84em;
+  color: var(--gold-soft);
+  line-height: 1.6;
+  text-align: center;
+}
+
+@media (max-width: 560px) {
+  .drop-flow-outcome-row {
+    flex-direction: column;
+  }
+  .drop-subtable-group {
+    flex-direction: column;
+  }
+  .drop-chance-table th,
+  .drop-chance-table td {
+    white-space: normal;
+  }
+}
+
+@media (max-width: 560px) {
+  .hive-card {
+    flex-wrap: wrap;
+  }
+
+  .hive-rarity-badge {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+  }
+
+  .hive-grid {
+    width: min(860px, 96%);
+  }
+}
+
+.hive-drop-tag--wheel {
+  background: rgba(180, 130, 255, 0.07);
+  border-color: rgba(180, 130, 255, 0.28);
+  color: #c49fff;
+}

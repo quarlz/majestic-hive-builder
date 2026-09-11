@@ -1,0 +1,207 @@
+.bees-page-title {
+  text-align: center;
+  padding: 30px 0 10px;
+}
+
+.bees-hero-description {
+  max-width: 740px;
+  margin: 6px auto 28px;
+  padding: 0 20px;
+  font-size: 1.05em;
+}
+
+.bees-info-box {
+  max-width: 680px;
+  margin: 0 auto 32px;
+  background: #241900;
+  border: 1px solid #3a2800;
+  border-radius: 12px;
+  padding: 20px 24px;
+  color: #c8a84e;
+  line-height: 1.8;
+}
+
+.bees-info-box--plain {
+  color: inherit;
+}
+
+.bees-table {
+  width: 100%;
+  margin-top: 12px;
+}
+
+.bees-slots-table th:last-child,
+.bees-slots-table td:last-child {
+  text-align: right;
+}
+
+.slot-table {
+  margin-top: 12px;
+}
+
+.slot-table-actions {
+  text-align: center;
+  margin-top: 12px;
+}
+
+.slot-table-toggle {
+  background: rgba(232, 192, 64, 0.12);
+  border: 1px solid rgba(232, 192, 64, 0.35);
+  color: var(--gold);
+  font-family: "Nunito", sans-serif;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 8px 16px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition:
+    transform 0.15s ease,
+    background 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.slot-table-toggle:hover {
+  background: rgba(232, 192, 64, 0.2);
+  border-color: rgba(232, 192, 64, 0.5);
+  transform: translateY(-1px);
+}
+
+.slot-table-toggle:active {
+  transform: translateY(0);
+}
+
+.slot-table tr,
+.bee-slot-row {
+  display: table-row;
+}
+
+.slot-table .bee-slot-row--extra {
+  display: none;
+}
+
+.slot-table.is-expanded .bee-slot-row--extra {
+  display: table-row;
+}
+
+.bee-color-colorless {
+  color: #e8e8e8;
+  border-color: rgba(232, 232, 232, 0.35);
+  background: rgba(232, 232, 232, 0.1);
+}
+
+.bee-color-red {
+  color: #e07070;
+  border-color: rgba(224, 112, 112, 0.35);
+  background: rgba(224, 112, 112, 0.1);
+}
+
+.bee-color-blue {
+  color: #82b8e8;
+  border-color: rgba(130, 184, 232, 0.35);
+  background: rgba(130, 184, 232, 0.1);
+}
+
+.bees-tab-hint {
+  text-align: center;
+  color: #a88c3a;
+  font-size: 0.93em;
+  margin-bottom: 18px;
+}
+
+.bee-desc-panel {
+  container-type: inline-size;
+}
+
+.bee-desc-panel-name {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 20%;
+  overflow: hidden;
+  white-space: nowrap;
+
+  font-size: clamp(0.1rem, 2cqi, 1rem);
+  container-type: inline-size;
+}
+
+.egg-chance {
+  display: inline-block;
+  font-size: 0.78rem;
+  font-weight: 700;
+  padding: 3px 9px;
+  border-radius: 999px;
+  border: 1px solid;
+  margin: 2px 3px 2px 0;
+  white-space: nowrap;
+}
+.egg-chance--common {
+  color: var(--r-common);
+  border-color: var(--r-common-bd);
+  background: var(--r-common-bg);
+}
+.egg-chance--rare {
+  color: var(--r-rare);
+  border-color: var(--r-rare-bd);
+  background: var(--r-rare-bg);
+}
+.egg-chance--epic {
+  color: var(--r-epic);
+  border-color: var(--r-epic-bd);
+  background: var(--r-epic-bg);
+}
+.egg-chance--legendary {
+  color: var(--r-legendary);
+  border-color: var(--r-legendary-bd);
+  background: var(--r-legendary-bg);
+}
+.egg-chance--mythic {
+  color: var(--r-mythic);
+  border-color: var(--r-mythic-bd);
+  background: var(--r-mythic-bg);
+}
+.egg-chance--special {
+  color: var(--r-special);
+  border-color: var(--r-special-bd);
+  background: var(--r-special-bg);
+}
+.egg-chance--limited {
+  position: relative;
+  isolation: isolate;
+  border-color: transparent;
+  background: transparent;
+  color: transparent;
+  background-image: var(--r-limited);
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+.egg-chance--limited::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  border-radius: inherit;
+  background: rgba(180, 160, 240, 0.08);
+}
+
+.egg-chance--limited::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  border-radius: inherit;
+  padding: 1px;
+  background: var(--r-limited);
+  mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  pointer-events: none;
+}
