@@ -927,7 +927,7 @@
 
 .hb-equip-buffs th:last-child,
 .hb-equip-buffs td:last-child {
-  width: 70px;
+  width: 110px;
   text-align: right;
 }
 
@@ -980,7 +980,7 @@
 
 .hb-modal {
   width: 100%;
-  max-width: 620px;
+  max-width: 560px;
   max-height: 82vh;
   display: flex;
   flex-direction: column;
@@ -1209,7 +1209,7 @@
 
 .hb-amulet-buffs th:last-child,
 .hb-amulet-buffs td:last-child {
-  width: 70px;
+  width: 110px;
 }
 
 .hb-amulet-buffs th {
