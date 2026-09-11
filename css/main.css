@@ -107,9 +107,9 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,[r
   --sidebar-width: 240px;
   --content-width: 1120px;
   --bg-image: ../images/backgrounds/bg.jpg;
-  --r-common: #a8794f;
-  --r-common-bg: rgba(168, 121, 79, 0.12);
-  --r-common-bd: rgba(168, 121, 79, 0.4);
+  --r-basic: #a8794f;
+  --r-basic-bg: rgba(168, 121, 79, 0.12);
+  --r-basic-bd: rgba(168, 121, 79, 0.4);
 
   --r-rare: #c4c8d4;
   --r-rare-bg: rgba(196, 200, 212, 0.1);
@@ -742,7 +742,7 @@ h1.page-header__title,
   border-color: var(--line);
 }
 
-.bee-common,
+.bee-basic,
 .bee-rare,
 .bee-epic,
 .bee-golden,
@@ -753,10 +753,10 @@ h1.page-header__title,
   font-weight: 600;
 }
 
-.bee-common {
-  color: var(--r-common);
-  border: 1px solid var(--r-common-bd);
-  background: var(--r-common-bg);
+.bee-basic {
+  color: var(--r-basic);
+  border: 1px solid var(--r-basic-bd);
+  background: var(--r-basic-bg);
 }
 .bee-rare {
   color: var(--r-rare);
@@ -1727,10 +1727,10 @@ html.pride-mode .mobile-bottom-sheet {
   margin: 2px 3px 2px 0;
   white-space: nowrap;
 }
-.egg-chance--common {
-  color: var(--r-common);
-  border-color: var(--r-common-bd);
-  background: var(--r-common-bg);
+.egg-chance--basic {
+  color: var(--r-basic);
+  border-color: var(--r-basic-bd);
+  background: var(--r-basic-bg);
 }
 .egg-chance--rare {
   color: var(--r-rare);
@@ -1896,14 +1896,14 @@ html.pride-mode .mobile-bottom-sheet {
   box-shadow: 0 0 20px rgba(212, 170, 48, 0.1);
 }
 
-.hive-card--common {
-  border-color: var(--r-common);
+.hive-card--basic {
+  border-color: var(--r-basic);
 }
-.hive-card--common:hover {
-  border-color: var(--r-common-bd);
+.hive-card--basic:hover {
+  border-color: var(--r-basic-bd);
 }
-.hive-card--common .hive-card-name {
-  color: var(--r-common);
+.hive-card--basic .hive-card-name {
+  color: var(--r-basic);
 }
 
 .hive-card--rare {

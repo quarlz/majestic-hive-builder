@@ -348,7 +348,7 @@
     "source": "Starflowers",
     "variants": [
       {
-        "rarity": "Common",
+        "rarity": "Basic",
         "source": "Basic Starflowers",
         "desc": "Drops from Basic Starflowers.",
         "buffsAmount": 3,

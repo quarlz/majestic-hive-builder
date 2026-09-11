@@ -95,14 +95,14 @@
   box-shadow: 0 0 20px rgba(212, 170, 48, 0.1);
 }
 
-.hive-card--common {
-  border-color: var(--r-common);
+.hive-card--basic {
+  border-color: var(--r-basic);
 }
-.hive-card--common:hover {
-  border-color: var(--r-common-bd);
+.hive-card--basic:hover {
+  border-color: var(--r-basic-bd);
 }
-.hive-card--common .hive-card-name {
-  color: var(--r-common);
+.hive-card--basic .hive-card-name {
+  color: var(--r-basic);
 }
 
 .hive-card--rare {

@@ -14,7 +14,7 @@ const HB_STICKER_SLOTS =
   HB_STICKER_GROUPS.right;
 
 const HB_RARITY_VAR = {
-  common: "--r-common",
+  basic: "--r-basic",
   rare: "--r-rare",
   epic: "--r-epic",
   legendary: "--r-legendary",
@@ -25,7 +25,7 @@ const HB_RARITY_VAR = {
 };
 
 const HB_RARITY_RGB = {
-  common: [168, 121, 79],
+  basic: [168, 121, 79],
   rare: [196, 200, 212],
   epic: [232, 192, 64],
   legendary: [100, 181, 246],
@@ -144,7 +144,7 @@ async function hbLoadData() {
 
 function hbApplyRarityStyle(card, rarity) {
   const rarityKey = (rarity || "").toLowerCase();
-  const rgb = HB_RARITY_RGB[rarityKey] || HB_RARITY_RGB.common;
+  const rgb = HB_RARITY_RGB[rarityKey] || HB_RARITY_RGB.basic;
 
   if (hbIsGradientRarity(rgb)) {
     const c1bg = hbMixRgb(rgb[0], HB_DARK_MIX, 0.45);
@@ -369,7 +369,7 @@ function hbRenderGrid() {
     if (!bee) return;
 
     const rarityKey = (bee.rarity || "").toLowerCase();
-    const rgb = HB_RARITY_RGB[rarityKey] || HB_RARITY_RGB.common;
+    const rgb = HB_RARITY_RGB[rarityKey] || HB_RARITY_RGB.basic;
     if (hbIsGradientRarity(rgb)) {
       const c1 = hbMixRgb(rgb[0], HB_DARK_MIX, 0.9);
       const c2 = hbMixRgb(rgb[1], HB_DARK_MIX, 0.9);
@@ -759,7 +759,7 @@ function hbUsedAmuletIds(excludeIndex) {
 
 function hbAmuletRarityRgb(rarity) {
   const key = (rarity || "").toLowerCase();
-  const rgb = HB_RARITY_RGB[key] || HB_RARITY_RGB.common;
+  const rgb = HB_RARITY_RGB[key] || HB_RARITY_RGB.basic;
   return hbIsGradientRarity(rgb) ? rgb[0] : rgb;
 }
 
@@ -1767,8 +1767,8 @@ async function hbExportHive() {
         ctx.fillStyle = "#2a2010";
         ctx.fill();
       } else {
-        const rarityKey = bee ? (bee.rarity || "").toLowerCase() : "common";
-        const rgb = HB_RARITY_RGB[rarityKey] || HB_RARITY_RGB.common;
+        const rarityKey = bee ? (bee.rarity || "").toLowerCase() : "basic";
+        const rgb = HB_RARITY_RGB[rarityKey] || HB_RARITY_RGB.basic;
         if (hbIsGradientRarity(rgb)) {
           const bounds = {
             x: cx - hexW / 2,

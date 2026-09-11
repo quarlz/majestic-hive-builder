@@ -1,15 +1,15 @@
 [
   {
     "name": "Normal Hive",
-    "image": "images/hive/skins/Normal Skin.png",
-    "rarity": "Common",
+    "image": "images/cosmetics/Normal Skin.png",
+    "rarity": "Basic",
     "order": 999,
     "desc": "Original Colour of hives.",
     "buffs": []
   },
   {
     "name": "Red Hive",
-    "image": "images/hive/skins/Red Skin.png",
+    "image": "images/cosmetics/Red Skin.png",
     "rarity": "Rare",
     "order": 990,
     "desc": "Red and strawberry style hive.",
@@ -24,7 +24,7 @@
   },
   {
     "name": "Blue Hive",
-    "image": "images/hive/skins/Blue Skin.png",
+    "image": "images/cosmetics/Blue Skin.png",
     "rarity": "Rare",
     "order": 990,
     "desc": "Blue and blueberry style hive.",
@@ -39,7 +39,7 @@
   },
   {
     "name": "Green Hive",
-    "image": "images/hive/skins/Green Skin.png",
+    "image": "images/cosmetics/Green Skin.png",
     "rarity": "Rare",
     "order": 990,
     "desc": "Green and lucky hive.",
@@ -54,7 +54,7 @@
   },
   {
     "name": "Orange Hive",
-    "image": "images/hive/skins/Orange Skin.png",
+    "image": "images/cosmetics/Orange Skin.png",
     "rarity": "Rare",
     "order": 990,
     "desc": "Orange and honeyfull hive.",
@@ -74,7 +74,7 @@
   },
   {
     "name": "Pink Hive",
-    "image": "images/hive/skins/Pink Skin.png",
+    "image": "images/cosmetics/Pink Skin.png",
     "rarity": "Epic",
     "order": 980,
     "desc": "Pink and sweety flavour hive.",
@@ -94,7 +94,7 @@
   },
   {
     "name": "Purple Hive",
-    "image": "images/hive/skins/Purple Skin.png",
+    "image": "images/cosmetics/Purple Skin.png",
     "rarity": "Epic",
     "order": 980,
     "desc": "Purple and mix of blue & red hive.",
@@ -114,7 +114,7 @@
   },
   {
     "name": "Light Blue Hive",
-    "image": "images/hive/skins/Light Blue Skin.png",
+    "image": "images/cosmetics/Light Blue Skin.png",
     "rarity": "Epic",
     "order": 980,
     "desc": "Light blue and sky color hive.",
@@ -134,7 +134,7 @@
   },
   {
     "name": "Black Hive",
-    "image": "images/hive/skins/Black Skin.png",
+    "image": "images/cosmetics/Black Skin.png",
     "rarity": "Epic",
     "order": 980,
     "desc": "Black and classic style hive.",
@@ -149,7 +149,7 @@
   },
   {
     "name": "White Hive",
-    "image": "images/hive/skins/White Skin.png",
+    "image": "images/cosmetics/White Skin.png",
     "rarity": "Epic",
     "order": 980,
     "desc": "White and classic style hive.",
@@ -169,7 +169,7 @@
   },
   {
     "name": "Blossom Hive",
-    "image": "images/hive/skins/Blossom Skin.png",
+    "image": "images/cosmetics/Blossom Skin.png",
     "rarity": "Legendary",
     "order": 970,
     "desc": "Legendary hive of blossom story...",
@@ -214,7 +214,7 @@
   },
   {
     "name": "Chromatic Hive",
-    "image": "images/hive/skins/Chromatic Skin.png",
+    "image": "images/cosmetics/Chromatic Skin.png",
     "rarity": "Legendary",
     "order": 970,
     "desc": "Mix of all colors hive.",

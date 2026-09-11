@@ -137,10 +137,10 @@
   margin: 2px 3px 2px 0;
   white-space: nowrap;
 }
-.egg-chance--common {
-  color: var(--r-common);
-  border-color: var(--r-common-bd);
-  background: var(--r-common-bg);
+.egg-chance--basic {
+  color: var(--r-basic);
+  border-color: var(--r-basic-bd);
+  background: var(--r-basic-bg);
 }
 .egg-chance--rare {
   color: var(--r-rare);
