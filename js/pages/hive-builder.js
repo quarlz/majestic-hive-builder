@@ -81,6 +81,7 @@ let hbEquipModalSlotIndex = null;
 let hbEquipModalStep = "pick"; // "pick" | "configure"
 let hbSkin = null;
 let hbSkinModalOpen = false;
+let hbSkinModalStep = "pick";
 let hbSlots = Array.from({ length: HB_TOTAL_SLOTS }, () => ({
   bee: null,
   shiny: false,
@@ -101,7 +102,7 @@ function hbEsc(str) {
 function hbFaceIcon(bee) {
   const raw = bee.icon || bee.image || "";
   const base = raw.split("/").pop();
-  return base ? `images/bee-faces/${base}` : "images/ui/site-logo.png";
+  return base ? `images/faces/bees/${base}` : "images/ui/site-logo.png";
 }
 
 function hbGetBee(name) {
@@ -1357,6 +1358,29 @@ function hbBuildSkinSlot() {
     </div>`;
 }
 
+function hbSkinDetailsHtml(skin) {
+  const rows = (skin.buffs || [])
+    .map(
+      (b) =>
+        `<tr><td>${hbEsc(b.stat)}</td><td>${hbEsc(hbFormatEquipBuff(b))}</td></tr>`,
+    )
+    .join("");
+  const buffsTable =
+    skin.buffs && skin.buffs.length
+      ? `<table class="hb-equip-buffs"><tr><th>Stat</th><th>Bonus</th></tr>${rows}</table>`
+      : "";
+  return `<div class="hb-equip-details">
+      <img class="hb-equip-img" src="${hbEsc(skin.image)}" alt="${hbEsc(skin.name)}" onerror="this.src='images/ui/site-logo.png'">
+      <div class="hb-equip-info">
+        <div class="hb-equip-name-row">
+          <span class="hb-equip-name">${hbEsc(skin.name)}</span>
+        </div>
+        <p class="hb-equip-source">${hbEsc(skin.desc || "")}</p>
+      </div>
+    </div>
+    ${buffsTable}`;
+}
+
 function hbEnsureSkinModal() {
   if (document.getElementById("hb-skin-modal")) return;
   const overlay = document.createElement("div");
@@ -1372,39 +1396,72 @@ function hbEnsureSkinModal() {
       <div class="hb-modal-body" id="hb-skin-modal-body"></div>
     </div>`;
   document.body.appendChild(overlay);
+
   overlay.addEventListener("click", (e) => {
     if (e.target === overlay) hbCloseSkinModal();
   });
-  document.getElementById("hb-skin-modal-close").addEventListener("click", hbCloseSkinModal);
-  document.getElementById("hb-skin-modal-body").addEventListener("click", (e) => {
-    const card = e.target.closest(".hb-equip-pick-card");
-    if (!card) return;
-    hbSkin = card.dataset.skinName;
-    hbBuildSkinSlot();
-    hbCloseSkinModal();
-    hbRenderBonuses();
+  document
+    .getElementById("hb-skin-modal-close")
+    .addEventListener("click", hbCloseSkinModal);
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && !overlay.hidden) hbCloseSkinModal();
   });
+
+  const body = document.getElementById("hb-skin-modal-body");
+  body.addEventListener("click", hbHandleSkinModalClick);
+}
+
+function hbRenderSkinModal() {
+  const body = document.getElementById("hb-skin-modal-body");
+  const title = document.getElementById("hb-skin-modal-title");
+  if (!body) return;
+  const current = hbGetSkin(hbSkin);
+
+  if (hbSkinModalStep === "pick" || !current) {
+    hbSkinModalStep = "pick";
+    title.textContent = "Skin · Choose an Item";
+    const [r, g, b] = HB_RARITY_RGB.epic;
+    const cards = hbCosmetics
+      .map((skin) => {
+        const selected = skin.name === hbSkin;
+        return `<button type="button"
+            class="hb-equip-pick-card${selected ? " hb-equip-pick-selected" : ""}"
+            data-skin-name="${hbEsc(skin.name)}"
+            style="--pick-r:${r}; --pick-g:${g}; --pick-b:${b};">
+            <img src="${hbEsc(skin.image)}" alt="" onerror="this.src='images/ui/site-logo.png'">
+            <span class="hb-equip-pick-name">${hbEsc(skin.name)}</span>
+          </button>`;
+      })
+      .join("");
+    body.innerHTML = `
+      <div class="hb-equip-pick-grid">${cards}</div>
+      ${
+        hbSkin
+          ? `<div class="hb-modal-actions">
+              <button type="button" class="hb-btn hb-btn-danger" id="hb-skin-remove-btn">Remove</button>
+              <button type="button" class="hb-btn hb-btn-primary" id="hb-skin-done-btn">Done</button>
+            </div>`
+          : ""
+      }
+    `;
+    return;
+  }
+
+  title.textContent = `Skin · ${current.name}`;
+  body.innerHTML = `
+    <button type="button" class="hb-modal-back" id="hb-skin-change-btn">&larr; Change skin</button>
+    ${hbSkinDetailsHtml(current)}
+    <div class="hb-modal-actions">
+      <button type="button" class="hb-btn hb-btn-danger" id="hb-skin-remove-btn">Remove</button>
+      <button type="button" class="hb-btn hb-btn-primary" id="hb-skin-done-btn">Done</button>
+    </div>
+  `;
 }
 
 function hbOpenSkinModal() {
   hbEnsureSkinModal();
-  const body = document.getElementById("hb-skin-modal-body");
-  const cards = hbCosmetics.map((skin) => {
-    const buffs = Array.isArray(skin.buffs) ? skin.buffs : [];
-    const buffHtml = buffs.length
-      ? `<div class="hb-skin-pick-buffs">
-          ${buffs.map((b) => `<span class="hb-skin-pick-buff">${hbEsc(b.stat)}: ${hbEsc(hbFormatEquipBuff(b))}</span>`).join("")}
-        </div>`
-      : `<div class="hb-skin-pick-buffs"><span class="hb-skin-pick-buff hb-skin-pick-none">No stats</span></div>`;
-    return `<button type="button" class="hb-equip-pick-card hb-skin-pick-card${skin.name === hbSkin ? " hb-equip-pick-selected" : ""}" data-skin-name="${hbEsc(skin.name)}">
-      <img src="${hbEsc(skin.image)}" alt="" onerror="this.src='images/ui/site-logo.png'">
-      <span class="hb-equip-pick-name">${hbEsc(skin.name)}</span>
-      ${skin.rarity ? `<span class="hb-skin-pick-rarity">${hbEsc(skin.rarity)}</span>` : ""}
-      ${skin.desc ? `<span class="hb-skin-pick-desc">${hbEsc(skin.desc)}</span>` : ""}
-      ${buffHtml}
-    </button>`;
-  }).join("");
-  body.innerHTML = `<div class="hb-equip-pick-grid hb-skin-pick-grid">${cards}</div>`;
+  hbSkinModalStep = hbSkin ? "configure" : "pick";
+  hbRenderSkinModal();
   const overlay = document.getElementById("hb-skin-modal");
   overlay.hidden = false;
   requestAnimationFrame(() => overlay.classList.add("hb-modal-open"));
@@ -1414,8 +1471,41 @@ function hbCloseSkinModal() {
   const overlay = document.getElementById("hb-skin-modal");
   if (!overlay || overlay.hidden) return;
   overlay.classList.remove("hb-modal-open");
-  setTimeout(() => { overlay.hidden = true; }, 160);
+  setTimeout(() => {
+    overlay.hidden = true;
+  }, 160);
   hbSkinModalOpen = false;
+  hbBuildSkinSlot();
+}
+
+function hbHandleSkinModalClick(e) {
+  const pick = e.target.closest(".hb-equip-pick-card");
+  if (pick) {
+    hbSkin = pick.dataset.skinName;
+    hbSkinModalStep = "configure";
+    hbRenderSkinModal();
+    hbRenderBonuses();
+    return;
+  }
+
+  if (e.target.closest("#hb-skin-change-btn")) {
+    hbSkinModalStep = "pick";
+    hbRenderSkinModal();
+    return;
+  }
+
+  if (e.target.closest("#hb-skin-remove-btn")) {
+    hbSkin = null;
+    hbSkinModalStep = "pick";
+    hbRenderSkinModal();
+    hbRenderBonuses();
+    return;
+  }
+
+  if (e.target.closest("#hb-skin-done-btn")) {
+    hbCloseSkinModal();
+    return;
+  }
 }
 
 function hbInitSkin() {
