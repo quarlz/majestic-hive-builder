@@ -944,7 +944,9 @@
   color: #d8c8a0;
 }
 
-/* ---------- Amulets ---------- */
+/* ---------- Amulets: equip-slot row ---------- */
+/* Amulet slot cards now reuse the .hb-equip-slot* classes below (via the
+   shared hbSlotCardHtml() renderer), so only the row layout is needed here. */
 
 .hb-amulet-slots {
   display: flex;
