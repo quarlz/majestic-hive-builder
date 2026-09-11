@@ -6,10 +6,9 @@
 
 .hb-shell {
   display: grid;
-  grid-template-columns: 190px minmax(0, 520px) 190px;
+  grid-template-columns: minmax(230px, 260px) minmax(0, 1fr) minmax(230px, 260px);
   grid-template-areas: "bees hive stickers";
   align-items: start;
-  justify-content: center;
   gap: 14px;
   max-width: 1080px;
   margin: 0 auto 20px;
@@ -33,7 +32,8 @@
   background: var(--panel);
   border: 1px solid var(--line);
   border-radius: 12px;
-  padding: 12px;
+  padding: 16px 18px;
+  width: 100%;
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -53,7 +53,7 @@
 
 .hb-palette-list {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 8px;
   overflow-y: auto;
   padding-right: 2px;
@@ -61,7 +61,8 @@
 }
 
 .hb-card {
-  width: 64px;
+  width: 100%;
+  min-width: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -1459,7 +1460,7 @@
     max-height: none;
   }
   .hb-palette-list {
-    grid-template-columns: repeat(6, 1fr);
+    grid-template-columns: repeat(6, minmax(0, 1fr));
     max-height: 190px;
   }
 }
@@ -1487,7 +1488,7 @@
     margin-left: 0;
   }
   .hb-palette-list {
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(5, minmax(0, 1fr));
     max-height: 160px;
   }
   .hb-palette-label {
@@ -1511,7 +1512,7 @@
     height: 38px;
   }
   .hb-palette-list {
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(4, minmax(0, 1fr));
   }
   .hb-equip-slot {
     width: 64px;
