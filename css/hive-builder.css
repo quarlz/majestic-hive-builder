@@ -6,9 +6,10 @@
 
 .hb-shell {
   display: grid;
-  grid-template-columns: minmax(230px, 260px) minmax(0, 1fr) minmax(230px, 260px);
+  grid-template-columns: 190px minmax(0, 520px) 190px;
   grid-template-areas: "bees hive stickers";
   align-items: start;
+  justify-content: center;
   gap: 14px;
   max-width: 1080px;
   margin: 0 auto 20px;
@@ -32,8 +33,7 @@
   background: var(--panel);
   border: 1px solid var(--line);
   border-radius: 12px;
-  padding: 16px 18px;
-  width: 100%;
+  padding: 12px;
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -53,7 +53,7 @@
 
 .hb-palette-list {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(2, 1fr);
   gap: 8px;
   overflow-y: auto;
   padding-right: 2px;
@@ -61,8 +61,7 @@
 }
 
 .hb-card {
-  width: 100%;
-  min-width: 0;
+  width: 64px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -113,6 +112,62 @@
   text-overflow: ellipsis;
   max-width: 100%;
   pointer-events: none;
+}
+
+
+
+/* Bee / sticker palette cards use the same slot-card design as
+   amulets, equipment, and cosmetics. */
+.hb-palette-list {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  justify-items: center;
+}
+
+.hb-palette-item {
+  width: 78px;
+  min-width: 78px;
+  height: 78px;
+  padding: 5px;
+  gap: 3px;
+  cursor: grab;
+}
+
+.hb-palette-item img {
+  width: 42%;
+  height: 42%;
+  object-fit: contain;
+  image-rendering: pixelated;
+}
+
+.hb-palette-item .hb-palette-name,
+.hb-palette-item span {
+  max-width: 92%;
+  font-size: 0.58rem;
+  color: var(--gold-soft);
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: 1.15;
+  pointer-events: none;
+}
+
+.hb-palette-item.hb-card-selected {
+  box-shadow:
+    0 0 0 2px var(--gold),
+    0 0 10px rgba(232, 192, 64, 0.4);
+}
+
+.hb-palette-item:hover {
+  transform: translateY(-2px);
+}
+
+@media (max-width: 700px) {
+  .hb-palette-item {
+    width: 76px;
+    min-width: 76px;
+    height: 76px;
+  }
 }
 
 .hb-trash {
@@ -1460,7 +1515,7 @@
     max-height: none;
   }
   .hb-palette-list {
-    grid-template-columns: repeat(6, minmax(0, 1fr));
+    grid-template-columns: repeat(6, 1fr);
     max-height: 190px;
   }
 }
@@ -1488,7 +1543,7 @@
     margin-left: 0;
   }
   .hb-palette-list {
-    grid-template-columns: repeat(5, minmax(0, 1fr));
+    grid-template-columns: repeat(5, 1fr);
     max-height: 160px;
   }
   .hb-palette-label {
@@ -1512,7 +1567,7 @@
     height: 38px;
   }
   .hb-palette-list {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
+    grid-template-columns: repeat(4, 1fr);
   }
   .hb-equip-slot {
     width: 64px;
