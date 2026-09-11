@@ -145,6 +145,12 @@ async function hbLoadData() {
   hbStatDefs = Array.isArray(statsData) ? statsData : [];
 }
 
+function hbRarityRgbTriple(rarity) {
+  const key = (rarity || "").toLowerCase();
+  const rgb = HB_RARITY_RGB[key] || HB_RARITY_RGB.basic;
+  return hbIsGradientRarity(rgb) ? rgb[0] : rgb;
+}
+
 function hbApplyRarityStyle(card, rarity) {
   const rarityKey = (rarity || "").toLowerCase();
   const rgb = HB_RARITY_RGB[rarityKey] || HB_RARITY_RGB.basic;
@@ -761,9 +767,7 @@ function hbUsedAmuletIds(excludeIndex) {
 }
 
 function hbAmuletRarityRgb(rarity) {
-  const key = (rarity || "").toLowerCase();
-  const rgb = HB_RARITY_RGB[key] || HB_RARITY_RGB.basic;
-  return hbIsGradientRarity(rgb) ? rgb[0] : rgb;
+  return hbRarityRgbTriple(rarity);
 }
 
 function hbFormatAmuletRange(type, min, max) {
@@ -1116,11 +1120,17 @@ function hbEquipDetailsHtml(item) {
     item.buffs && item.buffs.length
       ? `<table class="hb-equip-buffs"><tr><th>Stat</th><th>Bonus</th></tr>${rows}</table>`
       : "";
+  const [r, g, b] = hbRarityRgbTriple(item.rarity);
+  const chipStyle = `color: rgb(${r},${g},${b}); background: rgba(${r},${g},${b},0.15); border-color: rgba(${r},${g},${b},0.4);`;
+  const rarityChip = item.rarity
+    ? `<span class="hb-amulet-rarity" style="${chipStyle}">${hbEsc(item.rarity)}</span>`
+    : "";
   return `<div class="hb-equip-details">
       <img class="hb-equip-img" src="${hbEsc(item.image)}" alt="${hbEsc(item.name)}" onerror="this.src='images/ui/site-logo.png'">
       <div class="hb-equip-info">
         <div class="hb-equip-name-row">
           <span class="hb-equip-name">${hbEsc(item.name)}</span>
+          ${rarityChip}
         </div>
         <p class="hb-equip-source">${hbEsc(item.description || "")}</p>
       </div>
@@ -1141,7 +1151,9 @@ function hbBuildEquipSlots() {
           <span class="hb-equip-slot-label">${hbEsc(def.label)}</span>
         </div>`;
       }
+      const [r, g, b] = hbRarityRgbTriple(item.rarity);
       return `<div class="hb-equip-slot hb-equip-slot-filled" data-slot-index="${i}" role="button" tabindex="0"
+          style="--slot-r:${r}; --slot-g:${g}; --slot-b:${b};"
           aria-label="${hbEsc(def.label)} slot, ${hbEsc(item.name)}. Click to edit.">
         <img src="${hbEsc(item.image)}" alt="" onerror="this.src='images/ui/site-logo.png'">
         <button type="button" class="hb-equip-slot-remove" data-remove-index="${i}" aria-label="Remove ${hbEsc(def.label)}">&times;</button>
@@ -1204,7 +1216,7 @@ function hbRenderEquipModal() {
     const cards = items
       .map((item) => {
         const selected = item.name === slot.item;
-        const [r, g, b] = HB_RARITY_RGB.epic;
+        const [r, g, b] = hbRarityRgbTriple(item.rarity);
         return `<button type="button"
             class="hb-equip-pick-card${selected ? " hb-equip-pick-selected" : ""}"
             data-item-name="${hbEsc(item.name)}"
@@ -1350,7 +1362,10 @@ function hbBuildSkinSlot() {
     </div>`;
     return;
   }
-  wrap.innerHTML = `<div class="hb-equip-slot hb-equip-slot-filled hb-skin-slot" id="hb-skin-slot" role="button" tabindex="0" aria-label="Skin slot, ${hbEsc(skin.name)}. Click to change.">
+  const [r, g, b] = hbRarityRgbTriple(skin.rarity);
+  wrap.innerHTML = `<div class="hb-equip-slot hb-equip-slot-filled hb-skin-slot" id="hb-skin-slot" role="button" tabindex="0"
+      style="--slot-r:${r}; --slot-g:${g}; --slot-b:${b};"
+      aria-label="Skin slot, ${hbEsc(skin.name)}. Click to change.">
       <img src="${hbEsc(skin.image)}" alt="" onerror="this.src='images/ui/site-logo.png'">
       <button type="button" class="hb-equip-slot-remove" id="hb-skin-remove" aria-label="Remove Skin">&times;</button>
       <span class="hb-equip-slot-name">${hbEsc(skin.name)}</span>
@@ -1368,11 +1383,17 @@ function hbSkinDetailsHtml(skin) {
     skin.buffs && skin.buffs.length
       ? `<table class="hb-equip-buffs"><tr><th>Stat</th><th>Bonus</th></tr>${rows}</table>`
       : "";
+  const [r, g, b] = hbRarityRgbTriple(skin.rarity);
+  const chipStyle = `color: rgb(${r},${g},${b}); background: rgba(${r},${g},${b},0.15); border-color: rgba(${r},${g},${b},0.4);`;
+  const rarityChip = skin.rarity
+    ? `<span class="hb-amulet-rarity" style="${chipStyle}">${hbEsc(skin.rarity)}</span>`
+    : "";
   return `<div class="hb-equip-details">
       <img class="hb-equip-img" src="${hbEsc(skin.image)}" alt="${hbEsc(skin.name)}" onerror="this.src='images/ui/site-logo.png'">
       <div class="hb-equip-info">
         <div class="hb-equip-name-row">
           <span class="hb-equip-name">${hbEsc(skin.name)}</span>
+          ${rarityChip}
         </div>
         <p class="hb-equip-source">${hbEsc(skin.desc || "")}</p>
       </div>
@@ -1419,10 +1440,10 @@ function hbRenderSkinModal() {
   if (hbSkinModalStep === "pick" || !current) {
     hbSkinModalStep = "pick";
     title.textContent = "Skin · Choose an Item";
-    const [r, g, b] = HB_RARITY_RGB.epic;
     const cards = hbCosmetics
       .map((skin) => {
         const selected = skin.name === hbSkin;
+        const [r, g, b] = hbRarityRgbTriple(skin.rarity);
         return `<button type="button"
             class="hb-equip-pick-card${selected ? " hb-equip-pick-selected" : ""}"
             data-skin-name="${hbEsc(skin.name)}"

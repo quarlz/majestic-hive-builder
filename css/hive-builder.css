@@ -1450,13 +1450,16 @@
 }
 
 .hb-equip-slot-filled {
-  background: rgba(232, 192, 64, 0.14);
-  border-color: rgba(232, 192, 64, 0.55);
-  box-shadow: 0 0 0 1px rgba(232, 192, 64, 0.2);
+  --slot-r: 232;
+  --slot-g: 192;
+  --slot-b: 64;
+  background: rgba(var(--slot-r), var(--slot-g), var(--slot-b), 0.14);
+  border-color: rgba(var(--slot-r), var(--slot-g), var(--slot-b), 0.55);
+  box-shadow: 0 0 0 1px rgba(var(--slot-r), var(--slot-g), var(--slot-b), 0.2);
 }
 
 .hb-equip-slot-filled:hover {
-  box-shadow: 0 0 14px rgba(232, 192, 64, 0.35);
+  box-shadow: 0 0 14px rgba(var(--slot-r), var(--slot-g), var(--slot-b), 0.35);
 }
 
 .hb-equip-slot-filled img {
