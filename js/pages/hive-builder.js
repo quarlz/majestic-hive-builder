@@ -1093,7 +1093,7 @@ function hbInitAmulets() {
   const wrap = document.getElementById("hb-amulet-list");
   if (wrap) {
     wrap.addEventListener("click", (e) => {
-      const removeBtn = e.target.closest(".hb-amulet-slot-remove");
+      const removeBtn = e.target.closest(".hb-equip-slot-remove");
       if (removeBtn) {
         e.stopPropagation();
         const index = Number(removeBtn.dataset.removeIndex);
@@ -1102,13 +1102,13 @@ function hbInitAmulets() {
         hbRenderBonuses();
         return;
       }
-      const slotEl = e.target.closest(".hb-amulet-slot");
+      const slotEl = e.target.closest(".hb-equip-slot");
       if (slotEl) hbOpenAmuletModal(Number(slotEl.dataset.slotIndex));
     });
 
     wrap.addEventListener("keydown", (e) => {
       if (e.key !== "Enter" && e.key !== " ") return;
-      const slotEl = e.target.closest(".hb-amulet-slot");
+      const slotEl = e.target.closest(".hb-equip-slot");
       if (!slotEl) return;
       e.preventDefault();
       hbOpenAmuletModal(Number(slotEl.dataset.slotIndex));
